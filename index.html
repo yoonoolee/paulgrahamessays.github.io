@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul Graham Essays Collection</title>
+    <title>Paul Graham Essays</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Paul Graham Essays</h1>
-        <p class="subtitle">A collection of 230 essays on startups, technology, and life</p>
     </header>
 
     <div class="main-content">
@@ -22,7 +21,7 @@
 
                 <div class="essay-count" id="essayCount"></div>
 
-                <div id="tableContainer"></div>
+                <div id="essayList"></div>
             </div>
         </div>
 
@@ -91,12 +90,12 @@
             rightPane.classList.remove('visible');
         }
 
-        // ========== TABLE RENDERING ==========
+        // ========== LIST RENDERING ==========
 
         let allEssays = [];
 
-        function renderTable(essays) {
-            const container = document.getElementById('tableContainer');
+        function renderList(essays) {
+            const container = document.getElementById('essayList');
             const countDiv = document.getElementById('essayCount');
 
             countDiv.innerHTML = `Showing ${essays.length} essays`;
@@ -106,32 +105,13 @@
                 return;
             }
 
-            const table = document.createElement('table');
+            container.innerHTML = '';
 
-            // Create header
-            const thead = table.createTHead();
-            const headerRow = thead.insertRow();
-            ['Bookmark', 'Title', 'Date', 'Reading Time', 'Topics'].forEach(headerText => {
-                const th = document.createElement('th');
-                th.textContent = headerText;
-                headerRow.appendChild(th);
-            });
-
-            // Create body
-            const tbody = table.createTBody();
             essays.forEach(essay => {
-                const row = tbody.insertRow();
+                const item = document.createElement('div');
+                item.className = 'essay-item';
 
-                // Add click handler to row (except for bookmark button)
-                row.onclick = (e) => {
-                    if (e.target.classList.contains('bookmark-btn')) {
-                        return; // Don't open preview if clicking bookmark
-                    }
-                    openPreview(essay);
-                };
-
-                // Bookmark cell
-                const bookmarkCell = row.insertCell();
+                // Create bookmark button
                 const bookmarkBtn = document.createElement('button');
                 bookmarkBtn.className = 'bookmark-btn' + (isBookmarked(essay.Title) ? ' bookmarked' : '');
                 bookmarkBtn.innerHTML = isBookmarked(essay.Title) ? '★' : '☆';
@@ -140,38 +120,66 @@
                     e.stopPropagation();
                     toggleBookmark(essay.Title);
                 };
-                bookmarkCell.appendChild(bookmarkBtn);
 
-                // Title cell
-                const titleCell = row.insertCell();
-                titleCell.textContent = essay.Title;
+                // Create title
+                const title = document.createElement('div');
+                title.className = 'essay-title';
+                title.textContent = essay.Title;
 
-                // Date cell
-                const dateCell = row.insertCell();
-                dateCell.textContent = essay.Date;
+                // Create tags container
+                const tagsContainer = document.createElement('div');
+                tagsContainer.className = 'essay-tags';
 
-                // Reading time cell
-                const readingTimeCell = row.insertCell();
-                readingTimeCell.textContent = essay.ReadingTime;
+                // Add date tag
+                const dateTag = document.createElement('span');
+                dateTag.className = 'tag date-tag';
+                dateTag.textContent = essay.Date;
+                tagsContainer.appendChild(dateTag);
 
-                // Topics cell
-                const topicsCell = row.insertCell();
-                const topicNames = essay.Topics.map(t => t.topic).join(', ');
-                topicsCell.textContent = topicNames;
+                // Add reading time tag
+                const timeTag = document.createElement('span');
+                timeTag.className = 'tag time-tag';
+                timeTag.textContent = essay.ReadingTime;
+                tagsContainer.appendChild(timeTag);
+
+                // Add topic tags
+                essay.Topics.forEach(topic => {
+                    const topicTag = document.createElement('span');
+                    topicTag.className = 'tag topic-tag';
+                    topicTag.textContent = topic.topic;
+                    tagsContainer.appendChild(topicTag);
+                });
+
+                // Create content wrapper
+                const contentWrapper = document.createElement('div');
+                contentWrapper.className = 'essay-content';
+                contentWrapper.appendChild(title);
+                contentWrapper.appendChild(tagsContainer);
+
+                // Assemble the item
+                item.appendChild(bookmarkBtn);
+                item.appendChild(contentWrapper);
+
+                // Add click handler to open preview
+                item.onclick = (e) => {
+                    if (e.target.classList.contains('bookmark-btn')) {
+                        return;
+                    }
+                    openPreview(essay);
+                };
+
+                container.appendChild(item);
             });
-
-            container.innerHTML = '';
-            container.appendChild(table);
         }
 
         function showAll() {
-            renderTable(allEssays);
+            renderList(allEssays);
         }
 
         function showBookmarked() {
             const bookmarks = getBookmarks();
             const bookmarkedEssays = allEssays.filter(essay => bookmarks.includes(essay.Title));
-            renderTable(bookmarkedEssays);
+            renderList(bookmarkedEssays);
         }
 
         // ========== LOAD DATA ==========
@@ -180,11 +188,11 @@
             .then(response => response.json())
             .then(data => {
                 allEssays = data.essays;
-                renderTable(allEssays);
+                renderList(allEssays);
             })
             .catch(error => {
                 console.error('Error loading essays:', error);
-                document.getElementById('tableContainer').innerHTML =
+                document.getElementById('essayList').innerHTML =
                     '<p style="text-align: center; padding: 2rem; color: #e53e3e;">Error loading essays. Please refresh the page.</p>';
             });
     </script>

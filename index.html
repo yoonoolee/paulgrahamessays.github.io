@@ -55,14 +55,20 @@
 
             <div class="filter-group">
                 <label class="filter-label">Reading Time (min)</label>
-                <input type="range" id="timeSlider" min="5" max="70" step="5" value="70" oninput="updateTimeLabel(); applySortAndFilter()">
-                <div class="slider-label">Up to <span id="timeLabel">70</span> min</div>
+                <div class="dual-slider-container">
+                    <input type="range" id="timeMinSlider" class="dual-slider dual-slider-min" min="5" max="70" step="5" value="5" oninput="updateTimeLabels(); applySortAndFilter()">
+                    <input type="range" id="timeMaxSlider" class="dual-slider dual-slider-max" min="5" max="70" step="5" value="70" oninput="updateTimeLabels(); applySortAndFilter()">
+                </div>
+                <div class="slider-label"><span id="timeMinLabel">5</span> - <span id="timeMaxLabel">70</span> min</div>
             </div>
 
             <div class="filter-group">
                 <label class="filter-label">Year</label>
-                <input type="range" id="yearSlider" min="1996" max="2025" value="1996" oninput="updateYearLabel(); applySortAndFilter()">
-                <div class="slider-label"><span id="yearLabel">1996</span> to 2025</div>
+                <div class="dual-slider-container">
+                    <input type="range" id="yearMinSlider" class="dual-slider dual-slider-min" min="1996" max="2025" value="1996" oninput="updateYearLabels(); applySortAndFilter()">
+                    <input type="range" id="yearMaxSlider" class="dual-slider dual-slider-max" min="1996" max="2025" value="2025" oninput="updateYearLabels(); applySortAndFilter()">
+                </div>
+                <div class="slider-label"><span id="yearMinLabel">1996</span> - <span id="yearMaxLabel">2025</span></div>
             </div>
 
             <div class="section-divider">
@@ -189,14 +195,36 @@
             applySortAndFilter();
         }
 
-        function updateTimeLabel() {
-            const value = document.getElementById('timeSlider').value;
-            document.getElementById('timeLabel').textContent = value;
+        function updateTimeLabels() {
+            const minSlider = document.getElementById('timeMinSlider');
+            const maxSlider = document.getElementById('timeMaxSlider');
+            let minValue = parseInt(minSlider.value);
+            let maxValue = parseInt(maxSlider.value);
+
+            // Ensure min doesn't exceed max
+            if (minValue > maxValue) {
+                minSlider.value = maxValue;
+                minValue = maxValue;
+            }
+
+            document.getElementById('timeMinLabel').textContent = minValue;
+            document.getElementById('timeMaxLabel').textContent = maxValue;
         }
 
-        function updateYearLabel() {
-            const value = document.getElementById('yearSlider').value;
-            document.getElementById('yearLabel').textContent = value;
+        function updateYearLabels() {
+            const minSlider = document.getElementById('yearMinSlider');
+            const maxSlider = document.getElementById('yearMaxSlider');
+            let minValue = parseInt(minSlider.value);
+            let maxValue = parseInt(maxSlider.value);
+
+            // Ensure min doesn't exceed max
+            if (minValue > maxValue) {
+                minSlider.value = maxValue;
+                minValue = maxValue;
+            }
+
+            document.getElementById('yearMinLabel').textContent = minValue;
+            document.getElementById('yearMaxLabel').textContent = maxValue;
         }
 
         function applySortAndFilter() {
@@ -240,13 +268,15 @@
                 );
             }
 
-            // Filter by reading time (slider)
-            const maxTime = parseInt(document.getElementById('timeSlider').value);
-            essays = essays.filter(essay => essay.ReadingTime <= maxTime);
+            // Filter by reading time (sliders)
+            const minTime = parseInt(document.getElementById('timeMinSlider').value);
+            const maxTime = parseInt(document.getElementById('timeMaxSlider').value);
+            essays = essays.filter(essay => essay.ReadingTime >= minTime && essay.ReadingTime <= maxTime);
 
-            // Filter by year (slider)
-            const minYear = parseInt(document.getElementById('yearSlider').value);
-            essays = essays.filter(essay => essay.Year >= minYear);
+            // Filter by year (sliders)
+            const minYear = parseInt(document.getElementById('yearMinSlider').value);
+            const maxYear = parseInt(document.getElementById('yearMaxSlider').value);
+            essays = essays.filter(essay => essay.Year >= minYear && essay.Year <= maxYear);
 
             // Sort
             switch(currentSort) {

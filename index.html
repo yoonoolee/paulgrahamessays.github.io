@@ -4,130 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paul Graham Essays Collection</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            margin-bottom: 2rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .filters {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .filter-btn {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            margin: 0.25rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-
-        .filter-btn:hover {
-            background: #5568d3;
-        }
-
-        .filter-btn.active {
-            background: #4c51bf;
-        }
-
-        table {
-            width: 100%;
-            background: white;
-            border-collapse: collapse;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        th {
-            background: #667eea;
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        tr:hover {
-            background-color: #f7fafc;
-        }
-
-        a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .bookmark-btn {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0 0.5rem;
-            color: #cbd5e0;
-        }
-
-        .bookmark-btn.bookmarked {
-            color: #f6ad55;
-        }
-
-        .bookmark-btn:hover {
-            color: #f6ad55;
-        }
-
-        .essay-count {
-            text-align: center;
-            margin: 1rem 0;
-            color: #718096;
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -135,15 +12,27 @@
         <p class="subtitle">A collection of 230 essays on startups, technology, and life</p>
     </header>
 
-    <div class="container">
-        <div class="filters">
-            <button class="filter-btn" onclick="showAll()">Show All</button>
-            <button class="filter-btn" onclick="showBookmarked()">Show Bookmarked</button>
+    <div class="main-content">
+        <div class="left-pane">
+            <div class="container">
+                <div class="filters">
+                    <button class="filter-btn" onclick="showAll()">Show All</button>
+                    <button class="filter-btn" onclick="showBookmarked()">Show Bookmarked</button>
+                </div>
+
+                <div class="essay-count" id="essayCount"></div>
+
+                <div id="tableContainer"></div>
+            </div>
         </div>
 
-        <div class="essay-count" id="essayCount"></div>
-
-        <div id="tableContainer"></div>
+        <div class="right-pane" id="rightPane">
+            <div class="preview-header">
+                <div class="preview-title" id="previewTitle"></div>
+                <button class="close-preview-btn" onclick="closePreview()">Close Preview</button>
+            </div>
+            <div class="preview-container" id="previewContainer"></div>
+        </div>
     </div>
 
     <script>
@@ -185,6 +74,23 @@
             });
         }
 
+        // ========== PREVIEW FUNCTIONS ==========
+
+        function openPreview(essay) {
+            const rightPane = document.getElementById('rightPane');
+            const previewTitle = document.getElementById('previewTitle');
+            const previewContainer = document.getElementById('previewContainer');
+
+            previewTitle.textContent = essay.Title;
+            previewContainer.innerHTML = `<iframe class="preview-iframe" src="${essay.URL}"></iframe>`;
+            rightPane.classList.add('visible');
+        }
+
+        function closePreview() {
+            const rightPane = document.getElementById('rightPane');
+            rightPane.classList.remove('visible');
+        }
+
         // ========== TABLE RENDERING ==========
 
         let allEssays = [];
@@ -216,22 +122,29 @@
             essays.forEach(essay => {
                 const row = tbody.insertRow();
 
+                // Add click handler to row (except for bookmark button)
+                row.onclick = (e) => {
+                    if (e.target.classList.contains('bookmark-btn')) {
+                        return; // Don't open preview if clicking bookmark
+                    }
+                    openPreview(essay);
+                };
+
                 // Bookmark cell
                 const bookmarkCell = row.insertCell();
                 const bookmarkBtn = document.createElement('button');
                 bookmarkBtn.className = 'bookmark-btn' + (isBookmarked(essay.Title) ? ' bookmarked' : '');
                 bookmarkBtn.innerHTML = isBookmarked(essay.Title) ? '★' : '☆';
                 bookmarkBtn.setAttribute('data-title', essay.Title);
-                bookmarkBtn.onclick = () => toggleBookmark(essay.Title);
+                bookmarkBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    toggleBookmark(essay.Title);
+                };
                 bookmarkCell.appendChild(bookmarkBtn);
 
                 // Title cell
                 const titleCell = row.insertCell();
-                const titleLink = document.createElement('a');
-                titleLink.href = essay.URL;
-                titleLink.target = '_blank';
-                titleLink.textContent = essay.Title;
-                titleCell.appendChild(titleLink);
+                titleCell.textContent = essay.Title;
 
                 // Date cell
                 const dateCell = row.insertCell();

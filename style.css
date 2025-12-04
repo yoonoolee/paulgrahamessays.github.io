@@ -44,7 +44,16 @@ h1 {
     gap: 0;
 }
 
-.left-pane {
+.filters-sidebar {
+    width: 250px;
+    background-color: white;
+    padding: 2rem 1.5rem;
+    border-right: 1px solid #e5e7eb;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.middle-pane {
     flex: 1;
     overflow-y: auto;
     background-color: white;
@@ -111,34 +120,136 @@ h1 {
     transform: translateX(-80px);
 }
 
-.container {
-    padding: 0;
+.section-divider {
+    margin: 2rem 0 1.5rem 0;
+    padding-top: 2rem;
+    border-top: 2px solid #e5e7eb;
 }
 
-.filters {
-    background: white;
-    padding: 0 0 1.5rem 0;
-    margin-bottom: 2rem;
+.section-divider:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.section-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #6f1314;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+}
+
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group:last-child {
+    margin-bottom: 0;
+}
+
+.filter-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .filter-btn {
-    background: #1f2937;
-    color: white;
-    border: none;
+    background: white;
+    color: #374151;
+    border: 1px solid #d1d5db;
     padding: 0.5rem 1rem;
-    margin: 0.25rem;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     transition: all 0.2s ease;
+    width: 100%;
+    text-align: left;
 }
 
 .filter-btn:hover {
-    background: #374151;
+    border-color: #9ca3af;
+    background: #f9fafb;
 }
 
 .filter-btn.active {
     background: #6f1314;
+    color: white;
+    border-color: #6f1314;
+}
+
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: #374151;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+select:hover {
+    border-color: #9ca3af;
+}
+
+select:focus {
+    outline: none;
+    border-color: #6f1314;
+    box-shadow: 0 0 0 3px rgba(111, 19, 20, 0.1);
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #e5e7eb;
+    outline: none;
+    -webkit-appearance: none;
+    margin: 0.5rem 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #6f1314;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #6f1314;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-align: center;
+}
+
+.slider-label span {
+    font-weight: 600;
+    color: #374151;
 }
 
 #essayList {

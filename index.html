@@ -12,17 +12,83 @@
     </header>
 
     <div class="main-content">
-        <div class="left-pane">
-            <div class="container">
-                <div class="filters">
-                    <button class="filter-btn" onclick="showAll()">Show All</button>
-                    <button class="filter-btn" onclick="showBookmarked()">Show Bookmarked</button>
+        <div class="filters-sidebar">
+            <div class="filter-group">
+                <label class="filter-label">View</label>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="toggleView('all')">All</button>
+                    <button class="filter-btn" onclick="toggleView('bookmarked')">Bookmarked</button>
                 </div>
-
-                <div class="essay-count" id="essayCount"></div>
-
-                <div id="essayList"></div>
             </div>
+
+            <div class="section-divider">
+                <h3 class="section-title">Filter</h3>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Topic</label>
+                <select id="topicFilter" onchange="applySortAndFilter()">
+                    <option value="all">All Topics</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Subtopic</label>
+                <select id="subtopicFilter" onchange="applySortAndFilter()">
+                    <option value="all">All Subtopics</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Essay Type</label>
+                <select id="essayTypeFilter" onchange="applySortAndFilter()">
+                    <option value="all">All Types</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Audience</label>
+                <select id="audienceFilter" onchange="applySortAndFilter()">
+                    <option value="all">All Audiences</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Reading Time (min)</label>
+                <input type="range" id="timeSlider" min="5" max="70" step="5" value="70" oninput="updateTimeLabel(); applySortAndFilter()">
+                <div class="slider-label">Up to <span id="timeLabel">70</span> min</div>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Year</label>
+                <input type="range" id="yearSlider" min="1996" max="2025" value="1996" oninput="updateYearLabel(); applySortAndFilter()">
+                <div class="slider-label"><span id="yearLabel">1996</span> to 2025</div>
+            </div>
+
+            <div class="section-divider">
+                <h3 class="section-title">Sort</h3>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Date</label>
+                <div class="filter-buttons">
+                    <button class="filter-btn sort-btn active" data-sort="date-desc" onclick="setSort(this, 'date-desc')">Newest First</button>
+                    <button class="filter-btn sort-btn" data-sort="date-asc" onclick="setSort(this, 'date-asc')">Oldest First</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label">Length</label>
+                <div class="filter-buttons">
+                    <button class="filter-btn sort-btn" data-sort="length-desc" onclick="setSort(this, 'length-desc')">Longest First</button>
+                    <button class="filter-btn sort-btn" data-sort="length-asc" onclick="setSort(this, 'length-asc')">Shortest First</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle-pane">
+            <div class="essay-count" id="essayCount"></div>
+            <div id="essayList"></div>
         </div>
 
         <div class="right-pane" id="rightPane">
@@ -58,6 +124,11 @@
 
             // Update the star icon without reloading
             updateBookmarkButton(title);
+
+            // Refresh the list if we're in bookmarked view
+            if (currentView === 'bookmarked') {
+                applySortAndFilter();
+            }
         }
 
         function updateBookmarkButton(title) {
@@ -93,6 +164,170 @@
         // ========== LIST RENDERING ==========
 
         let allEssays = [];
+        let currentView = 'all'; // 'all' or 'bookmarked'
+        let currentSort = 'date-desc';
+
+        function toggleView(view) {
+            currentView = view;
+
+            // Update button states
+            const buttons = document.querySelectorAll('.filter-buttons .filter-btn:not(.sort-btn)');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            applySortAndFilter();
+        }
+
+        function setSort(button, sortType) {
+            currentSort = sortType;
+
+            // Update button states - only within sort buttons
+            const sortButtons = document.querySelectorAll('.sort-btn');
+            sortButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            applySortAndFilter();
+        }
+
+        function updateTimeLabel() {
+            const value = document.getElementById('timeSlider').value;
+            document.getElementById('timeLabel').textContent = value;
+        }
+
+        function updateYearLabel() {
+            const value = document.getElementById('yearSlider').value;
+            document.getElementById('yearLabel').textContent = value;
+        }
+
+        function applySortAndFilter() {
+            let essays = [...allEssays];
+
+            // Filter by view (all or bookmarked)
+            if (currentView === 'bookmarked') {
+                const bookmarks = getBookmarks();
+                essays = essays.filter(essay => bookmarks.includes(essay.Title));
+            }
+
+            // Filter by topic
+            const topicFilter = document.getElementById('topicFilter').value;
+            if (topicFilter !== 'all') {
+                essays = essays.filter(essay =>
+                    essay.Topics.some(t => t.topic === topicFilter)
+                );
+            }
+
+            // Filter by subtopic
+            const subtopicFilter = document.getElementById('subtopicFilter').value;
+            if (subtopicFilter !== 'all') {
+                essays = essays.filter(essay =>
+                    essay.Topics.some(t => t.subtopics && t.subtopics.includes(subtopicFilter))
+                );
+            }
+
+            // Filter by essay type
+            const essayTypeFilter = document.getElementById('essayTypeFilter').value;
+            if (essayTypeFilter !== 'all') {
+                essays = essays.filter(essay =>
+                    essay.EssayType && essay.EssayType.includes(essayTypeFilter)
+                );
+            }
+
+            // Filter by audience
+            const audienceFilter = document.getElementById('audienceFilter').value;
+            if (audienceFilter !== 'all') {
+                essays = essays.filter(essay =>
+                    essay.Audience && essay.Audience.includes(audienceFilter)
+                );
+            }
+
+            // Filter by reading time (slider)
+            const maxTime = parseInt(document.getElementById('timeSlider').value);
+            essays = essays.filter(essay => essay.ReadingTime <= maxTime);
+
+            // Filter by year (slider)
+            const minYear = parseInt(document.getElementById('yearSlider').value);
+            essays = essays.filter(essay => essay.Year >= minYear);
+
+            // Sort
+            switch(currentSort) {
+                case 'date-desc':
+                    essays.sort((a, b) => b.Year - a.Year);
+                    break;
+                case 'date-asc':
+                    essays.sort((a, b) => a.Year - b.Year);
+                    break;
+                case 'length-desc':
+                    essays.sort((a, b) => b.WordCount - a.WordCount);
+                    break;
+                case 'length-asc':
+                    essays.sort((a, b) => a.WordCount - b.WordCount);
+                    break;
+            }
+
+            renderList(essays);
+        }
+
+        function populateFilters() {
+            // Populate topics
+            const topics = new Set();
+            allEssays.forEach(essay => {
+                essay.Topics.forEach(t => topics.add(t.topic));
+            });
+            const topicFilter = document.getElementById('topicFilter');
+            Array.from(topics).sort().forEach(topic => {
+                const option = document.createElement('option');
+                option.value = topic;
+                option.textContent = topic;
+                topicFilter.appendChild(option);
+            });
+
+            // Populate subtopics
+            const subtopics = new Set();
+            allEssays.forEach(essay => {
+                essay.Topics.forEach(t => {
+                    if (t.subtopics) {
+                        t.subtopics.forEach(sub => subtopics.add(sub));
+                    }
+                });
+            });
+            const subtopicFilter = document.getElementById('subtopicFilter');
+            Array.from(subtopics).sort().forEach(subtopic => {
+                const option = document.createElement('option');
+                option.value = subtopic;
+                option.textContent = subtopic;
+                subtopicFilter.appendChild(option);
+            });
+
+            // Populate essay types
+            const essayTypes = new Set();
+            allEssays.forEach(essay => {
+                if (essay.EssayType) {
+                    essay.EssayType.forEach(type => essayTypes.add(type));
+                }
+            });
+            const essayTypeFilter = document.getElementById('essayTypeFilter');
+            Array.from(essayTypes).sort().forEach(type => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = type;
+                essayTypeFilter.appendChild(option);
+            });
+
+            // Populate audiences
+            const audiences = new Set();
+            allEssays.forEach(essay => {
+                if (essay.Audience) {
+                    essay.Audience.forEach(aud => audiences.add(aud));
+                }
+            });
+            const audienceFilter = document.getElementById('audienceFilter');
+            Array.from(audiences).sort().forEach(audience => {
+                const option = document.createElement('option');
+                option.value = audience;
+                option.textContent = audience;
+                audienceFilter.appendChild(option);
+            });
+        }
 
         function renderList(essays) {
             const container = document.getElementById('essayList');
@@ -172,23 +407,14 @@
             });
         }
 
-        function showAll() {
-            renderList(allEssays);
-        }
-
-        function showBookmarked() {
-            const bookmarks = getBookmarks();
-            const bookmarkedEssays = allEssays.filter(essay => bookmarks.includes(essay.Title));
-            renderList(bookmarkedEssays);
-        }
-
         // ========== LOAD DATA ==========
 
         fetch('./essays.json')
             .then(response => response.json())
             .then(data => {
                 allEssays = data.essays;
-                renderList(allEssays);
+                populateFilters();
+                applySortAndFilter();
             })
             .catch(error => {
                 console.error('Error loading essays:', error);

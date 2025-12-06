@@ -248,7 +248,11 @@
             const subtopicFilter = document.getElementById('subtopicFilter').value;
             if (subtopicFilter !== 'all') {
                 essays = essays.filter(essay =>
-                    essay.Topics.some(t => t.subtopics && t.subtopics.includes(subtopicFilter))
+                    essay.Topics.some(t =>
+                        t.subtopics && t.subtopics.some(subObj =>
+                            subObj.items && subObj.items.includes(subtopicFilter)
+                        )
+                    )
                 );
             }
 
@@ -316,7 +320,12 @@
             allEssays.forEach(essay => {
                 essay.Topics.forEach(t => {
                     if (t.subtopics) {
-                        t.subtopics.forEach(sub => subtopics.add(sub));
+                        // Handle new nested structure
+                        t.subtopics.forEach(subObj => {
+                            if (subObj.items) {
+                                subObj.items.forEach(item => subtopics.add(item));
+                            }
+                        });
                     }
                 });
             });

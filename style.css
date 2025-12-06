@@ -211,14 +211,14 @@ select:focus {
 
 .dual-slider-container {
     position: relative;
-    height: 20px;
+    height: 16px;
     margin: 0.5rem 0;
 }
 
 .dual-slider {
     position: absolute;
     width: 100%;
-    height: 20px;
+    height: 16px;
     background: transparent;
     outline: none;
     -webkit-appearance: none;
@@ -237,43 +237,44 @@ select:focus {
 /* Track styling */
 .dual-slider::-webkit-slider-runnable-track {
     width: 100%;
-    height: 6px;
+    height: 2px;
     background: #e5e7eb;
-    border-radius: 3px;
-    margin-top: 7px;
+    border-radius: 10px;
 }
 
 .dual-slider::-moz-range-track {
     width: 100%;
-    height: 6px;
+    height: 2px;
     background: #e5e7eb;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 /* Thumb styling */
 .dual-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: #6f1314;
     cursor: pointer;
-    border: 2px solid white;
+    border: 3px solid white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     pointer-events: auto;
-    margin-top: 1px;
+    margin-top: -7px;
+    position: relative;
 }
 
 .dual-slider::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: #6f1314;
     cursor: pointer;
-    border: 2px solid white;
+    border: 3px solid white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     pointer-events: auto;
+    position: relative;
 }
 
 input[type="range"] {

@@ -11,7 +11,11 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
@@ -34,7 +38,11 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
@@ -57,8 +65,12 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career",
-            "Life advice"
+            {
+              "items": [
+                "Career",
+                "Life advice"
+              ]
+            }
           ]
         }
       ],
@@ -75,12 +87,16 @@
       "Date": "01/2025",
       "Year": 2025,
       "WordCount": 6245,
-      "ReadingTime": 30,
+      "ReadingTime": 40,
       "Topics": [
         {
           "topic": "Society",
           "subtopics": [
-            "Social commentary"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -102,19 +118,31 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         },
         {
           "topic": "Society",
           "subtopics": [
-            "Social commentary"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         },
         {
           "topic": "Technology",
           "subtopics": [
-            "Analysis"
+            {
+              "items": [
+                "Analysis"
+              ]
+            }
           ]
         }
       ],
@@ -137,15 +165,24 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career",
-            "Life advice"
+            {
+              "items": [
+                "Career",
+                "Life advice"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Starting a Company",
-            "Ideas"
+            {
+              "items": [
+                "Starting a Company",
+                "Ideas",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -168,8 +205,13 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth",
-            "Starting a Company"
+            {
+              "items": [
+                "Strategy and growth",
+                "Starting a Company",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -191,14 +233,23 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice",
-            "Career"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -221,10 +272,14 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Strategy and growth",
-            "YC",
-            "Starting a Company"
+            {
+              "items": [
+                "Ideas",
+                "Strategy and growth",
+                "YC",
+                "Starting a Company"
+              ]
+            }
           ]
         }
       ],
@@ -241,25 +296,37 @@
       "Date": "03/2024",
       "Year": 2024,
       "WordCount": 2846,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Ideas",
+                "Starting a Company"
+              ]
+            }
           ]
         },
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Technology",
           "subtopics": [
-            "Analysis"
+            {
+              "items": [
+                "Analysis"
+              ]
+            }
           ]
         }
       ],
@@ -277,12 +344,16 @@
       "Date": "03/2024",
       "Year": 2024,
       "WordCount": 4391,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
@@ -300,28 +371,37 @@
       "Date": "10/2023",
       "Year": 2023,
       "WordCount": 4312,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career",
-            "Life advice",
-            "Learning"
+            {
+              "items": [
+                "Career",
+                "Life advice"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "General",
+        "Founders"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary"
       ]
     },
     {
@@ -335,13 +415,28 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career",
-            "Productivity and focus"
+            {
+              "items": [
+                "Career",
+                "Productivity and focus"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Startups",
+          "subtopics": [
+            {
+              "items": [
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "General",
+        "Founders"
       ],
       "EssayType": [
         "How-to Guides"
@@ -358,14 +453,22 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Ideas",
+                "Starting a Company"
+              ]
+            }
           ]
         }
       ],
@@ -387,13 +490,22 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
@@ -416,13 +528,21 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         },
         {
           "topic": "Society",
           "subtopics": [
-            "Philosophy"
+            {
+              "items": [
+                "Philosophy"
+              ]
+            }
           ]
         }
       ],
@@ -444,13 +564,22 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Career",
+                "Life advice"
+              ]
+            }
           ]
         },
         {
           "topic": "Society",
           "subtopics": [
-            "Philosophy"
+            {
+              "items": [
+                "Philosophy"
+              ]
+            }
           ]
         }
       ],
@@ -467,15 +596,21 @@
       "Date": "09/2022",
       "Year": 2022,
       "WordCount": 2221,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth",
-            "Failure",
-            "YC",
-            "Starting a Company"
+            {
+              "items": [
+                "Strategy and growth",
+                "Failure",
+                "YC",
+                "Starting a Company",
+                "Funding/Investing, Finance, and Exits",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -493,24 +628,33 @@
       "Date": "04/2022",
       "Year": 2022,
       "WordCount": 2139,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         },
         {
           "topic": "Society",
           "subtopics": [
-            "Philosophy",
-            "Social commentary"
+            {
+              "items": [
+                "Philosophy",
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "General",
+        "Founders"
       ],
       "EssayType": [
         "Thought Pieces"
@@ -527,7 +671,11 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
@@ -550,7 +698,11 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Philosophy"
+            {
+              "items": [
+                "Philosophy"
+              ]
+            }
           ]
         }
       ],
@@ -572,13 +724,21 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         },
         {
           "topic": "Society",
           "subtopics": [
-            "Social commentary"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -600,18 +760,17 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
-          ]
-        },
-        {
-          "topic": "Personal growth",
-          "subtopics": [
-            "Learning"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
         "Commentary"
@@ -628,13 +787,22 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Starting a Company"
+            {
+              "items": [
+                "Starting a Company",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -653,19 +821,27 @@
       "Date": "06/2021",
       "Year": 2021,
       "WordCount": 2536,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Starting a Company",
-            "Ideas"
+            {
+              "items": [
+                "Starting a Company",
+                "Ideas"
+              ]
+            }
           ]
         }
       ],
@@ -688,14 +864,22 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Social commentary"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         },
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice",
-            "Career"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
           ]
         }
       ],
@@ -717,14 +901,23 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Ideas",
+                "Starting a Company",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -748,7 +941,11 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Analysis"
+            {
+              "items": [
+                "Analysis"
+              ]
+            }
           ]
         }
       ],
@@ -771,7 +968,11 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Social commentary"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -788,25 +989,39 @@
       "Date": "04/2021",
       "Year": 2021,
       "WordCount": 2626,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Society",
           "subtopics": [
-            "Wealth",
-            "Social commentary"
+            {
+              "items": [
+                "Economics and Policy",
+                "Social commentary"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Starting a Company"
+            {
+              "items": [
+                "Starting a Company",
+                "Founder Life",
+                "Startup Landscape"
+              ]
+            }
           ]
         },
         {
           "topic": "Technology",
           "subtopics": [
-            "Analysis"
+            {
+              "items": [
+                "Analysis"
+              ]
+            }
           ]
         }
       ],
@@ -829,7 +1044,11 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
@@ -852,7 +1071,11 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Social commentary"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -874,20 +1097,32 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Analysis"
+            {
+              "items": [
+                "Analysis"
+              ]
+            }
           ]
         },
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice",
-            "Career"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "YC"
+            {
+              "items": [
+                "YC"
+              ]
+            }
           ]
         }
       ],
@@ -909,20 +1144,33 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         },
         {
           "topic": "Society",
           "subtopics": [
-            "Social commentary",
-            "Philosophy"
+            {
+              "items": [
+                "Social commentary",
+                "Philosophy"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Starting a Company"
+            {
+              "items": [
+                "Starting a Company",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -945,15 +1193,24 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Wealth"
+            {
+              "items": [
+                "Economics and Policy"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "YC",
-            "Starting a Company",
-            "Strategy and growth"
+            {
+              "items": [
+                "YC",
+                "Starting a Company",
+                "Strategy and growth",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -976,14 +1233,20 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Strategy and growth",
-            "Starting a Company"
+            {
+              "items": [
+                "Ideas",
+                "Strategy and growth",
+                "Starting a Company",
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
         "Memoir"
@@ -1000,22 +1263,33 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning",
-            "Life advice",
-            "Career"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Starting a Company",
-            "Ideas"
+            {
+              "items": [
+                "Starting a Company",
+                "Ideas"
+              ]
+            }
           ]
         },
         {
           "topic": "Society",
           "subtopics": [
-            "Social commentary"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -1036,18 +1310,28 @@
       "Date": "10/2020",
       "Year": 2020,
       "WordCount": 2541,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Starting a Company"
+            {
+              "items": [
+                "Starting a Company",
+                "Ideas",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -1070,14 +1354,21 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Philosophy",
-            "Wealth"
+            {
+              "items": [
+                "Economics and Policy"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -1086,7 +1377,7 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary"
       ]
     },
     {
@@ -1095,26 +1386,27 @@
       "Date": "07/2020",
       "Year": 2020,
       "WordCount": 2001,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Society",
           "subtopics": [
-            "Philosophy",
-            "Societal issues"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Philosophy",
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -1137,7 +1429,12 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary",
+                "Philosophy"
+              ]
+            }
           ]
         }
       ],
@@ -1159,7 +1456,11 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -1176,26 +1477,21 @@
       "Date": "02/2020",
       "Year": 2020,
       "WordCount": 2876,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Writers",
-        "Founders",
-        "General"
+        "Writers"
       ],
       "EssayType": [
         "How-to Guides"
@@ -1212,13 +1508,22 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Starting a Company"
+            {
+              "items": [
+                "Starting a Company"
+              ]
+            }
           ]
         }
       ],
@@ -1241,13 +1546,21 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -1256,7 +1569,8 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Thought Pieces",
+        "Commentary"
       ]
     },
     {
@@ -1270,7 +1584,11 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -1292,13 +1610,23 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "Ideas",
+                "Starting a Company",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -1321,23 +1649,20 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Thought Pieces",
+        "Memoir"
       ]
     },
     {
@@ -1346,34 +1671,48 @@
       "Date": "12/2019",
       "Year": 2019,
       "WordCount": 4056,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Society",
           "subtopics": [
-            "Education",
-            "Philosophy"
+            {
+              "items": [
+                "Education",
+                "Philosophy",
+                "Social commentary"
+              ]
+            }
           ]
         },
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "YC"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
@@ -1387,13 +1726,21 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "Ideas"
+              ]
+            }
           ]
         }
       ],
@@ -1411,20 +1758,17 @@
       "Date": "11/2019",
       "Year": 2019,
       "WordCount": 2647,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career",
-            "Life advice"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Career",
+                "Life advice"
+              ]
+            }
           ]
         }
       ],
@@ -1445,18 +1789,21 @@
       "ReadingTime": 5,
       "Topics": [
         {
-          "topic": "Communication",
+          "topic": "Society",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Philosophy"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Writers",
         "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Thought Pieces"
       ]
     },
     {
@@ -1468,9 +1815,13 @@
       "ReadingTime": 5,
       "Topics": [
         {
-          "topic": "OTHER",
+          "topic": "Society",
           "subtopics": [
-            "OTHER"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -1478,7 +1829,7 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary"
       ]
     },
     {
@@ -1492,13 +1843,23 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "Ideas",
+                "Starting a Company"
+              ]
+            }
           ]
         }
       ],
@@ -1516,12 +1877,16 @@
       "Date": "04/2016",
       "Year": 2016,
       "WordCount": 2647,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Location"
+            {
+              "items": [
+                "Location"
+              ]
+            }
           ]
         }
       ],
@@ -1529,7 +1894,7 @@
         "Founders"
       ],
       "EssayType": [
-        "How-to Guides"
+        "Thought Pieces"
       ]
     },
     {
@@ -1543,19 +1908,15 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
         "General"
       ],
       "EssayType": [
@@ -1573,14 +1934,12 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Wealth"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Economics and Policy",
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -1603,13 +1962,12 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
-          ]
-        },
-        {
-          "topic": "Technology",
-          "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Social commentary",
+                "Wealth and Economics"
+              ]
+            }
           ]
         }
       ],
@@ -1617,7 +1975,8 @@
         "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
@@ -1629,9 +1988,13 @@
       "ReadingTime": 10,
       "Topics": [
         {
-          "topic": "OTHER",
+          "topic": "Startups",
           "subtopics": [
-            "OTHER"
+            {
+              "items": [
+                "YC"
+              ]
+            }
           ]
         }
       ],
@@ -1651,9 +2014,13 @@
       "ReadingTime": 5,
       "Topics": [
         {
-          "topic": "Personal growth",
+          "topic": "Society",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -1661,7 +2028,9 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Thought Pieces",
+        "How-to Guides",
+        "Commentary"
       ]
     },
     {
@@ -1675,21 +2044,16 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Writers",
-        "Founders",
-        "General"
+        "Writers"
       ],
       "EssayType": [
         "Commentary"
@@ -1706,7 +2070,12 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
@@ -1728,7 +2097,13 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Founder Life",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -1750,8 +2125,12 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Innovation",
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Starting a Company"
+              ]
+            }
           ]
         }
       ],
@@ -1773,7 +2152,12 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "Ideas",
+                "Starting a Company"
+              ]
+            }
           ]
         }
       ],
@@ -1795,7 +2179,11 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -1803,7 +2191,8 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
@@ -1817,13 +2206,22 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Starting a Company"
+            {
+              "items": [
+                "Starting a Company",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -1832,7 +2230,8 @@
         "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
@@ -1846,7 +2245,12 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
@@ -1868,23 +2272,37 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         },
         {
           "topic": "Technology",
-          "subtopics": []
+          "subtopics": [
+            {
+              "items": [
+                "Analysis"
+              ]
+            }
+          ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Strategy and growth",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers",
+        "Hackers and Makers",
         "Founders",
         "General"
       ],
@@ -1903,15 +2321,23 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career",
-            "Learning"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Ideas",
+                "Starting a Company",
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
@@ -1920,7 +2346,8 @@
         "General"
       ],
       "EssayType": [
-        "How-to Guides"
+        "How-to Guides",
+        "Commentary"
       ]
     },
     {
@@ -1932,17 +2359,21 @@
       "ReadingTime": 5,
       "Topics": [
         {
-          "topic": "Startups",
+          "topic": "Personal growth",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Thought Pieces"
       ]
     },
     {
@@ -1956,8 +2387,14 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising",
-            "Strategy and growth"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Strategy and growth",
+                "YC",
+                "Failure"
+              ]
+            }
           ]
         }
       ],
@@ -1979,23 +2416,35 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Failure",
-            "Strategy and growth"
+            {
+              "items": [
+                "Failure",
+                "Strategy and growth",
+                "Founder Life"
+              ]
+            }
           ]
         },
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "General"
       ],
       "EssayType": [
         "Thought Pieces",
-        "Commentary"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
@@ -2004,19 +2453,29 @@
       "Date": "10/2014",
       "Year": 2014,
       "WordCount": 4652,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Innovation"
+            {
+              "items": [
+                "Ideas",
+                "Starting a Company",
+                "YC",
+                "Founder Life"
+              ]
+            }
           ]
         },
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         }
       ],
@@ -2024,7 +2483,8 @@
         "Founders"
       ],
       "EssayType": [
-        "Memoir"
+        "Memoir",
+        "Commentary"
       ]
     },
     {
@@ -2033,12 +2493,17 @@
       "Date": "09/2013",
       "Year": 2013,
       "WordCount": 10797,
-      "ReadingTime": 50,
+      "ReadingTime": 60,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Strategy and growth"
+              ]
+            }
           ]
         }
       ],
@@ -2060,15 +2525,23 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Strategy and growth",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "How-to Guides"
       ]
     },
     {
@@ -2082,7 +2555,11 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
@@ -2099,12 +2576,18 @@
       "Date": "07/2013",
       "Year": 2013,
       "WordCount": 4423,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "YC",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -2112,7 +2595,8 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
@@ -2121,17 +2605,23 @@
       "Date": "06/2013",
       "Year": 2013,
       "WordCount": 2988,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
         "Commentary"
@@ -2148,8 +2638,12 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Innovation"
+            {
+              "items": [
+                "Ideas",
+                "Strategy and growth"
+              ]
+            }
           ]
         }
       ],
@@ -2171,12 +2665,22 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
-          "subtopics": []
+          "subtopics": [
+            {
+              "items": [
+                "YC"
+              ]
+            }
+          ]
         }
       ],
       "Audience": [
@@ -2198,8 +2702,14 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Innovation",
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Ideas",
+                "Funding/Investing, Finance, and Exits",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -2216,20 +2726,28 @@
       "Date": "09/2012",
       "Year": 2012,
       "WordCount": 2182,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "YC",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
@@ -2243,23 +2761,20 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Productivity and focus"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
         "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Thought Pieces"
       ]
     },
     {
@@ -2273,7 +2788,11 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
@@ -2282,7 +2801,7 @@
         "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Thought Pieces"
       ]
     },
     {
@@ -2296,7 +2815,11 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "YC"
+              ]
+            }
           ]
         }
       ],
@@ -2305,7 +2828,7 @@
         "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Memoir"
       ]
     },
     {
@@ -2319,7 +2842,12 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary",
+                "Philosophy"
+              ]
+            }
           ]
         }
       ],
@@ -2327,7 +2855,7 @@
         "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Thought Pieces"
       ]
     },
     {
@@ -2341,8 +2869,32 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Innovation"
+            {
+              "items": [
+                "Ideas",
+                "Startup Landscape"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Technology",
+          "subtopics": [
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
@@ -2350,7 +2902,8 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
@@ -2364,7 +2917,24 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Starting a Company",
+                "Founder Life",
+                "YC"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Personal growth",
+          "subtopics": [
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         }
       ],
@@ -2372,7 +2942,9 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Thought Pieces",
+        "Memoir"
       ]
     },
     {
@@ -2386,8 +2958,13 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Innovation"
+            {
+              "items": [
+                "Ideas",
+                "YC",
+                "Starting a Company"
+              ]
+            }
           ]
         }
       ],
@@ -2395,21 +2972,26 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
       "Title": "Snapshot: Viaweb, June 1998",
       "URL": "https://www.paulgraham.com/vw.html",
-      "Date": "06/1998",
-      "Year": 1998,
+      "Date": "01/2012",
+      "Year": 2012,
       "WordCount": 884,
       "ReadingTime": 5,
       "Topics": [
         {
-          "topic": "Startups",
+          "topic": "Technology",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
@@ -2417,7 +2999,7 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Memoir"
       ]
     },
     {
@@ -2431,7 +3013,16 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Location"
+            {
+              "items": [
+                "Location",
+                "Starting a Company",
+                "Strategy and growth",
+                "Founder Life",
+                "YC",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -2451,9 +3042,33 @@
       "ReadingTime": 5,
       "Topics": [
         {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Economics and Policy"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Technology",
+          "subtopics": [
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
+          ]
+        },
+        {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -2475,16 +3090,22 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Strategy and growth"
+            {
+              "items": [
+                "Ideas",
+                "YC",
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
-        "Commentary"
+        "Memoir"
       ]
     },
     {
@@ -2498,8 +3119,13 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising",
-            "Strategy and growth"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Strategy and growth",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -2521,7 +3147,11 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
@@ -2543,7 +3173,11 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Cofounders"
+            {
+              "items": [
+                "Starting a Company"
+              ]
+            }
           ]
         }
       ],
@@ -2565,13 +3199,18 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising",
-            "Innovation"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
         "Commentary"
@@ -2588,7 +3227,11 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Location"
+            {
+              "items": [
+                "Location"
+              ]
+            }
           ]
         }
       ],
@@ -2611,12 +3254,17 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
         "How-to Guides"
@@ -2628,17 +3276,28 @@
       "Date": "08/2010",
       "Year": 2010,
       "WordCount": 2062,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Startup Landscape"
+              ]
+            }
           ]
         },
         {
           "topic": "Technology",
-          "subtopics": []
+          "subtopics": [
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
+          ]
         }
       ],
       "Audience": [
@@ -2646,7 +3305,8 @@
         "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
@@ -2660,13 +3320,18 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising",
-            "Innovation"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
         "Commentary"
@@ -2683,12 +3348,22 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         },
         {
           "topic": "Technology",
-          "subtopics": []
+          "subtopics": [
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
+          ]
         }
       ],
       "Audience": [
@@ -2709,13 +3384,32 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Productivity and focus"
+            {
+              "items": [
+                "Career",
+                "Life advice"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "Founder Life"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Philosophy"
+              ]
+            }
           ]
         }
       ],
@@ -2738,23 +3432,31 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice",
-            "Productivity and focus"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         },
         {
-          "topic": "Startups",
+          "topic": "Society",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Economics and Policy",
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
         "General"
       ],
       "EssayType": [
-        "How-to Guides"
+        "How-to Guides",
+        "Commentary"
       ]
     },
     {
@@ -2768,8 +3470,11 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Innovation"
+            {
+              "items": [
+                "Ideas"
+              ]
+            }
           ]
         }
       ],
@@ -2786,17 +3491,22 @@
       "Date": "11/2009",
       "Year": 2009,
       "WordCount": 2162,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "General",
+        "Founders"
       ],
       "EssayType": [
         "Commentary"
@@ -2813,8 +3523,16 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Innovation",
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Starting a Company",
+                "YC",
+                "Founder Life",
+                "Ideas",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -2834,14 +3552,30 @@
       "ReadingTime": 10,
       "Topics": [
         {
-          "topic": "Personal growth",
+          "topic": "Society",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Philosophy",
+                "Social commentary"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Communication",
+          "subtopics": [
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "General",
+        "Writers"
       ],
       "EssayType": [
         "Thought Pieces"
@@ -2858,13 +3592,31 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Publishing"
+            {
+              "items": [
+                "Media"
+              ]
+            }
           ]
         },
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -2887,13 +3639,16 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Writers",
-        "General"
+        "Writers"
       ],
       "EssayType": [
         "Commentary"
@@ -2910,12 +3665,22 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
-          "subtopics": []
+          "subtopics": [
+            {
+              "items": [
+                "Founder Life"
+              ]
+            }
+          ]
         }
       ],
       "Audience": [
@@ -2937,7 +3702,15 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Location"
+            {
+              "items": [
+                "Location",
+                "YC",
+                "Starting a Company",
+                "Founder Life",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -2945,7 +3718,7 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Memoir"
       ]
     },
     {
@@ -2959,7 +3732,31 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "Ideas"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Technology",
+          "subtopics": [
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -2968,7 +3765,8 @@
         "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Thought Pieces"
       ]
     },
     {
@@ -2982,8 +3780,14 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising",
-            "Strategy and growth"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Strategy and growth",
+                "Founder Life",
+                "Starting a Company"
+              ]
+            }
           ]
         }
       ],
@@ -3005,16 +3809,38 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Productivity and focus"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
-          "topic": "Technology",
-          "subtopics": []
+          "topic": "Startups",
+          "subtopics": [
+            {
+              "items": [
+                "Founder Life",
+                "Startup Landscape"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
+          ]
         }
       ],
       "Audience": [
-        "Programmers",
+        "Hackers and Makers",
+        "Writers",
         "General"
       ],
       "EssayType": [
@@ -3032,7 +3858,11 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "Location"
+              ]
+            }
           ]
         }
       ],
@@ -3054,7 +3884,11 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
@@ -3076,12 +3910,24 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary",
+                "Economics and Policy"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
-          "subtopics": []
+          "subtopics": [
+            {
+              "items": [
+                "Location",
+                "Startup Landscape"
+              ]
+            }
+          ]
         }
       ],
       "Audience": [
@@ -3103,7 +3949,12 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Cofounders"
+            {
+              "items": [
+                "Founder Life",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -3111,7 +3962,7 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Memoir"
       ]
     },
     {
@@ -3125,13 +3976,23 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Founder Life"
+              ]
+            }
           ]
         },
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
           ]
         }
       ],
@@ -3139,7 +4000,7 @@
         "Founders"
       ],
       "EssayType": [
-        "How-to Guides"
+        "Commentary"
       ]
     },
     {
@@ -3153,12 +4014,17 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
         "Founders",
+        "Investors",
         "General"
       ],
       "EssayType": [
@@ -3176,12 +4042,17 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "General",
+        "Founders"
       ],
       "EssayType": [
         "Commentary"
@@ -3198,7 +4069,11 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Location"
+            {
+              "items": [
+                "Location"
+              ]
+            }
           ]
         }
       ],
@@ -3216,29 +4091,24 @@
       "Date": "02/2007",
       "Year": 2007,
       "WordCount": 2898,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
-        {
-          "topic": "Communication",
-          "subtopics": [
-            "Publishing"
-          ]
-        },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "YC"
+            {
+              "items": [
+                "YC"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
-        "General"
+        "Founders"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
-        "Commentary"
+        "Memoir"
       ]
     },
     {
@@ -3252,8 +4122,17 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Innovation",
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Funding/Investing, Finance, and Exits",
+                "Failure",
+                "Founder Life",
+                "Ideas",
+                "Starting a Company",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -3275,29 +4154,31 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         },
         {
           "topic": "Society",
           "subtopics": [
-            "Philosophy"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Philosophy",
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Thought Pieces",
+        "Commentary"
       ]
     },
     {
@@ -3306,19 +4187,18 @@
       "Date": "12/2008",
       "Year": 2008,
       "WordCount": 2398,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Society",
           "subtopics": [
-            "Education"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Social commentary",
+                "Economics and Policy",
+                "Education"
+              ]
+            }
           ]
         }
       ],
@@ -3341,13 +4221,29 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Failure",
-            "Fundraising"
+            {
+              "items": [
+                "Failure",
+                "Funding/Investing, Finance, and Exits",
+                "Startup Landscape"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Economics and Policy"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
         "Commentary"
@@ -3364,12 +4260,22 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         },
         {
           "topic": "Technology",
-          "subtopics": []
+          "subtopics": [
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
+          ]
         }
       ],
       "Audience": [
@@ -3388,14 +4294,18 @@
       "ReadingTime": 10,
       "Topics": [
         {
-          "topic": "Personal growth",
+          "topic": "Technology",
           "subtopics": [
-            "Productivity and focus"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "Founders"
       ],
       "EssayType": [
         "Commentary"
@@ -3412,8 +4322,14 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Innovation",
-            "Strategy and growth"
+            {
+              "items": [
+                "Starting a Company",
+                "Funding/Investing, Finance, and Exits",
+                "Failure",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -3421,7 +4337,7 @@
         "Founders"
       ],
       "EssayType": [
-        "How-to Guides"
+        "Commentary"
       ]
     },
     {
@@ -3430,12 +4346,17 @@
       "Date": "08/2008",
       "Year": 2008,
       "WordCount": 4871,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Failure"
+              ]
+            }
           ]
         }
       ],
@@ -3457,7 +4378,12 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -3479,13 +4405,21 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Location"
+            {
+              "items": [
+                "Location"
+              ]
+            }
           ]
         }
       ],
@@ -3494,7 +4428,7 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary"
       ]
     },
     {
@@ -3508,7 +4442,21 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Productivity and focus"
+            {
+              "items": [
+                "Career"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -3530,8 +4478,11 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Education",
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -3548,12 +4499,17 @@
       "Date": "04/2008",
       "Year": 2008,
       "WordCount": 2968,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -3575,12 +4531,19 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Funding/Investing, Finance, and Exits",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
         "Commentary"
@@ -3592,12 +4555,16 @@
       "Date": "04/2008",
       "Year": 2008,
       "WordCount": 2703,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
-          "topic": "OTHER",
+          "topic": "Society",
           "subtopics": [
-            "OTHER"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -3605,7 +4572,7 @@
         "General"
       ],
       "EssayType": [
-        "OTHER"
+        "Commentary"
       ]
     },
     {
@@ -3619,14 +4586,33 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Media",
+                "Writing"
+              ]
+            }
           ]
         },
         {
-          "topic": "Startups",
+          "topic": "Personal growth",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -3644,18 +4630,27 @@
       "Date": "06/2008",
       "Year": 2008,
       "WordCount": 2559,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "YC"
+              ]
+            }
           ]
         }
       ],
@@ -3678,13 +4673,20 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Innovation",
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "YC",
+                "Funding/Investing, Finance, and Exits",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
         "Commentary"
@@ -3701,7 +4703,11 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Publishing"
+            {
+              "items": [
+                "Media"
+              ]
+            }
           ]
         }
       ],
@@ -3709,7 +4715,7 @@
         "General"
       ],
       "EssayType": [
-        "OTHER"
+        "Commentary"
       ]
     },
     {
@@ -3721,15 +4727,15 @@
       "ReadingTime": 10,
       "Topics": [
         {
-          "topic": "Personal growth",
-          "subtopics": [
-            "Career"
-          ]
-        },
-        {
           "topic": "Startups",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "YC",
+                "Ideas",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -3738,7 +4744,7 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Memoir"
       ]
     },
     {
@@ -3752,7 +4758,12 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Location"
+            {
+              "items": [
+                "Location",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -3774,14 +4785,21 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Innovation",
-            "Strategy and growth"
+            {
+              "items": [
+                "Startup Landscape"
+              ]
+            }
           ]
         },
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
@@ -3798,12 +4816,36 @@
       "Date": "09/2007",
       "Year": 2007,
       "WordCount": 4795,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Communication",
+          "subtopics": [
+            {
+              "items": [
+                "Writing"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Philosophy"
+              ]
+            }
           ]
         }
       ],
@@ -3812,7 +4854,8 @@
       ],
       "EssayType": [
         "How-to Guides",
-        "Thought Pieces"
+        "Thought Pieces",
+        "Memoir"
       ]
     },
     {
@@ -3821,12 +4864,16 @@
       "Date": "09/2007",
       "Year": 2007,
       "WordCount": 2240,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Society",
           "subtopics": [
-            "Education"
+            {
+              "items": [
+                "Education"
+              ]
+            }
           ]
         }
       ],
@@ -3848,8 +4895,13 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Failure",
-            "Strategy and growth"
+            {
+              "items": [
+                "Failure",
+                "Strategy and growth",
+                "YC"
+              ]
+            }
           ]
         }
       ],
@@ -3871,15 +4923,21 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Software development"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Development"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary",
+        "How-to Guides"
       ]
     },
     {
@@ -3893,23 +4951,29 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         },
         {
-          "topic": "Startups",
+          "topic": "Society",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary"
       ]
     },
     {
@@ -3923,15 +4987,21 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "How-to Guides"
       ]
     },
     {
@@ -3945,7 +5015,11 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -3962,21 +5036,28 @@
       "Date": "04/2007",
       "Year": 2007,
       "WordCount": 6268,
-      "ReadingTime": 30,
+      "ReadingTime": 40,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Hackers and Makers",
+        "Investors"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
-        "Commentary"
+        "Commentary",
+        "How-to Guides"
       ]
     },
     {
@@ -3990,7 +5071,22 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Social commentary",
+                "Philosophy"
+              ]
+            }
           ]
         }
       ],
@@ -3998,6 +5094,7 @@
         "General"
       ],
       "EssayType": [
+        "Commentary",
         "Thought Pieces"
       ]
     },
@@ -4012,7 +5109,11 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
@@ -4029,13 +5130,17 @@
       "Date": "03/2007",
       "Year": 2007,
       "WordCount": 6315,
-      "ReadingTime": 30,
+      "ReadingTime": 40,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Innovation"
+            {
+              "items": [
+                "Starting a Company",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -4043,7 +5148,8 @@
         "Founders"
       ],
       "EssayType": [
-        "How-to Guides"
+        "Memoir",
+        "Commentary"
       ]
     },
     {
@@ -4057,14 +5163,11 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Life advice"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         }
       ],
@@ -4087,7 +5190,12 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -4107,25 +5215,21 @@
       "ReadingTime": 20,
       "Topics": [
         {
-          "topic": "OTHER",
+          "topic": "Society",
           "subtopics": [
-            "OTHER"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
         "General"
       ],
       "EssayType": [
-        "OTHER"
+        "Thought Pieces"
       ]
     },
     {
@@ -4139,9 +5243,14 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Failure",
-            "Innovation",
-            "Strategy and growth"
+            {
+              "items": [
+                "Failure",
+                "Strategy and growth",
+                "Startup Landscape",
+                "Founder Life"
+              ]
+            }
           ]
         }
       ],
@@ -4158,13 +5267,16 @@
       "Date": "10/2006",
       "Year": 2006,
       "WordCount": 6483,
-      "ReadingTime": 30,
+      "ReadingTime": 40,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Innovation"
+            {
+              "items": [
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -4172,7 +5284,8 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "How-to Guides"
       ]
     },
     {
@@ -4181,12 +5294,16 @@
       "Date": "09/2010",
       "Year": 2010,
       "WordCount": 2848,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
@@ -4208,7 +5325,12 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Life advice",
+                "Career"
+              ]
+            }
           ]
         }
       ],
@@ -4216,7 +5338,8 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Thought Pieces",
+        "Memoir"
       ]
     },
     {
@@ -4228,25 +5351,21 @@
       "ReadingTime": 5,
       "Topics": [
         {
-          "topic": "Society",
+          "topic": "Personal growth",
           "subtopics": [
-            "Wealth"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
         "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Thought Pieces"
       ]
     },
     {
@@ -4255,28 +5374,25 @@
       "Date": "06/2006",
       "Year": 2006,
       "WordCount": 6102,
-      "ReadingTime": 30,
+      "ReadingTime": 40,
       "Topics": [
-        {
-          "topic": "Personal growth",
-          "subtopics": [
-            "Life advice"
-          ]
-        },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Starting a Company",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
-        "General"
+        "Founders"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary"
       ]
     },
     {
@@ -4285,18 +5401,34 @@
       "Date": "05/2006",
       "Year": 2006,
       "WordCount": 4809,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Location"
+            {
+              "items": [
+                "Location",
+                "Startup Landscape"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Economics and Policy",
+                "Social commentary",
+                "Education"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
-        "General"
+        "Founders"
       ],
       "EssayType": [
         "Commentary"
@@ -4313,13 +5445,16 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Location"
+            {
+              "items": [
+                "Location"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
-        "General"
+        "Founders"
       ],
       "EssayType": [
         "How-to Guides"
@@ -4331,13 +5466,17 @@
       "Date": "04/2006",
       "Year": 2006,
       "WordCount": 4879,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Innovation",
-            "Strategy and growth"
+            {
+              "items": [
+                "Strategy and growth",
+                "Failure"
+              ]
+            }
           ]
         }
       ],
@@ -4345,7 +5484,8 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "How-to Guides"
       ]
     },
     {
@@ -4359,7 +5499,21 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Learning"
+            {
+              "items": [
+                "Life advice"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Philosophy"
+              ]
+            }
           ]
         }
       ],
@@ -4376,50 +5530,75 @@
       "Date": "03/2006",
       "Year": 2006,
       "WordCount": 4701,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         },
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary",
+                "Economics and Policy"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Startups",
+          "subtopics": [
+            {
+              "items": [
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers",
+        "Hackers and Makers",
+        "Founders",
         "General"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
         "Commentary"
       ]
     },
     {
       "Title": "6,631,372",
       "URL": "https://www.paulgraham.com/6631327.html",
-      "Date": "02/1998",
-      "Year": 1998,
+      "Date": "03/2006",
+      "Year": 2006,
       "WordCount": 694,
       "ReadingTime": 5,
       "Topics": [
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Founders",
+        "General",
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Commentary"
+        "Memoir"
       ]
     },
     {
@@ -4433,7 +5612,11 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "YC"
+              ]
+            }
           ]
         }
       ],
@@ -4441,7 +5624,7 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Memoir"
       ]
     },
     {
@@ -4450,19 +5633,16 @@
       "Date": "01/2006",
       "Year": 2006,
       "WordCount": 4752,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         }
       ],
@@ -4485,14 +5665,11 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Productivity and focus"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         }
       ],
@@ -4501,7 +5678,7 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary"
       ]
     },
     {
@@ -4515,7 +5692,11 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
@@ -4523,7 +5704,7 @@
         "General"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary"
       ]
     },
     {
@@ -4532,17 +5713,22 @@
       "Date": "11/2005",
       "Year": 2005,
       "WordCount": 8982,
-      "ReadingTime": 40,
+      "ReadingTime": 50,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
         "How-to Guides"
@@ -4559,12 +5745,18 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
         "Commentary"
@@ -4581,8 +5773,11 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Innovation"
+            {
+              "items": [
+                "Ideas"
+              ]
+            }
           ]
         }
       ],
@@ -4599,12 +5794,17 @@
       "Date": "10/2005",
       "Year": 2005,
       "WordCount": 2588,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Founder Life",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -4612,6 +5812,7 @@
         "Founders"
       ],
       "EssayType": [
+        "Memoir",
         "Commentary"
       ]
     },
@@ -4621,24 +5822,32 @@
       "Date": "08/2005",
       "Year": 2005,
       "WordCount": 2867,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Society",
           "subtopics": [
-            "Wealth"
+            {
+              "items": [
+                "Economics and Policy"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
         "Founders",
+        "Investors",
         "General"
       ],
       "EssayType": [
@@ -4656,14 +5865,32 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career"
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Startup Landscape"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Social commentary",
+                "Economics and Policy"
+              ]
+            }
           ]
         }
       ],
@@ -4672,7 +5899,7 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary"
       ]
     },
     {
@@ -4681,40 +5908,54 @@
       "Date": "08/2005",
       "Year": 2005,
       "WordCount": 4400,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Technology",
           "subtopics": [
-            "Software development"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
-          "subtopics": []
+          "subtopics": [
+            {
+              "items": [
+                "Startup Landscape"
+              ]
+            }
+          ]
         }
       ],
       "Audience": [
-        "Programmers",
+        "Hackers and Makers",
         "Founders"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
         "Commentary"
       ]
     },
     {
       "Title": "Hiring is Obsolete",
       "URL": "https://www.paulgraham.com/hiring.html",
-      "Date": "03/1995",
+      "Date": "05/2005",
       "Year": 1995,
       "WordCount": 4822,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Startups",
           "subtopics": [
-            "Strategy and growth"
+            {
+              "items": [
+                "Starting a Company",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
@@ -4731,12 +5972,26 @@
       "Date": "01/2006",
       "Year": 2006,
       "WordCount": 2419,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Communication",
           "subtopics": [
-            "Publishing"
+            {
+              "items": [
+                "Media"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -4758,7 +6013,11 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "Ideas"
+              ]
+            }
           ]
         }
       ],
@@ -4766,6 +6025,7 @@
         "Founders"
       ],
       "EssayType": [
+        "Memoir",
         "Commentary"
       ]
     },
@@ -4780,16 +6040,21 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers",
+        "Hackers and Makers",
         "General"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
@@ -4803,16 +6068,19 @@
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Writers",
-        "General"
+        "Writers"
       ],
       "EssayType": [
-        "Commentary"
+        "How-to Guides"
       ]
     },
     {
@@ -4826,15 +6094,39 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Education"
+            {
+              "items": [
+                "Education"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Technology",
+          "subtopics": [
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Personal growth",
+          "subtopics": [
+            {
+              "items": [
+                "Career"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Commentary"
+        "How-to Guides"
       ]
     },
     {
@@ -4848,12 +6140,18 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Fundraising"
+            {
+              "items": [
+                "Funding/Investing, Finance, and Exits",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Founders",
+        "Investors"
       ],
       "EssayType": [
         "Commentary"
@@ -4870,8 +6168,14 @@
         {
           "topic": "Startups",
           "subtopics": [
-            "Innovation",
-            "Strategy and growth"
+            {
+              "items": [
+                "Starting a Company",
+                "Founder Life",
+                "Ideas",
+                "Funding/Investing, Finance, and Exits"
+              ]
+            }
           ]
         }
       ],
@@ -4893,15 +6197,22 @@
         {
           "topic": "Personal growth",
           "subtopics": [
-            "Career",
-            "Life advice"
+            {
+              "items": [
+                "Career",
+                "Life advice"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Starting a Company"
+              ]
+            }
           ]
         }
       ],
@@ -4910,7 +6221,7 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary"
       ]
     },
     {
@@ -4922,9 +6233,23 @@
       "ReadingTime": 10,
       "Topics": [
         {
-          "topic": "Startups",
+          "topic": "Technology",
           "subtopics": [
-            "Location"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
+          ]
+        },
+        {
+          "topic": "Society",
+          "subtopics": [
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -4933,7 +6258,7 @@
         "General"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary"
       ]
     },
     {
@@ -4945,9 +6270,13 @@
       "ReadingTime": 10,
       "Topics": [
         {
-          "topic": "OTHER",
+          "topic": "Society",
           "subtopics": [
-            "OTHER"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -4955,7 +6284,7 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary"
       ]
     },
     {
@@ -4967,9 +6296,13 @@
       "ReadingTime": 5,
       "Topics": [
         {
-          "topic": "OTHER",
+          "topic": "Society",
           "subtopics": [
-            "OTHER"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -4977,7 +6310,7 @@
         "General"
       ],
       "EssayType": [
-        "OTHER"
+        "Commentary"
       ]
     },
     {
@@ -4986,17 +6319,21 @@
       "Date": "10/2004",
       "Year": 2004,
       "WordCount": 4289,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
-          "topic": "Startups",
+          "topic": "Communication",
           "subtopics": [
-            "Ideas"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders"
+        "Writers"
       ],
       "EssayType": [
         "Commentary"
@@ -5013,18 +6350,30 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
           "subtopics": [
-            "Failure"
+            {
+              "items": [
+                "Failure",
+                "Startup Landscape"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "General",
+        "Founders",
+        "Hackers and Makers",
+        "Investors"
       ],
       "EssayType": [
         "Commentary"
@@ -5036,29 +6385,24 @@
       "Date": "09/2004",
       "Year": 2004,
       "WordCount": 4555,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Communication",
           "subtopics": [
-            "Writing"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Writing"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Writers",
-        "Founders",
-        "General"
+        "Writers"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "How-to Guides"
       ]
     },
     {
@@ -5072,15 +6416,24 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            },
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
         "Commentary"
       ]
     },
@@ -5095,23 +6448,30 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Software development"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         },
         {
-          "topic": "Startups",
+          "topic": "Society",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers",
+        "Hackers and Makers",
         "Founders"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Memoir"
       ]
     },
     {
@@ -5125,24 +6485,29 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Philosophy",
-            "Wealth"
+            {
+              "items": [
+                "Economics and Policy"
+              ]
+            }
           ]
         },
         {
-          "topic": "Startups",
+          "topic": "Society",
           "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Founders",
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary"
       ]
     },
     {
@@ -5156,21 +6521,31 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Philosophy",
-            "Wealth"
+            {
+              "items": [
+                "Economics and Policy"
+              ]
+            }
           ]
         },
         {
           "topic": "Startups",
-          "subtopics": []
+          "subtopics": [
+            {
+              "items": [
+                "Startup Landscape"
+              ]
+            }
+          ]
         }
       ],
       "Audience": [
-        "General"
+        "General",
+        "Founders"
       ],
       "EssayType": [
         "How-to Guides",
-        "Thought Pieces"
+        "Commentary"
       ]
     },
     {
@@ -5184,16 +6559,18 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Software development"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers",
-        "General"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
         "Commentary"
       ]
     },
@@ -5208,15 +6585,21 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "General",
+        "Founders"
       ],
       "EssayType": [
-        "Commentary"
+        "Commentary",
+        "Thought Pieces"
       ]
     },
     {
@@ -5230,15 +6613,20 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Software development"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Development"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary"
       ]
     },
     {
@@ -5252,16 +6640,19 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Software development"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers",
-        "General"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Memoir"
       ]
     },
     {
@@ -5275,23 +6666,26 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            "Ideas",
-            "Starting a Company"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            },
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers",
+        "Hackers and Makers",
         "Founders"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary"
       ]
     },
     {
@@ -5300,20 +6694,24 @@
       "Date": "04/2003",
       "Year": 2003,
       "WordCount": 4808,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
         "Commentary"
       ]
     },
@@ -5328,7 +6726,11 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Education"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],
@@ -5345,20 +6747,25 @@
       "Date": "08/2002",
       "Year": 2002,
       "WordCount": 4345,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Technology",
           "subtopics": [
-            "Software development"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Development"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary"
       ]
     },
     {
@@ -5367,20 +6774,32 @@
       "Date": "01/2003",
       "Year": 2003,
       "WordCount": 2674,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
-          "topic": "OTHER",
+          "topic": "Technology",
           "subtopics": [
-            "OTHER"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Development"
+              ]
+            },
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "General",
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary",
+        "How-to Guides"
       ]
     },
     {
@@ -5394,15 +6813,21 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Software development"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Development"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary",
+        "How-to Guides"
       ]
     },
     {
@@ -5416,15 +6841,25 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            },
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary"
       ]
     },
     {
@@ -5438,15 +6873,20 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary"
       ]
     },
     {
@@ -5460,16 +6900,21 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
-        "Commentary"
+        "Commentary",
+        "How-to Guides"
       ]
     },
     {
@@ -5478,21 +6923,26 @@
       "Date": "02/2002",
       "Year": 2002,
       "WordCount": 4358,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
-          "topic": "OTHER",
+          "topic": "Technology",
           "subtopics": [
-            "OTHER"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Development"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
-        "Thought Pieces"
+        "Commentary",
+        "How-to Guides"
       ]
     },
     {
@@ -5506,15 +6956,19 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
         "Commentary"
       ]
     },
@@ -5529,15 +6983,19 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
         "Commentary"
       ]
     },
@@ -5552,12 +7010,18 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Industry trends"
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "General"
+        "General",
+        "Hackers and Makers",
+        "Founders"
       ],
       "EssayType": [
         "Commentary"
@@ -5574,15 +7038,19 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives",
         "Commentary"
       ]
     },
@@ -5592,20 +7060,25 @@
       "Date": "05/2001",
       "Year": 2001,
       "WordCount": 2950,
-      "ReadingTime": 10,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary"
       ]
     },
     {
@@ -5619,15 +7092,26 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            },
+            {
+              "items": [
+                "Industry Analysis and Trends"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary",
+        "How-to Guides"
       ]
     },
     {
@@ -5641,15 +7125,20 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary"
       ]
     },
     {
@@ -5658,24 +7147,26 @@
       "Date": "01/2003",
       "Year": 2003,
       "WordCount": 4499,
-      "ReadingTime": 20,
+      "ReadingTime": 30,
       "Topics": [
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": []
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary",
+        "Memoir"
       ]
     },
     {
@@ -5689,59 +7180,74 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "Commentary"
       ]
     },
     {
       "Title": "Chapter 1 of Ansi Common Lisp",
-      "URL": "https://www.paulgraham.com/acl1.txt",
-      "Date": "01/1996",
-      "Year": 1996,
-      "WordCount": 22,
-      "ReadingTime": 5,
+      "URL": "https://sep.turbifycdn.com/ty/cdn/paulgraham/acl1.txt",
+      "Date": "01/1995",
+      "Year": 1995,
+      "WordCount": 2466,
+      "ReadingTime": 20,
       "Topics": [
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "How-to Guides"
       ]
     },
     {
       "Title": "Chapter 2 of Ansi Common Lisp",
-      "URL": "https://www.paulgraham.com/acl2.txt",
-      "Date": "01/1996",
-      "Year": 1996,
-      "WordCount": 22,
-      "ReadingTime": 5,
+      "URL": "https://sep.turbifycdn.com/ty/cdn/paulgraham/acl2.txt",
+      "Date": "01/1995",
+      "Year": 1995,
+      "WordCount": 7182,
+      "ReadingTime": 40,
       "Topics": [
         {
           "topic": "Technology",
           "subtopics": [
-            "Programming languages"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "How-to Guides"
       ]
     },
     {
@@ -5755,15 +7261,21 @@
         {
           "topic": "Technology",
           "subtopics": [
-            "Software development"
+            {
+              "category": "Deep-Dives",
+              "items": [
+                "Development",
+                "Programming languages"
+              ]
+            }
           ]
         }
       ],
       "Audience": [
-        "Programmers"
+        "Hackers and Makers"
       ],
       "EssayType": [
-        "Technical Deep-Dives"
+        "How-to Guides"
       ]
     },
     {
@@ -5777,7 +7289,11 @@
         {
           "topic": "Society",
           "subtopics": [
-            "Societal issues"
+            {
+              "items": [
+                "Social commentary"
+              ]
+            }
           ]
         }
       ],

@@ -26,40 +26,46 @@
             </div>
 
             <div class="filter-group">
-                <label class="filter-label">Topics</label>
-                <div id="topicTree" class="topic-tree"></div>
-            </div>
-
-            <div class="filter-group">
-                <label class="filter-label">Essay Type</label>
-                <select id="essayTypeFilter" onchange="applySortAndFilter()">
-                    <option value="all">All Types</option>
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label class="filter-label">Audience</label>
-                <select id="audienceFilter" onchange="applySortAndFilter()">
-                    <option value="all">All Audiences</option>
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label class="filter-label">Reading Time (min)</label>
-                <div class="dual-slider-container">
-                    <input type="range" id="timeMinSlider" class="dual-slider dual-slider-min" min="5" max="70" step="5" value="5" oninput="updateTimeLabels(); applySortAndFilter()">
-                    <input type="range" id="timeMaxSlider" class="dual-slider dual-slider-max" min="5" max="70" step="5" value="70" oninput="updateTimeLabels(); applySortAndFilter()">
+                <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Topics</label>
+                <div class="filter-content collapsed">
+                    <div id="topicTree" class="topic-tree"></div>
                 </div>
-                <div class="slider-label"><span id="timeMinLabel">5</span> - <span id="timeMaxLabel">70</span> min</div>
             </div>
 
             <div class="filter-group">
-                <label class="filter-label">Year</label>
-                <div class="dual-slider-container">
-                    <input type="range" id="yearMinSlider" class="dual-slider dual-slider-min" min="1996" max="2025" value="1996" oninput="updateYearLabels(); applySortAndFilter()">
-                    <input type="range" id="yearMaxSlider" class="dual-slider dual-slider-max" min="1996" max="2025" value="2025" oninput="updateYearLabels(); applySortAndFilter()">
+                <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Essay Type</label>
+                <div class="filter-content collapsed">
+                    <div id="essayTypeTree" class="topic-tree"></div>
                 </div>
-                <div class="slider-label"><span id="yearMinLabel">1996</span> - <span id="yearMaxLabel">2025</span></div>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Audience</label>
+                <div class="filter-content collapsed">
+                    <div id="audienceTree" class="topic-tree"></div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Reading Time (min)</label>
+                <div class="filter-content collapsed">
+                    <div class="dual-slider-container">
+                        <input type="range" id="timeMinSlider" class="dual-slider dual-slider-min" min="5" max="70" step="5" value="5" oninput="updateTimeLabels(); applySortAndFilter()">
+                        <input type="range" id="timeMaxSlider" class="dual-slider dual-slider-max" min="5" max="70" step="5" value="70" oninput="updateTimeLabels(); applySortAndFilter()">
+                    </div>
+                    <div class="slider-label"><span id="timeMinLabel">5</span> - <span id="timeMaxLabel">70</span> min</div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Year</label>
+                <div class="filter-content collapsed">
+                    <div class="dual-slider-container">
+                        <input type="range" id="yearMinSlider" class="dual-slider dual-slider-min" min="1996" max="2025" value="1996" oninput="updateYearLabels(); applySortAndFilter()">
+                        <input type="range" id="yearMaxSlider" class="dual-slider dual-slider-max" min="1996" max="2025" value="2025" oninput="updateYearLabels(); applySortAndFilter()">
+                    </div>
+                    <div class="slider-label"><span id="yearMinLabel">1996</span> - <span id="yearMaxLabel">2025</span></div>
+                </div>
             </div>
 
             <div class="section-divider">
@@ -67,18 +73,22 @@
             </div>
 
             <div class="filter-group">
-                <label class="filter-label">Date</label>
-                <div class="filter-buttons">
-                    <button class="filter-btn sort-btn active" data-sort="date-desc" onclick="setSort(this, 'date-desc')">Newest First</button>
-                    <button class="filter-btn sort-btn" data-sort="date-asc" onclick="setSort(this, 'date-asc')">Oldest First</button>
+                <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Date</label>
+                <div class="filter-content collapsed">
+                    <div class="filter-buttons">
+                        <button class="filter-btn sort-btn active" data-sort="date-desc" onclick="setSort(this, 'date-desc')">Newest First</button>
+                        <button class="filter-btn sort-btn" data-sort="date-asc" onclick="setSort(this, 'date-asc')">Oldest First</button>
+                    </div>
                 </div>
             </div>
 
             <div class="filter-group">
-                <label class="filter-label">Length</label>
-                <div class="filter-buttons">
-                    <button class="filter-btn sort-btn" data-sort="length-desc" onclick="setSort(this, 'length-desc')">Longest First</button>
-                    <button class="filter-btn sort-btn" data-sort="length-asc" onclick="setSort(this, 'length-asc')">Shortest First</button>
+                <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Length</label>
+                <div class="filter-content collapsed">
+                    <div class="filter-buttons">
+                        <button class="filter-btn sort-btn" data-sort="length-desc" onclick="setSort(this, 'length-desc')">Longest First</button>
+                        <button class="filter-btn sort-btn" data-sort="length-asc" onclick="setSort(this, 'length-asc')">Shortest First</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -158,12 +168,22 @@
             rightPane.classList.remove('visible');
         }
 
+        // ========== FILTER SECTION COLLAPSE ==========
+
+        function toggleFilterSection(labelElement) {
+            const content = labelElement.nextElementSibling;
+            labelElement.classList.toggle('collapsed');
+            content.classList.toggle('collapsed');
+        }
+
         // ========== LIST RENDERING ==========
 
         let allEssays = [];
         let currentView = 'all'; // 'all' or 'bookmarked'
         let currentSort = 'date-desc';
         let selectedTopicPath = []; // Tracks selected topic path [topic, category, item]
+        let selectedEssayType = null; // Tracks selected essay type
+        let selectedAudience = null; // Tracks selected audience
 
         function toggleView(view) {
             currentView = view;
@@ -274,18 +294,16 @@
             }
 
             // Filter by essay type
-            const essayTypeFilter = document.getElementById('essayTypeFilter').value;
-            if (essayTypeFilter !== 'all') {
+            if (selectedEssayType) {
                 essays = essays.filter(essay =>
-                    essay.EssayType && essay.EssayType.includes(essayTypeFilter)
+                    essay.EssayType && essay.EssayType.includes(selectedEssayType)
                 );
             }
 
             // Filter by audience
-            const audienceFilter = document.getElementById('audienceFilter').value;
-            if (audienceFilter !== 'all') {
+            if (selectedAudience) {
                 essays = essays.filter(essay =>
-                    essay.Audience && essay.Audience.includes(audienceFilter)
+                    essay.Audience && essay.Audience.includes(selectedAudience)
                 );
             }
 
@@ -412,7 +430,7 @@
             // Add selected state to items in the path
             if (selectedTopicPath.length > 0) {
                 // Find and select based on path
-                const topicItems = document.querySelectorAll('.tree-item');
+                const topicItems = document.querySelectorAll('#topicTree .tree-item');
                 topicItems.forEach(item => {
                     const label = item.querySelector('.tree-item-label').textContent;
                     if (selectedTopicPath.includes(label)) {
@@ -420,6 +438,50 @@
                     }
                 });
             }
+
+            // Update essay type selection
+            if (selectedEssayType) {
+                const essayTypeItems = document.querySelectorAll('#essayTypeTree .tree-item');
+                essayTypeItems.forEach(item => {
+                    const label = item.querySelector('.tree-item-label').textContent;
+                    if (label === selectedEssayType) {
+                        item.classList.add('selected');
+                    }
+                });
+            }
+
+            // Update audience selection
+            if (selectedAudience) {
+                const audienceItems = document.querySelectorAll('#audienceTree .tree-item');
+                audienceItems.forEach(item => {
+                    const label = item.querySelector('.tree-item-label').textContent;
+                    if (label === selectedAudience) {
+                        item.classList.add('selected');
+                    }
+                });
+            }
+        }
+
+        function handleEssayTypeClick(essayType) {
+            // Toggle selection
+            if (selectedEssayType === essayType) {
+                selectedEssayType = null;
+            } else {
+                selectedEssayType = essayType;
+            }
+            updateTreeSelection();
+            applySortAndFilter();
+        }
+
+        function handleAudienceClick(audience) {
+            // Toggle selection
+            if (selectedAudience === audience) {
+                selectedAudience = null;
+            } else {
+                selectedAudience = audience;
+            }
+            updateTreeSelection();
+            applySortAndFilter();
         }
 
         function populateFilters() {
@@ -510,34 +572,46 @@
                 topicTree.appendChild(childrenContainer);
             });
 
-            // Populate essay types
-            const essayTypes = new Set();
+            // Populate essay types with counts
+            const essayTypeCounts = {};
             allEssays.forEach(essay => {
                 if (essay.EssayType) {
-                    essay.EssayType.forEach(type => essayTypes.add(type));
+                    essay.EssayType.forEach(type => {
+                        if (!essayTypeCounts[type]) {
+                            essayTypeCounts[type] = 0;
+                        }
+                        essayTypeCounts[type]++;
+                    });
                 }
-            });
-            const essayTypeFilter = document.getElementById('essayTypeFilter');
-            Array.from(essayTypes).sort().forEach(type => {
-                const option = document.createElement('option');
-                option.value = type;
-                option.textContent = type;
-                essayTypeFilter.appendChild(option);
             });
 
-            // Populate audiences
-            const audiences = new Set();
+            const essayTypeTree = document.getElementById('essayTypeTree');
+            essayTypeTree.innerHTML = '';
+            Object.keys(essayTypeCounts).sort().forEach(type => {
+                const count = essayTypeCounts[type];
+                const item = createTreeItem(type, count, 1, () => handleEssayTypeClick(type));
+                essayTypeTree.appendChild(item);
+            });
+
+            // Populate audiences with counts
+            const audienceCounts = {};
             allEssays.forEach(essay => {
                 if (essay.Audience) {
-                    essay.Audience.forEach(aud => audiences.add(aud));
+                    essay.Audience.forEach(aud => {
+                        if (!audienceCounts[aud]) {
+                            audienceCounts[aud] = 0;
+                        }
+                        audienceCounts[aud]++;
+                    });
                 }
             });
-            const audienceFilter = document.getElementById('audienceFilter');
-            Array.from(audiences).sort().forEach(audience => {
-                const option = document.createElement('option');
-                option.value = audience;
-                option.textContent = audience;
-                audienceFilter.appendChild(option);
+
+            const audienceTree = document.getElementById('audienceTree');
+            audienceTree.innerHTML = '';
+            Object.keys(audienceCounts).sort().forEach(audience => {
+                const count = audienceCounts[audience];
+                const item = createTreeItem(audience, count, 1, () => handleAudienceClick(audience));
+                audienceTree.appendChild(item);
             });
         }
 

@@ -515,6 +515,21 @@ a:hover {
     margin-left: 0.5rem;
 }
 
+/* Sort number badge */
+.sort-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
 /* Nested levels */
 .tree-children {
     display: none;

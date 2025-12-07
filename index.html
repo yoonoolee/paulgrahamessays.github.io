@@ -75,9 +75,13 @@
             <div class="filter-group">
                 <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Date</label>
                 <div class="filter-content collapsed">
-                    <div class="filter-buttons">
-                        <button class="filter-btn sort-btn active" data-sort="date-desc" onclick="setSort(this, 'date-desc')">Newest First</button>
-                        <button class="filter-btn sort-btn" data-sort="date-asc" onclick="setSort(this, 'date-asc')">Oldest First</button>
+                    <div class="topic-tree" id="dateSortTree">
+                        <div class="tree-item" onclick="setSortOption('date-desc')">
+                            <span class="tree-item-label">Newest First</span>
+                        </div>
+                        <div class="tree-item" onclick="setSortOption('date-asc')">
+                            <span class="tree-item-label">Oldest First</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -85,9 +89,13 @@
             <div class="filter-group">
                 <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Length</label>
                 <div class="filter-content collapsed">
-                    <div class="filter-buttons">
-                        <button class="filter-btn sort-btn" data-sort="length-desc" onclick="setSort(this, 'length-desc')">Longest First</button>
-                        <button class="filter-btn sort-btn" data-sort="length-asc" onclick="setSort(this, 'length-asc')">Shortest First</button>
+                    <div class="topic-tree" id="lengthSortTree">
+                        <div class="tree-item" onclick="setSortOption('length-desc')">
+                            <span class="tree-item-label">Longest First</span>
+                        </div>
+                        <div class="tree-item" onclick="setSortOption('length-asc')">
+                            <span class="tree-item-label">Shortest First</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -181,6 +189,8 @@
         let allEssays = [];
         let currentView = 'all'; // 'all' or 'bookmarked'
         let currentSort = 'date-desc';
+        let primarySort = 'date-desc'; // Primary sort criterion
+        let secondarySort = null; // Secondary sort criterion
         let selectedTopicPath = []; // Tracks selected topic path [topic, category, item]
         let selectedEssayType = null; // Tracks selected essay type
         let selectedAudience = null; // Tracks selected audience
@@ -196,15 +206,79 @@
             applySortAndFilter();
         }
 
-        function setSort(button, sortType) {
-            currentSort = sortType;
+        function setSortOption(sortType) {
+            const clickedItem = event.target.closest('.tree-item');
+            const sortCategory = sortType.startsWith('date') ? 'date' : 'length';
 
-            // Update button states - only within sort buttons
-            const sortButtons = document.querySelectorAll('.sort-btn');
-            sortButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+            // Check if clicking on already selected sort to deselect it
+            if (sortType === primarySort) {
+                // Deselecting primary - promote secondary to primary
+                primarySort = secondarySort || 'date-desc'; // Default to date-desc if no secondary
+                currentSort = primarySort;
+                secondarySort = null;
+            } else if (sortType === secondarySort) {
+                // Deselecting secondary
+                secondarySort = null;
+            } else {
+                // Determine if this becomes primary or secondary
+                if (!primarySort || primarySort.startsWith(sortCategory)) {
+                    // First selection or clicking within same category - make it primary
+                    primarySort = sortType;
+                    currentSort = sortType;
+                } else {
+                    // Clicking different category - make it secondary
+                    secondarySort = sortType;
+                }
+            }
 
+            // Update the UI
+            updateSortBadges();
             applySortAndFilter();
+        }
+
+        function updateSortBadges() {
+            // Remove all badges and selected states
+            document.querySelectorAll('#dateSortTree .tree-item, #lengthSortTree .tree-item').forEach(item => {
+                item.classList.remove('selected');
+                const existingBadge = item.querySelector('.sort-number');
+                if (existingBadge) {
+                    existingBadge.remove();
+                }
+            });
+
+            // Add badge to primary sort
+            if (primarySort) {
+                const primaryItem = findSortItem(primarySort);
+                if (primaryItem) {
+                    primaryItem.classList.add('selected');
+                    const badge = document.createElement('span');
+                    badge.className = 'sort-number';
+                    badge.textContent = '1';
+                    primaryItem.querySelector('.tree-item-label').appendChild(badge);
+                }
+            }
+
+            // Add badge to secondary sort
+            if (secondarySort) {
+                const secondaryItem = findSortItem(secondarySort);
+                if (secondaryItem) {
+                    secondaryItem.classList.add('selected');
+                    const badge = document.createElement('span');
+                    badge.className = 'sort-number';
+                    badge.textContent = '2';
+                    secondaryItem.querySelector('.tree-item-label').appendChild(badge);
+                }
+            }
+        }
+
+        function findSortItem(sortType) {
+            const allSortItems = document.querySelectorAll('#dateSortTree .tree-item, #lengthSortTree .tree-item');
+            for (let item of allSortItems) {
+                if (item.getAttribute('onclick')?.includes(sortType)) {
+                    return item;
+                }
+            }
+            return null;
         }
 
         function updateTimeLabels() {
@@ -317,21 +391,41 @@
             const maxYear = parseInt(document.getElementById('yearMaxSlider').value);
             essays = essays.filter(essay => essay.Year >= minYear && essay.Year <= maxYear);
 
-            // Sort
-            switch(currentSort) {
-                case 'date-desc':
-                    essays.sort((a, b) => b.Year - a.Year);
-                    break;
-                case 'date-asc':
-                    essays.sort((a, b) => a.Year - b.Year);
-                    break;
-                case 'length-desc':
-                    essays.sort((a, b) => b.WordCount - a.WordCount);
-                    break;
-                case 'length-asc':
-                    essays.sort((a, b) => a.WordCount - b.WordCount);
-                    break;
-            }
+            // Sort - with primary and secondary criteria
+            essays.sort((a, b) => {
+                // Apply primary sort
+                let primaryResult = 0;
+                switch(primarySort) {
+                    case 'date-desc':
+                        primaryResult = b.Year - a.Year;
+                        break;
+                    case 'date-asc':
+                        primaryResult = a.Year - b.Year;
+                        break;
+                    case 'length-desc':
+                        primaryResult = b.WordCount - a.WordCount;
+                        break;
+                    case 'length-asc':
+                        primaryResult = a.WordCount - b.WordCount;
+                        break;
+                }
+
+                // If primary sort values are equal and there's a secondary sort, apply it
+                if (primaryResult === 0 && secondarySort) {
+                    switch(secondarySort) {
+                        case 'date-desc':
+                            return b.Year - a.Year;
+                        case 'date-asc':
+                            return a.Year - b.Year;
+                        case 'length-desc':
+                            return b.WordCount - a.WordCount;
+                        case 'length-asc':
+                            return a.WordCount - b.WordCount;
+                    }
+                }
+
+                return primaryResult;
+            });
 
             renderList(essays);
         }
@@ -532,7 +626,8 @@
             const topicTree = document.getElementById('topicTree');
             topicTree.innerHTML = '';
 
-            Object.keys(topicHierarchy).sort().forEach(topicName => {
+            // Sort topics by count (descending)
+            Object.keys(topicHierarchy).sort((a, b) => topicHierarchy[b].count - topicHierarchy[a].count).forEach(topicName => {
                 const topicData = topicHierarchy[topicName];
                 const topicItem = createTreeItem(topicName, topicData.count, 1, () => handleTopicClick(topicName));
                 topicTree.appendChild(topicItem);
@@ -587,7 +682,8 @@
 
             const essayTypeTree = document.getElementById('essayTypeTree');
             essayTypeTree.innerHTML = '';
-            Object.keys(essayTypeCounts).sort().forEach(type => {
+            // Sort essay types by count (descending)
+            Object.keys(essayTypeCounts).sort((a, b) => essayTypeCounts[b] - essayTypeCounts[a]).forEach(type => {
                 const count = essayTypeCounts[type];
                 const item = createTreeItem(type, count, 1, () => handleEssayTypeClick(type));
                 essayTypeTree.appendChild(item);
@@ -608,7 +704,8 @@
 
             const audienceTree = document.getElementById('audienceTree');
             audienceTree.innerHTML = '';
-            Object.keys(audienceCounts).sort().forEach(audience => {
+            // Sort audiences by count (descending)
+            Object.keys(audienceCounts).sort((a, b) => audienceCounts[b] - audienceCounts[a]).forEach(audience => {
                 const count = audienceCounts[audience];
                 const item = createTreeItem(audience, count, 1, () => handleAudienceClick(audience));
                 audienceTree.appendChild(item);
@@ -700,6 +797,7 @@
             .then(data => {
                 allEssays = data.essays;
                 populateFilters();
+                updateSortBadges(); // Show initial sort badge
                 applySortAndFilter();
             })
             .catch(error => {

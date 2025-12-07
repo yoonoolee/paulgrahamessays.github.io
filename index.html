@@ -26,17 +26,8 @@
             </div>
 
             <div class="filter-group">
-                <label class="filter-label">Topic</label>
-                <select id="topicFilter" onchange="applySortAndFilter()">
-                    <option value="all">All Topics</option>
-                </select>
-            </div>
-
-            <div class="filter-group">
-                <label class="filter-label">Subtopic</label>
-                <select id="subtopicFilter" onchange="applySortAndFilter()">
-                    <option value="all">All Subtopics</option>
-                </select>
+                <label class="filter-label">Topics</label>
+                <div id="topicTree" class="topic-tree"></div>
             </div>
 
             <div class="filter-group">
@@ -172,6 +163,7 @@
         let allEssays = [];
         let currentView = 'all'; // 'all' or 'bookmarked'
         let currentSort = 'date-desc';
+        let selectedTopicPath = []; // Tracks selected topic path [topic, category, item]
 
         function toggleView(view) {
             currentView = view;
@@ -236,24 +228,49 @@
                 essays = essays.filter(essay => bookmarks.includes(essay.Title));
             }
 
-            // Filter by topic
-            const topicFilter = document.getElementById('topicFilter').value;
-            if (topicFilter !== 'all') {
-                essays = essays.filter(essay =>
-                    essay.Topics.some(t => t.topic === topicFilter)
-                );
-            }
+            // Filter by topic tree selection
+            if (selectedTopicPath.length > 0) {
+                essays = essays.filter(essay => {
+                    return essay.Topics.some(t => {
+                        const [topic, secondLevel, thirdLevel] = selectedTopicPath;
 
-            // Filter by subtopic
-            const subtopicFilter = document.getElementById('subtopicFilter').value;
-            if (subtopicFilter !== 'all') {
-                essays = essays.filter(essay =>
-                    essay.Topics.some(t =>
-                        t.subtopics && t.subtopics.some(subObj =>
-                            subObj.items && subObj.items.includes(subtopicFilter)
-                        )
-                    )
-                );
+                        // Check if topic matches
+                        if (t.topic !== topic) return false;
+
+                        // If only topic is selected, include all essays with this topic
+                        if (!secondLevel) return true;
+
+                        // Check if we have a two-level or three-level path
+                        if (!thirdLevel) {
+                            // Two-level path: could be [topic, directItem] or [topic, category]
+                            if (t.subtopics) {
+                                // Check if secondLevel is a direct item (no category) or a category
+                                return t.subtopics.some(subObj => {
+                                    // Check if it's a direct item
+                                    if (!subObj.category && subObj.items && subObj.items.includes(secondLevel)) {
+                                        return true;
+                                    }
+                                    // Check if it's a category
+                                    if (subObj.category === secondLevel) {
+                                        return true;
+                                    }
+                                    return false;
+                                });
+                            }
+                            return false;
+                        } else {
+                            // Three-level path: [topic, category, item]
+                            if (t.subtopics) {
+                                return t.subtopics.some(subObj => {
+                                    return subObj.category === secondLevel &&
+                                           subObj.items &&
+                                           subObj.items.includes(thirdLevel);
+                                });
+                            }
+                            return false;
+                        }
+                    });
+                });
             }
 
             // Filter by essay type
@@ -301,40 +318,196 @@
             renderList(essays);
         }
 
-        function populateFilters() {
-            // Populate topics
-            const topics = new Set();
-            allEssays.forEach(essay => {
-                essay.Topics.forEach(t => topics.add(t.topic));
-            });
-            const topicFilter = document.getElementById('topicFilter');
-            Array.from(topics).sort().forEach(topic => {
-                const option = document.createElement('option');
-                option.value = topic;
-                option.textContent = topic;
-                topicFilter.appendChild(option);
+        // ========== TOPIC TREE FUNCTIONS ==========
+
+        function createTreeItem(label, count, level, onClick) {
+            const item = document.createElement('div');
+            item.className = 'tree-item';
+            if (level > 1) {
+                item.classList.add(`tree-level-${level}`);
+            }
+
+            const labelSpan = document.createElement('span');
+            labelSpan.className = 'tree-item-label';
+            labelSpan.textContent = label;
+
+            const badge = document.createElement('span');
+            badge.className = 'count-badge';
+            badge.textContent = count;
+
+            item.appendChild(labelSpan);
+            item.appendChild(badge);
+            item.onclick = (e) => {
+                e.stopPropagation();
+                onClick();
+            };
+
+            return item;
+        }
+
+        function handleTopicClick(topicName) {
+            // Clear previous selection
+            selectedTopicPath = [topicName];
+
+            // Toggle expansion
+            const childrenContainer = document.getElementById(`children-${topicName}`);
+            const wasExpanded = childrenContainer.classList.contains('expanded');
+
+            // Collapse all other topics
+            document.querySelectorAll('.tree-children').forEach(el => el.classList.remove('expanded'));
+            document.querySelectorAll('.tree-item').forEach(el => el.classList.remove('selected'));
+
+            if (!wasExpanded) {
+                childrenContainer.classList.add('expanded');
+            } else {
+                selectedTopicPath = [];
+            }
+
+            updateTreeSelection();
+            applySortAndFilter();
+        }
+
+        function handleCategoryClick(topicName, categoryName) {
+            selectedTopicPath = [topicName, categoryName];
+
+            // Toggle expansion
+            const childrenContainer = document.getElementById(`children-${topicName}-${categoryName}`);
+            const wasExpanded = childrenContainer.classList.contains('expanded');
+
+            // Collapse all category children
+            document.querySelectorAll(`[id^="children-${topicName}-"]`).forEach(el => {
+                if (el.id !== `children-${topicName}`) {
+                    el.classList.remove('expanded');
+                }
             });
 
-            // Populate subtopics
-            const subtopics = new Set();
+            if (!wasExpanded) {
+                childrenContainer.classList.add('expanded');
+            } else {
+                selectedTopicPath = [topicName];
+            }
+
+            updateTreeSelection();
+            applySortAndFilter();
+        }
+
+        function handleDirectItemClick(topicName, itemName) {
+            // For two-level structure (no category)
+            selectedTopicPath = [topicName, itemName];
+            updateTreeSelection();
+            applySortAndFilter();
+        }
+
+        function handleItemClick(topicName, categoryName, itemName) {
+            // For three-level structure (with category)
+            selectedTopicPath = [topicName, categoryName, itemName];
+            updateTreeSelection();
+            applySortAndFilter();
+        }
+
+        function updateTreeSelection() {
+            // Remove all selected states
+            document.querySelectorAll('.tree-item').forEach(el => el.classList.remove('selected'));
+
+            // Add selected state to items in the path
+            if (selectedTopicPath.length > 0) {
+                // Find and select based on path
+                const topicItems = document.querySelectorAll('.tree-item');
+                topicItems.forEach(item => {
+                    const label = item.querySelector('.tree-item-label').textContent;
+                    if (selectedTopicPath.includes(label)) {
+                        item.classList.add('selected');
+                    }
+                });
+            }
+        }
+
+        function populateFilters() {
+            // Build topic hierarchy with counts
+            const topicHierarchy = {};
+
             allEssays.forEach(essay => {
                 essay.Topics.forEach(t => {
+                    const topicName = t.topic;
+
+                    if (!topicHierarchy[topicName]) {
+                        topicHierarchy[topicName] = { count: 0, categories: {}, directItems: {} };
+                    }
+                    topicHierarchy[topicName].count++;
+
                     if (t.subtopics) {
-                        // Handle new nested structure
                         t.subtopics.forEach(subObj => {
-                            if (subObj.items) {
-                                subObj.items.forEach(item => subtopics.add(item));
+                            if (subObj.category && subObj.items) {
+                                // Has category - three level structure
+                                const categoryName = subObj.category;
+
+                                if (!topicHierarchy[topicName].categories[categoryName]) {
+                                    topicHierarchy[topicName].categories[categoryName] = { count: 0, items: {} };
+                                }
+                                topicHierarchy[topicName].categories[categoryName].count++;
+
+                                subObj.items.forEach(item => {
+                                    if (!topicHierarchy[topicName].categories[categoryName].items[item]) {
+                                        topicHierarchy[topicName].categories[categoryName].items[item] = 0;
+                                    }
+                                    topicHierarchy[topicName].categories[categoryName].items[item]++;
+                                });
+                            } else if (subObj.items) {
+                                // No category - two level structure (direct items under topic)
+                                subObj.items.forEach(item => {
+                                    if (!topicHierarchy[topicName].directItems[item]) {
+                                        topicHierarchy[topicName].directItems[item] = 0;
+                                    }
+                                    topicHierarchy[topicName].directItems[item]++;
+                                });
                             }
                         });
                     }
                 });
             });
-            const subtopicFilter = document.getElementById('subtopicFilter');
-            Array.from(subtopics).sort().forEach(subtopic => {
-                const option = document.createElement('option');
-                option.value = subtopic;
-                option.textContent = subtopic;
-                subtopicFilter.appendChild(option);
+
+            // Build the tree UI
+            const topicTree = document.getElementById('topicTree');
+            topicTree.innerHTML = '';
+
+            Object.keys(topicHierarchy).sort().forEach(topicName => {
+                const topicData = topicHierarchy[topicName];
+                const topicItem = createTreeItem(topicName, topicData.count, 1, () => handleTopicClick(topicName));
+                topicTree.appendChild(topicItem);
+
+                // Create children container
+                const childrenContainer = document.createElement('div');
+                childrenContainer.className = 'tree-children';
+                childrenContainer.id = `children-${topicName}`;
+
+                // Add direct items (two-level structure)
+                Object.keys(topicData.directItems).sort().forEach(itemName => {
+                    const itemCount = topicData.directItems[itemName];
+                    const itemElement = createTreeItem(itemName, itemCount, 2, () => handleDirectItemClick(topicName, itemName));
+                    childrenContainer.appendChild(itemElement);
+                });
+
+                // Add categories (three-level structure)
+                Object.keys(topicData.categories).sort().forEach(categoryName => {
+                    const categoryData = topicData.categories[categoryName];
+                    const categoryItem = createTreeItem(categoryName, categoryData.count, 2, () => handleCategoryClick(topicName, categoryName));
+                    childrenContainer.appendChild(categoryItem);
+
+                    // Create children container for items under category
+                    const itemsContainer = document.createElement('div');
+                    itemsContainer.className = 'tree-children';
+                    itemsContainer.id = `children-${topicName}-${categoryName}`;
+
+                    Object.keys(categoryData.items).sort().forEach(itemName => {
+                        const itemCount = categoryData.items[itemName];
+                        const itemElement = createTreeItem(itemName, itemCount, 3, () => handleItemClick(topicName, categoryName, itemName));
+                        itemsContainer.appendChild(itemElement);
+                    });
+
+                    childrenContainer.appendChild(itemsContainer);
+                });
+
+                topicTree.appendChild(childrenContainer);
             });
 
             // Populate essay types

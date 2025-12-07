@@ -439,3 +439,75 @@ a:hover {
     font-size: 0.9rem;
     font-weight: 500;
 }
+
+/* ========== TOPIC TREE (Algolia-style) ========== */
+.topic-tree {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tree-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.35rem 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tree-item-label {
+    font-size: 0.8125rem;
+    color: #111827;
+    font-weight: 400;
+    line-height: 1.4;
+    flex: 1;
+}
+
+.tree-item-label:hover {
+    color: #3b82f6;
+}
+
+/* Selected state */
+.tree-item.selected .tree-item-label {
+    font-weight: 700;
+    color: #3b82f6;
+}
+
+/* Count badge */
+.count-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    background: #f3f4f6;
+    color: #6b7280;
+    border-radius: 11px;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+/* Nested levels */
+.tree-children {
+    display: none;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-top: 0.35rem;
+    margin-left: 1.25rem;
+}
+
+.tree-children.expanded {
+    display: flex;
+}
+
+/* Level-specific indentation */
+.tree-level-2 {
+    margin-left: 1.25rem;
+}
+
+.tree-level-3 {
+    margin-left: 2.5rem;
+}

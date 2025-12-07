@@ -140,7 +140,7 @@
           "subtopics": [
             {
               "items": [
-                "Analysis"
+                "Industry Analysis and Trends"
               ]
             }
           ]
@@ -177,9 +177,15 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Starting a Company",
-                "Ideas",
+                "Ideas"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -206,10 +212,16 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
-                "Starting a Company",
                 "Founder Life"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
+                "Starting a Company"
               ]
             }
           ]
@@ -245,6 +257,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
                 "Founder Life"
@@ -273,11 +286,22 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas",
-                "Strategy and growth",
-                "YC",
                 "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
+                "YC"
               ]
             }
           ]
@@ -302,6 +326,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas",
                 "Starting a Company"
@@ -324,7 +349,7 @@
           "subtopics": [
             {
               "items": [
-                "Analysis"
+                "Industry Analysis and Trends"
               ]
             }
           ]
@@ -388,8 +413,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Strategy and growth",
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -417,8 +448,7 @@
           "subtopics": [
             {
               "items": [
-                "Career",
-                "Productivity and focus"
+                "Career"
               ]
             }
           ]
@@ -427,6 +457,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Founder Life"
               ]
@@ -464,6 +495,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas",
                 "Starting a Company"
@@ -602,13 +634,23 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
-                "Failure",
+                "Failure"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "YC",
-                "Starting a Company",
-                "Funding/Investing, Finance, and Exits",
                 "Startup Landscape"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
+                "Starting a Company"
               ]
             }
           ]
@@ -798,8 +840,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
-                "Starting a Company",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -837,6 +885,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Starting a Company",
                 "Ideas"
@@ -912,9 +961,15 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas",
-                "Starting a Company",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -943,7 +998,7 @@
           "subtopics": [
             {
               "items": [
-                "Analysis"
+                "Industry Analysis and Trends"
               ]
             }
           ]
@@ -1006,9 +1061,20 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
-                "Starting a Company",
-                "Founder Life",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
+                "Founder Life"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -1019,7 +1085,7 @@
           "subtopics": [
             {
               "items": [
-                "Analysis"
+                "Industry Analysis and Trends"
               ]
             }
           ]
@@ -1099,7 +1165,7 @@
           "subtopics": [
             {
               "items": [
-                "Analysis"
+                "Industry Analysis and Trends"
               ]
             }
           ]
@@ -1119,6 +1185,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "YC"
               ]
@@ -1166,8 +1233,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
-                "Starting a Company",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -1204,11 +1277,22 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "YC",
-                "Starting a Company",
-                "Strategy and growth",
                 "Startup Landscape"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
+                "Strategy and growth"
               ]
             }
           ]
@@ -1234,11 +1318,22 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas",
-                "Strategy and growth",
-                "Starting a Company",
-                "Funding/Investing, Finance, and Exits"
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "Funding & Finance",
+              "items": [
+                "Exits"
               ]
             }
           ]
@@ -1275,6 +1370,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Starting a Company",
                 "Ideas"
@@ -1326,9 +1422,15 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Starting a Company",
-                "Ideas",
+                "Ideas"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -1365,6 +1467,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Founder Life"
               ]
@@ -1520,6 +1623,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Starting a Company"
               ]
@@ -1557,6 +1661,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Founder Life"
               ]
@@ -1621,9 +1726,15 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas",
-                "Starting a Company",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -1700,6 +1811,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "YC"
               ]
@@ -1737,6 +1849,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas"
               ]
@@ -1855,6 +1968,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas",
                 "Starting a Company"
@@ -1883,8 +1997,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
-                "Location"
+                "Startup Hubs"
               ]
             }
           ]
@@ -1965,7 +2080,7 @@
             {
               "items": [
                 "Social commentary",
-                "Wealth and Economics"
+                "Economics and Policy"
               ]
             }
           ]
@@ -1991,6 +2106,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "YC"
               ]
@@ -2071,9 +2187,15 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Strategy and growth",
-                "Funding/Investing, Finance, and Exits"
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "Funding & Finance",
+              "items": [
+                "Runway"
               ]
             }
           ]
@@ -2098,9 +2220,15 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
-                "Founder Life",
+                "Founder Life"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -2126,8 +2254,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Strategy and growth",
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
                 "Starting a Company"
               ]
             }
@@ -2153,6 +2287,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas",
                 "Starting a Company"
@@ -2180,6 +2315,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Founder Life"
               ]
@@ -2217,8 +2353,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
-                "Starting a Company",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -2246,9 +2388,15 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Strategy and growth",
-                "Funding/Investing, Finance, and Exits"
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "Funding & Finance",
+              "items": [
+                "Exits"
               ]
             }
           ]
@@ -2284,7 +2432,7 @@
           "subtopics": [
             {
               "items": [
-                "Analysis"
+                "Industry Analysis and Trends"
               ]
             }
           ]
@@ -2293,8 +2441,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Strategy and growth",
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -2332,10 +2486,10 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas",
-                "Starting a Company",
-                "Funding/Investing, Finance, and Exits"
+                "Starting a Company"
               ]
             }
           ]
@@ -2388,11 +2542,22 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
+                "Runway"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Strategy and growth",
-                "YC",
                 "Failure"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
+                "YC"
               ]
             }
           ]
@@ -2417,6 +2582,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Failure",
                 "Strategy and growth",
@@ -2459,10 +2625,21 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas",
-                "Starting a Company",
-                "YC",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
+                "YC"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -2499,8 +2676,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Strategy and growth"
               ]
             }
@@ -2526,9 +2709,20 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
-                "Strategy and growth",
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -2556,8 +2750,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits"
+                "Funding/Investing"
               ]
             }
           ]
@@ -2582,10 +2777,16 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
-                "YC",
                 "Founder Life"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
+                "YC"
               ]
             }
           ]
@@ -2611,8 +2812,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -2639,8 +2846,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
-                "Ideas",
+                "Ideas"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Strategy and growth"
               ]
             }
@@ -2676,6 +2889,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "YC"
               ]
@@ -2703,10 +2917,20 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Strategy and growth",
-                "Ideas",
-                "Funding/Investing, Finance, and Exits",
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
+                "Ideas"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -2732,8 +2956,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "YC",
                 "Startup Landscape"
               ]
@@ -2816,6 +3046,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "YC"
               ]
@@ -2870,8 +3101,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
-                "Ideas",
+                "Ideas"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -2918,10 +3155,21 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
-                "Starting a Company",
-                "Founder Life",
+                "Founder Life"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "YC"
               ]
             }
@@ -2959,10 +3207,16 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas",
-                "YC",
                 "Starting a Company"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
+                "YC"
               ]
             }
           ]
@@ -3014,13 +3268,24 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
-                "Location",
-                "Starting a Company",
-                "Strategy and growth",
-                "Founder Life",
+                "Startup Hubs",
                 "YC",
                 "Startup Landscape"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
+                "Strategy and growth",
+                "Founder Life"
               ]
             }
           ]
@@ -3065,6 +3330,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "Startup Landscape"
               ]
@@ -3091,10 +3357,21 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
-                "Ideas",
-                "YC",
-                "Funding/Investing, Finance, and Exits"
+                "Ideas"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
+                "YC"
+              ]
+            },
+            {
+              "category": "Funding & Finance",
+              "items": [
+                "Funding/Investing"
               ]
             }
           ]
@@ -3120,9 +3397,20 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
-                "Strategy and growth",
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -3174,6 +3462,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Starting a Company"
               ]
@@ -3200,8 +3489,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -3228,8 +3523,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
-                "Location"
+                "Startup Hubs"
               ]
             }
           ]
@@ -3255,8 +3551,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits"
+                "Funding/Investing"
               ]
             }
           ]
@@ -3282,8 +3579,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Strategy and growth",
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -3321,8 +3624,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -3396,6 +3705,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Founder Life"
               ]
@@ -3471,6 +3781,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas"
               ]
@@ -3524,12 +3835,23 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
+                "Founder Life"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
                 "Starting a Company",
+                "Ideas"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "YC",
-                "Founder Life",
-                "Ideas",
                 "Startup Landscape"
               ]
             }
@@ -3676,6 +3998,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Founder Life"
               ]
@@ -3703,12 +4026,23 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
-                "Location",
+                "Startup Hubs",
                 "YC",
-                "Starting a Company",
-                "Founder Life",
                 "Startup Landscape"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
+                "Founder Life"
               ]
             }
           ]
@@ -3733,6 +4067,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas"
               ]
@@ -3781,10 +4116,21 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
+                "Runway"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Strategy and growth",
-                "Founder Life",
+                "Founder Life"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
                 "Starting a Company"
               ]
             }
@@ -3820,8 +4166,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Founder Life",
+                "Founder Life"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -3859,8 +4211,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
-                "Location"
+                "Startup Hubs"
               ]
             }
           ]
@@ -3922,8 +4275,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
-                "Location",
+                "Startup Hubs",
                 "Startup Landscape"
               ]
             }
@@ -3950,8 +4304,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Founder Life",
+                "Founder Life"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -3977,6 +4337,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
                 "Founder Life"
@@ -4015,8 +4376,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits"
+                "Funding/Investing"
               ]
             }
           ]
@@ -4070,8 +4432,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
-                "Location"
+                "Startup Hubs"
               ]
             }
           ]
@@ -4097,6 +4460,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "YC"
               ]
@@ -4123,13 +4487,23 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
-                "Funding/Investing, Finance, and Exits",
                 "Failure",
-                "Founder Life",
+                "Founder Life"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
                 "Ideas",
-                "Starting a Company",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -4222,9 +4596,20 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Failure",
-                "Funding/Investing, Finance, and Exits",
+                "Failure"
+              ]
+            },
+            {
+              "category": "Funding & Finance",
+              "items": [
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -4323,10 +4708,20 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
-                "Starting a Company",
-                "Funding/Investing, Finance, and Exits",
-                "Failure",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
+                "Failure"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -4352,8 +4747,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
                 "Failure"
               ]
             }
@@ -4379,8 +4780,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Strategy and growth",
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -4416,8 +4823,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
-                "Location"
+                "Startup Hubs"
               ]
             }
           ]
@@ -4505,6 +4913,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
                 "Founder Life"
@@ -4532,9 +4941,20 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Strategy and growth",
-                "Funding/Investing, Finance, and Exits",
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "Funding & Finance",
+              "items": [
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -4646,8 +5066,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Strategy and growth",
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "YC"
               ]
             }
@@ -4674,11 +5100,22 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Strategy and growth",
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "YC",
-                "Funding/Investing, Finance, and Exits",
                 "Startup Landscape"
+              ]
+            },
+            {
+              "category": "Funding & Finance",
+              "items": [
+                "Funding/Investing"
               ]
             }
           ]
@@ -4730,10 +5167,16 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "YC",
-                "Ideas",
                 "Startup Landscape"
+              ]
+            },
+            {
+              "category": "Getting Started",
+              "items": [
+                "Ideas"
               ]
             }
           ]
@@ -4759,8 +5202,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
-                "Location",
+                "Startup Hubs",
                 "Startup Landscape"
               ]
             }
@@ -4786,6 +5230,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "Startup Landscape"
               ]
@@ -4896,9 +5341,15 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Failure",
-                "Strategy and growth",
+                "Strategy and growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "YC"
               ]
             }
@@ -4988,8 +5439,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits"
+                "Funding/Investing"
               ]
             }
           ]
@@ -5042,8 +5494,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -5136,8 +5594,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
-                "Starting a Company",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -5191,6 +5655,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
                 "Founder Life"
@@ -5244,11 +5709,17 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Failure",
                 "Strategy and growth",
-                "Startup Landscape",
                 "Founder Life"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
+                "Startup Landscape"
               ]
             }
           ]
@@ -5273,6 +5744,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "Startup Landscape"
               ]
@@ -5300,8 +5772,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits"
+                "Funding/Investing"
               ]
             }
           ]
@@ -5380,8 +5853,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
-                "Starting a Company",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -5407,8 +5886,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
-                "Location",
+                "Startup Hubs",
                 "Startup Landscape"
               ]
             }
@@ -5446,8 +5926,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
-                "Location"
+                "Startup Hubs"
               ]
             }
           ]
@@ -5472,6 +5953,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
                 "Strategy and growth",
                 "Failure"
@@ -5557,6 +6039,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "Startup Landscape"
               ]
@@ -5613,6 +6096,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "YC"
               ]
@@ -5719,8 +6203,9 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits"
+                "Funding/Investing"
               ]
             }
           ]
@@ -5746,8 +6231,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -5774,6 +6265,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas"
               ]
@@ -5800,8 +6292,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Founder Life",
+                "Founder Life"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -5838,6 +6336,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "Startup Landscape"
               ]
@@ -5876,6 +6375,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "Startup Landscape"
               ]
@@ -5924,6 +6424,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "Startup Landscape"
               ]
@@ -5951,8 +6452,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
-                "Starting a Company",
+                "Starting a Company"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -6014,6 +6521,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Ideas"
               ]
@@ -6141,8 +6649,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Funding & Finance",
               "items": [
-                "Funding/Investing, Finance, and Exits",
+                "Funding/Investing"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -6169,11 +6683,16 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Starting a Company",
-                "Founder Life",
-                "Ideas",
-                "Funding/Investing, Finance, and Exits"
+                "Ideas"
+              ]
+            },
+            {
+              "category": "Running a Startup",
+              "items": [
+                "Founder Life"
               ]
             }
           ]
@@ -6209,6 +6728,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Getting Started",
               "items": [
                 "Starting a Company"
               ]
@@ -6361,8 +6881,14 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "Running a Startup",
               "items": [
-                "Failure",
+                "Failure"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Startup Landscape"
               ]
             }
@@ -6532,6 +7058,7 @@
           "topic": "Startups",
           "subtopics": [
             {
+              "category": "The Startup World",
               "items": [
                 "Startup Landscape"
               ]

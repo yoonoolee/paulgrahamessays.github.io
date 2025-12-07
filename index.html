@@ -191,9 +191,9 @@
         let currentSort = 'date-desc';
         let primarySort = 'date-desc'; // Primary sort criterion
         let secondarySort = null; // Secondary sort criterion
-        let selectedTopicPath = []; // Tracks selected topic path [topic, category, item]
-        let selectedEssayType = null; // Tracks selected essay type
-        let selectedAudience = null; // Tracks selected audience
+        let selectedTopicPaths = []; // Tracks multiple selected topic paths [[topic, category, item], ...]
+        let selectedEssayTypes = []; // Tracks multiple selected essay types
+        let selectedAudiences = []; // Tracks multiple selected audiences
 
         function toggleView(view) {
             currentView = view;
@@ -322,62 +322,65 @@
                 essays = essays.filter(essay => bookmarks.includes(essay.Title));
             }
 
-            // Filter by topic tree selection
-            if (selectedTopicPath.length > 0) {
+            // Filter by topic tree selection - match ANY selected path
+            if (selectedTopicPaths.length > 0) {
                 essays = essays.filter(essay => {
-                    return essay.Topics.some(t => {
-                        const [topic, secondLevel, thirdLevel] = selectedTopicPath;
+                    // Check if essay matches ANY of the selected paths
+                    return selectedTopicPaths.some(selectedPath => {
+                        return essay.Topics.some(t => {
+                            const [topic, secondLevel, thirdLevel] = selectedPath;
 
-                        // Check if topic matches
-                        if (t.topic !== topic) return false;
+                            // Check if topic matches
+                            if (t.topic !== topic) return false;
 
-                        // If only topic is selected, include all essays with this topic
-                        if (!secondLevel) return true;
+                            // If only topic is selected, include all essays with this topic
+                            if (!secondLevel) return true;
 
-                        // Check if we have a two-level or three-level path
-                        if (!thirdLevel) {
-                            // Two-level path: could be [topic, directItem] or [topic, category]
-                            if (t.subtopics) {
-                                // Check if secondLevel is a direct item (no category) or a category
-                                return t.subtopics.some(subObj => {
-                                    // Check if it's a direct item
-                                    if (!subObj.category && subObj.items && subObj.items.includes(secondLevel)) {
-                                        return true;
-                                    }
-                                    // Check if it's a category
-                                    if (subObj.category === secondLevel) {
-                                        return true;
-                                    }
-                                    return false;
-                                });
+                            // Check if we have a two-level or three-level path
+                            if (!thirdLevel) {
+                                // Two-level path: could be [topic, directItem] or [topic, category]
+                                if (t.subtopics) {
+                                    // Check if secondLevel is a direct item (no category) or a category
+                                    return t.subtopics.some(subObj => {
+                                        // Check if it's a direct item
+                                        if (!subObj.category && subObj.items && subObj.items.includes(secondLevel)) {
+                                            return true;
+                                        }
+                                        // Check if it's a category
+                                        if (subObj.category === secondLevel) {
+                                            return true;
+                                        }
+                                        return false;
+                                    });
+                                }
+                                return false;
+                            } else {
+                                // Three-level path: [topic, category, item]
+                                if (t.subtopics) {
+                                    return t.subtopics.some(subObj => {
+                                        return subObj.category === secondLevel &&
+                                               subObj.items &&
+                                               subObj.items.includes(thirdLevel);
+                                    });
+                                }
+                                return false;
                             }
-                            return false;
-                        } else {
-                            // Three-level path: [topic, category, item]
-                            if (t.subtopics) {
-                                return t.subtopics.some(subObj => {
-                                    return subObj.category === secondLevel &&
-                                           subObj.items &&
-                                           subObj.items.includes(thirdLevel);
-                                });
-                            }
-                            return false;
-                        }
+                        });
                     });
                 });
             }
 
-            // Filter by essay type
-            if (selectedEssayType) {
+            // Filter by essay type - match ANY selected type
+            if (selectedEssayTypes.length > 0) {
                 essays = essays.filter(essay =>
-                    essay.EssayType && essay.EssayType.includes(selectedEssayType)
+                    essay.EssayType && selectedEssayTypes.some(type => essay.EssayType.includes(type))
                 );
             }
 
-            // Filter by audience
-            if (selectedAudience) {
+            // Filter by audience - match ANY selected audience
+            if (selectedAudiences.length > 0) {
                 essays = essays.filter(essay =>
-                    essay.Audience && essay.Audience.includes(selectedAudience)
+                    essay.Audience && selectedAudiences.some(aud => essay.Audience.includes(aud))
                 );
             }
 
@@ -428,15 +431,251 @@
             });
 
             renderList(essays);
+            updateFilterCounts(essays);
+        }
+
+        // ========== UPDATE FILTER COUNTS ==========
+
+        function updateFilterCounts(filteredEssays) {
+            // For topic counts: exclude topic filters, include everything else
+            let essaysForTopicCounts = [...allEssays];
+
+            // Apply essay type filters
+            if (selectedEssayTypes.length > 0) {
+                essaysForTopicCounts = essaysForTopicCounts.filter(essay =>
+                    essay.EssayType && selectedEssayTypes.some(type => essay.EssayType.includes(type))
+                );
+            }
+
+            // Apply audience filters
+            if (selectedAudiences.length > 0) {
+                essaysForTopicCounts = essaysForTopicCounts.filter(essay =>
+                    essay.Audience && selectedAudiences.some(aud => essay.Audience.includes(aud))
+                );
+            }
+
+            // Apply reading time filter
+            const minTime = parseInt(document.getElementById('timeMinSlider').value);
+            const maxTime = parseInt(document.getElementById('timeMaxSlider').value);
+            essaysForTopicCounts = essaysForTopicCounts.filter(essay =>
+                essay.ReadingTime >= minTime && essay.ReadingTime <= maxTime
+            );
+
+            // Apply year filter
+            const minYear = parseInt(document.getElementById('yearMinSlider').value);
+            const maxYear = parseInt(document.getElementById('yearMaxSlider').value);
+            essaysForTopicCounts = essaysForTopicCounts.filter(essay =>
+                essay.Year >= minYear && essay.Year <= maxYear
+            );
+
+            // Apply view filter
+            if (currentView === 'bookmarked') {
+                const bookmarks = getBookmarks();
+                essaysForTopicCounts = essaysForTopicCounts.filter(essay => bookmarks.includes(essay.Title));
+            }
+
+            // Count essays for each topic/category/item
+            const topicCounts = {};
+            essaysForTopicCounts.forEach(essay => {
+                essay.Topics.forEach(t => {
+                    const topicName = t.topic;
+                    topicCounts[topicName] = (topicCounts[topicName] || 0) + 1;
+
+                    if (t.subtopics) {
+                        t.subtopics.forEach(subObj => {
+                            if (subObj.category && subObj.items) {
+                                const categoryKey = `${topicName}|${subObj.category}`;
+                                topicCounts[categoryKey] = (topicCounts[categoryKey] || 0) + 1;
+
+                                subObj.items.forEach(item => {
+                                    const itemKey = `${topicName}|${subObj.category}|${item}`;
+                                    topicCounts[itemKey] = (topicCounts[itemKey] || 0) + 1;
+                                });
+                            } else if (subObj.items) {
+                                subObj.items.forEach(item => {
+                                    const itemKey = `${topicName}|${item}`;
+                                    topicCounts[itemKey] = (topicCounts[itemKey] || 0) + 1;
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Update topic tree badges
+            document.querySelectorAll('#topicTree .tree-item[data-filter-key]').forEach(item => {
+                const filterKey = item.getAttribute('data-filter-key');
+                const badge = item.querySelector('.count-badge');
+                if (filterKey && badge) {
+                    badge.textContent = topicCounts[filterKey] || 0;
+                }
+            });
+
+            // For essay type counts: exclude essay type filters, include everything else
+            let essaysForTypeCounts = [...allEssays];
+
+            // Apply topic filters
+            if (selectedTopicPaths.length > 0) {
+                essaysForTypeCounts = essaysForTypeCounts.filter(essay => {
+                    return selectedTopicPaths.some(selectedPath => {
+                        return essay.Topics.some(t => {
+                            const [topic, secondLevel, thirdLevel] = selectedPath;
+                            if (t.topic !== topic) return false;
+                            if (!secondLevel) return true;
+                            if (!thirdLevel) {
+                                if (t.subtopics) {
+                                    return t.subtopics.some(subObj => {
+                                        if (!subObj.category && subObj.items && subObj.items.includes(secondLevel)) {
+                                            return true;
+                                        }
+                                        if (subObj.category === secondLevel) {
+                                            return true;
+                                        }
+                                        return false;
+                                    });
+                                }
+                                return false;
+                            } else {
+                                if (t.subtopics) {
+                                    return t.subtopics.some(subObj => {
+                                        return subObj.category === secondLevel &&
+                                               subObj.items &&
+                                               subObj.items.includes(thirdLevel);
+                                    });
+                                }
+                                return false;
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Apply audience filters
+            if (selectedAudiences.length > 0) {
+                essaysForTypeCounts = essaysForTypeCounts.filter(essay =>
+                    essay.Audience && selectedAudiences.some(aud => essay.Audience.includes(aud))
+                );
+            }
+
+            // Apply reading time and year filters
+            essaysForTypeCounts = essaysForTypeCounts.filter(essay =>
+                essay.ReadingTime >= minTime && essay.ReadingTime <= maxTime &&
+                essay.Year >= minYear && essay.Year <= maxYear
+            );
+
+            if (currentView === 'bookmarked') {
+                const bookmarks = getBookmarks();
+                essaysForTypeCounts = essaysForTypeCounts.filter(essay => bookmarks.includes(essay.Title));
+            }
+
+            // Count essays for each essay type
+            const typeCounts = {};
+            essaysForTypeCounts.forEach(essay => {
+                if (essay.EssayType) {
+                    essay.EssayType.forEach(type => {
+                        typeCounts[`type:${type}`] = (typeCounts[`type:${type}`] || 0) + 1;
+                    });
+                }
+            });
+
+            // Update essay type badges
+            document.querySelectorAll('#essayTypeTree .tree-item[data-filter-key]').forEach(item => {
+                const filterKey = item.getAttribute('data-filter-key');
+                const badge = item.querySelector('.count-badge');
+                if (filterKey && badge) {
+                    badge.textContent = typeCounts[filterKey] || 0;
+                }
+            });
+
+            // For audience counts: exclude audience filters, include everything else
+            let essaysForAudienceCounts = [...allEssays];
+
+            // Apply topic filters
+            if (selectedTopicPaths.length > 0) {
+                essaysForAudienceCounts = essaysForAudienceCounts.filter(essay => {
+                    return selectedTopicPaths.some(selectedPath => {
+                        return essay.Topics.some(t => {
+                            const [topic, secondLevel, thirdLevel] = selectedPath;
+                            if (t.topic !== topic) return false;
+                            if (!secondLevel) return true;
+                            if (!thirdLevel) {
+                                if (t.subtopics) {
+                                    return t.subtopics.some(subObj => {
+                                        if (!subObj.category && subObj.items && subObj.items.includes(secondLevel)) {
+                                            return true;
+                                        }
+                                        if (subObj.category === secondLevel) {
+                                            return true;
+                                        }
+                                        return false;
+                                    });
+                                }
+                                return false;
+                            } else {
+                                if (t.subtopics) {
+                                    return t.subtopics.some(subObj => {
+                                        return subObj.category === secondLevel &&
+                                               subObj.items &&
+                                               subObj.items.includes(thirdLevel);
+                                    });
+                                }
+                                return false;
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Apply essay type filters
+            if (selectedEssayTypes.length > 0) {
+                essaysForAudienceCounts = essaysForAudienceCounts.filter(essay =>
+                    essay.EssayType && selectedEssayTypes.some(type => essay.EssayType.includes(type))
+                );
+            }
+
+            // Apply reading time and year filters
+            essaysForAudienceCounts = essaysForAudienceCounts.filter(essay =>
+                essay.ReadingTime >= minTime && essay.ReadingTime <= maxTime &&
+                essay.Year >= minYear && essay.Year <= maxYear
+            );
+
+            if (currentView === 'bookmarked') {
+                const bookmarks = getBookmarks();
+                essaysForAudienceCounts = essaysForAudienceCounts.filter(essay => bookmarks.includes(essay.Title));
+            }
+
+            // Count essays for each audience
+            const audienceCounts = {};
+            essaysForAudienceCounts.forEach(essay => {
+                if (essay.Audience) {
+                    essay.Audience.forEach(aud => {
+                        audienceCounts[`audience:${aud}`] = (audienceCounts[`audience:${aud}`] || 0) + 1;
+                    });
+                }
+            });
+
+            // Update audience badges
+            document.querySelectorAll('#audienceTree .tree-item[data-filter-key]').forEach(item => {
+                const filterKey = item.getAttribute('data-filter-key');
+                const badge = item.querySelector('.count-badge');
+                if (filterKey && badge) {
+                    badge.textContent = audienceCounts[filterKey] || 0;
+                }
+            });
         }
 
         // ========== TOPIC TREE FUNCTIONS ==========
 
-        function createTreeItem(label, count, level, onClick) {
+        function createTreeItem(label, count, level, onClick, dataKey = null) {
             const item = document.createElement('div');
             item.className = 'tree-item';
             if (level > 1) {
                 item.classList.add(`tree-level-${level}`);
+            }
+
+            // Add data attribute for easier lookup
+            if (dataKey) {
+                item.setAttribute('data-filter-key', dataKey);
             }
 
             const labelSpan = document.createElement('span');
@@ -458,98 +697,137 @@
         }
 
         function handleTopicClick(topicName) {
-            // Clear previous selection
-            selectedTopicPath = [topicName];
-
             // Toggle expansion
             const childrenContainer = document.getElementById(`children-${topicName}`);
-            const wasExpanded = childrenContainer.classList.contains('expanded');
+            childrenContainer.classList.toggle('expanded');
 
-            // Collapse all other topics
-            document.querySelectorAll('.tree-children').forEach(el => el.classList.remove('expanded'));
-            document.querySelectorAll('.tree-item').forEach(el => el.classList.remove('selected'));
-
-            if (!wasExpanded) {
-                childrenContainer.classList.add('expanded');
-            } else {
-                selectedTopicPath = [];
-            }
-
-            updateTreeSelection();
-            applySortAndFilter();
+            // Toggle selection
+            const path = [topicName];
+            toggleTopicSelection(path);
         }
 
         function handleCategoryClick(topicName, categoryName) {
-            selectedTopicPath = [topicName, categoryName];
-
             // Toggle expansion
             const childrenContainer = document.getElementById(`children-${topicName}-${categoryName}`);
-            const wasExpanded = childrenContainer.classList.contains('expanded');
+            childrenContainer.classList.toggle('expanded');
 
-            // Collapse all category children
-            document.querySelectorAll(`[id^="children-${topicName}-"]`).forEach(el => {
-                if (el.id !== `children-${topicName}`) {
-                    el.classList.remove('expanded');
-                }
-            });
-
-            if (!wasExpanded) {
-                childrenContainer.classList.add('expanded');
-            } else {
-                selectedTopicPath = [topicName];
-            }
-
-            updateTreeSelection();
-            applySortAndFilter();
+            // Toggle selection
+            const path = [topicName, categoryName];
+            toggleTopicSelection(path);
         }
 
         function handleDirectItemClick(topicName, itemName) {
-            // For two-level structure (no category)
-            selectedTopicPath = [topicName, itemName];
-            updateTreeSelection();
-            applySortAndFilter();
+            // For two-level structure (no category) - toggle selection
+            const path = [topicName, itemName];
+            toggleTopicSelection(path);
         }
 
         function handleItemClick(topicName, categoryName, itemName) {
-            // For three-level structure (with category)
-            selectedTopicPath = [topicName, categoryName, itemName];
+            // For three-level structure (with category) - toggle selection
+            const path = [topicName, categoryName, itemName];
+            toggleTopicSelection(path);
+        }
+
+        function toggleTopicSelection(path) {
+            // Check if this path is already selected
+            const pathString = JSON.stringify(path);
+            const existingIndex = selectedTopicPaths.findIndex(p => JSON.stringify(p) === pathString);
+
+            // Also check if any descendants are selected (even if this path itself isn't)
+            const hasDescendants = selectedTopicPaths.some(p =>
+                p.length > path.length &&
+                path.every((item, index) => item === p[index])
+            );
+
+            if (existingIndex >= 0 || hasDescendants) {
+                // Deselecting - remove it and any descendants
+                selectedTopicPaths = selectedTopicPaths.filter(existingPath => {
+                    // Remove the path itself
+                    if (JSON.stringify(existingPath) === pathString) return false;
+
+                    // Remove any descendants (children, grandchildren, etc.)
+                    const isDescendant = existingPath.length > path.length &&
+                                        path.every((item, index) => item === existingPath[index]);
+                    return !isDescendant;
+                });
+
+                // If this path has a parent and no siblings are selected, re-select the parent
+                if (path.length > 1) {
+                    const parentPath = path.slice(0, -1);
+                    const hasSiblings = selectedTopicPaths.some(p => {
+                        // Check if any selected path is a sibling (same parent, different last element)
+                        return p.length === path.length &&
+                               p.slice(0, -1).every((item, index) => item === parentPath[index]) &&
+                               p[p.length - 1] !== path[p.length - 1];
+                    });
+
+                    if (!hasSiblings) {
+                        selectedTopicPaths.push(parentPath);
+                    }
+                }
+            } else {
+                // Before adding, remove any ancestor or descendant paths
+                selectedTopicPaths = selectedTopicPaths.filter(existingPath => {
+                    const existingPathString = JSON.stringify(existingPath);
+
+                    // Check if existingPath is an ancestor of the new path
+                    // (e.g., ["Startups"] is ancestor of ["Startups", "Funding and Finance"])
+                    const isAncestor = path.length > existingPath.length &&
+                                      existingPath.every((item, index) => item === path[index]);
+
+                    // Check if existingPath is a descendant of the new path
+                    // (e.g., ["Startups", "Funding and Finance", "Exits"] is descendant of ["Startups"])
+                    const isDescendant = existingPath.length > path.length &&
+                                        path.every((item, index) => item === existingPath[index]);
+
+                    // Keep the path only if it's neither an ancestor nor descendant
+                    return !isAncestor && !isDescendant;
+                });
+
+                // Add the new path
+                selectedTopicPaths.push(path);
+            }
+
             updateTreeSelection();
             applySortAndFilter();
         }
 
         function updateTreeSelection() {
-            // Remove all selected states
-            document.querySelectorAll('.tree-item').forEach(el => el.classList.remove('selected'));
+            // Remove all selected states from filter items only (not sort items)
+            document.querySelectorAll('#topicTree .tree-item, #essayTypeTree .tree-item, #audienceTree .tree-item').forEach(el => {
+                el.classList.remove('selected');
+            });
 
-            // Add selected state to items in the path
-            if (selectedTopicPath.length > 0) {
-                // Find and select based on path
+            // Add selected state to topic items
+            if (selectedTopicPaths.length > 0) {
                 const topicItems = document.querySelectorAll('#topicTree .tree-item');
                 topicItems.forEach(item => {
                     const label = item.querySelector('.tree-item-label').textContent;
-                    if (selectedTopicPath.includes(label)) {
+                    // Check if this label is in any of the selected paths
+                    const isSelected = selectedTopicPaths.some(path => path.includes(label));
+                    if (isSelected) {
                         item.classList.add('selected');
                     }
                 });
             }
 
             // Update essay type selection
-            if (selectedEssayType) {
+            if (selectedEssayTypes.length > 0) {
                 const essayTypeItems = document.querySelectorAll('#essayTypeTree .tree-item');
                 essayTypeItems.forEach(item => {
                     const label = item.querySelector('.tree-item-label').textContent;
-                    if (label === selectedEssayType) {
+                    if (selectedEssayTypes.includes(label)) {
                         item.classList.add('selected');
                     }
                 });
             }
 
             // Update audience selection
-            if (selectedAudience) {
+            if (selectedAudiences.length > 0) {
                 const audienceItems = document.querySelectorAll('#audienceTree .tree-item');
                 audienceItems.forEach(item => {
                     const label = item.querySelector('.tree-item-label').textContent;
-                    if (label === selectedAudience) {
+                    if (selectedAudiences.includes(label)) {
                         item.classList.add('selected');
                     }
                 });
@@ -558,10 +836,11 @@
 
         function handleEssayTypeClick(essayType) {
             // Toggle selection
-            if (selectedEssayType === essayType) {
-                selectedEssayType = null;
+            const index = selectedEssayTypes.indexOf(essayType);
+            if (index >= 0) {
+                selectedEssayTypes.splice(index, 1);
             } else {
-                selectedEssayType = essayType;
+                selectedEssayTypes.push(essayType);
             }
             updateTreeSelection();
             applySortAndFilter();
@@ -569,10 +848,11 @@
 
         function handleAudienceClick(audience) {
             // Toggle selection
-            if (selectedAudience === audience) {
-                selectedAudience = null;
+            const index = selectedAudiences.indexOf(audience);
+            if (index >= 0) {
+                selectedAudiences.splice(index, 1);
             } else {
-                selectedAudience = audience;
+                selectedAudiences.push(audience);
             }
             updateTreeSelection();
             applySortAndFilter();
@@ -629,7 +909,7 @@
             // Sort topics by count (descending)
             Object.keys(topicHierarchy).sort((a, b) => topicHierarchy[b].count - topicHierarchy[a].count).forEach(topicName => {
                 const topicData = topicHierarchy[topicName];
-                const topicItem = createTreeItem(topicName, topicData.count, 1, () => handleTopicClick(topicName));
+                const topicItem = createTreeItem(topicName, topicData.count, 1, () => handleTopicClick(topicName), topicName);
                 topicTree.appendChild(topicItem);
 
                 // Create children container
@@ -640,14 +920,14 @@
                 // Add direct items (two-level structure)
                 Object.keys(topicData.directItems).sort().forEach(itemName => {
                     const itemCount = topicData.directItems[itemName];
-                    const itemElement = createTreeItem(itemName, itemCount, 2, () => handleDirectItemClick(topicName, itemName));
+                    const itemElement = createTreeItem(itemName, itemCount, 2, () => handleDirectItemClick(topicName, itemName), `${topicName}|${itemName}`);
                     childrenContainer.appendChild(itemElement);
                 });
 
                 // Add categories (three-level structure)
                 Object.keys(topicData.categories).sort().forEach(categoryName => {
                     const categoryData = topicData.categories[categoryName];
-                    const categoryItem = createTreeItem(categoryName, categoryData.count, 2, () => handleCategoryClick(topicName, categoryName));
+                    const categoryItem = createTreeItem(categoryName, categoryData.count, 2, () => handleCategoryClick(topicName, categoryName), `${topicName}|${categoryName}`);
                     childrenContainer.appendChild(categoryItem);
 
                     // Create children container for items under category
@@ -657,7 +937,7 @@
 
                     Object.keys(categoryData.items).sort().forEach(itemName => {
                         const itemCount = categoryData.items[itemName];
-                        const itemElement = createTreeItem(itemName, itemCount, 3, () => handleItemClick(topicName, categoryName, itemName));
+                        const itemElement = createTreeItem(itemName, itemCount, 3, () => handleItemClick(topicName, categoryName, itemName), `${topicName}|${categoryName}|${itemName}`);
                         itemsContainer.appendChild(itemElement);
                     });
 
@@ -685,7 +965,7 @@
             // Sort essay types by count (descending)
             Object.keys(essayTypeCounts).sort((a, b) => essayTypeCounts[b] - essayTypeCounts[a]).forEach(type => {
                 const count = essayTypeCounts[type];
-                const item = createTreeItem(type, count, 1, () => handleEssayTypeClick(type));
+                const item = createTreeItem(type, count, 1, () => handleEssayTypeClick(type), `type:${type}`);
                 essayTypeTree.appendChild(item);
             });
 
@@ -707,7 +987,7 @@
             // Sort audiences by count (descending)
             Object.keys(audienceCounts).sort((a, b) => audienceCounts[b] - audienceCounts[a]).forEach(audience => {
                 const count = audienceCounts[audience];
-                const item = createTreeItem(audience, count, 1, () => handleAudienceClick(audience));
+                const item = createTreeItem(audience, count, 1, () => handleAudienceClick(audience), `audience:${audience}`);
                 audienceTree.appendChild(item);
             });
         }
@@ -760,13 +1040,48 @@
                 timeTag.textContent = essay.ReadingTime + ' min';
                 tagsContainer.appendChild(timeTag);
 
-                // Add topic tags
+                // Add topic tags (more specific with subtopics)
                 essay.Topics.forEach(topic => {
-                    const topicTag = document.createElement('span');
-                    topicTag.className = 'tag topic-tag';
-                    topicTag.textContent = topic.topic;
-                    tagsContainer.appendChild(topicTag);
+                    if (topic.subtopics && topic.subtopics.length > 0) {
+                        // Show topic with each subtopic item
+                        topic.subtopics.forEach(subObj => {
+                            if (subObj.items && subObj.items.length > 0) {
+                                subObj.items.forEach(item => {
+                                    const topicTag = document.createElement('span');
+                                    topicTag.className = 'tag topic-tag';
+                                    topicTag.textContent = `${topic.topic}: ${item}`;
+                                    tagsContainer.appendChild(topicTag);
+                                });
+                            }
+                        });
+                    } else {
+                        // No subtopics, just show the topic
+                        const topicTag = document.createElement('span');
+                        topicTag.className = 'tag topic-tag';
+                        topicTag.textContent = topic.topic;
+                        tagsContainer.appendChild(topicTag);
+                    }
                 });
+
+                // Add essay type tags
+                if (essay.EssayType && essay.EssayType.length > 0) {
+                    essay.EssayType.forEach(type => {
+                        const typeTag = document.createElement('span');
+                        typeTag.className = 'tag type-tag';
+                        typeTag.textContent = type;
+                        tagsContainer.appendChild(typeTag);
+                    });
+                }
+
+                // Add audience tags
+                if (essay.Audience && essay.Audience.length > 0) {
+                    essay.Audience.forEach(audience => {
+                        const audienceTag = document.createElement('span');
+                        audienceTag.className = 'tag audience-tag';
+                        audienceTag.textContent = audience;
+                        tagsContainer.appendChild(audienceTag);
+                    });
+                }
 
                 // Create content wrapper
                 const contentWrapper = document.createElement('div');

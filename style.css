@@ -428,6 +428,16 @@ input[type="range"]::-moz-range-thumb {
     color: #991b1b;
 }
 
+.type-tag {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.audience-tag {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
 a {
     color: #6f1314;
     text-decoration: none;

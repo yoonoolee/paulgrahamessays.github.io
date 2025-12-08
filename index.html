@@ -12,6 +12,7 @@
             <h1>Paul Graham Essays</h1>
             <div class="search-container">
                 <input type="text" class="search-bar" placeholder="Search essays...">
+                <span class="search-clear" onclick="clearSearch()">×</span>
             </div>
         </div>
     </header>
@@ -226,6 +227,72 @@
         let yearMax = 2025;
         let timeMin = 0;
         let timeMax = 60;
+        let searchQuery = '';
+        let idfScores = {}; // Pre-computed IDF scores for all terms
+
+        // ========== TF-IDF FUNCTIONS ==========
+
+        /**
+         * Tokenize text: lowercase, split on non-alphanumeric, filter empty
+         */
+        function tokenize(text) {
+            return text
+                .toLowerCase()
+                .split(/[^a-z0-9]+/)
+                .filter(token => token.length > 0);
+        }
+
+        /**
+         * Compute IDF scores for all terms in the corpus
+         * IDF(term) = log(N / df) where N = total docs, df = docs containing term
+         */
+        function computeIDF(essays) {
+            const N = essays.length;
+            const termDocFreq = {}; // term -> number of documents containing it
+
+            // Count document frequency for each term
+            essays.forEach(essay => {
+                const tokens = new Set(tokenize(essay.Title)); // Use Set to count each term once per doc
+                tokens.forEach(token => {
+                    termDocFreq[token] = (termDocFreq[token] || 0) + 1;
+                });
+            });
+
+            // Compute IDF for each term
+            const idf = {};
+            for (const term in termDocFreq) {
+                idf[term] = Math.log(N / termDocFreq[term]);
+            }
+
+            return idf;
+        }
+
+        /**
+         * Compute TF-IDF score for a query against a document
+         * Returns sum of (TF * IDF) for each query term
+         */
+        function computeTFIDF(query, documentTitle) {
+            const queryTokens = tokenize(query);
+            const docTokens = tokenize(documentTitle);
+
+            if (queryTokens.length === 0) return 0;
+
+            // Compute term frequency in document
+            const tf = {};
+            docTokens.forEach(token => {
+                tf[token] = (tf[token] || 0) + 1;
+            });
+
+            // Compute TF-IDF score
+            let score = 0;
+            queryTokens.forEach(queryTerm => {
+                const termFreq = tf[queryTerm] || 0;
+                const idf = idfScores[queryTerm] || 0;
+                score += termFreq * idf;
+            });
+
+            return score;
+        }
 
         function toggleView(view) {
             currentView = view;
@@ -390,8 +457,29 @@
             // Filter by reading time range
             essays = essays.filter(essay => essay.ReadingTime >= timeMin && essay.ReadingTime <= timeMax);
 
+            // Filter by search query and compute TF-IDF scores
+            const hasSearchQuery = searchQuery.trim() !== '';
+            if (hasSearchQuery) {
+                // Filter essays that contain at least one query term
+                essays = essays.filter(essay => {
+                    const score = computeTFIDF(searchQuery, essay.Title);
+                    essay._tfidfScore = score; // Store score for sorting
+                    return score > 0;
+                });
+            }
+
             // Sort - with primary and secondary criteria
             essays.sort((a, b) => {
+                // If there's a search query, sort by TF-IDF score first
+                if (hasSearchQuery) {
+                    const scoreA = a._tfidfScore || 0;
+                    const scoreB = b._tfidfScore || 0;
+                    if (scoreB !== scoreA) {
+                        return scoreB - scoreA; // Higher scores first
+                    }
+                    // If TF-IDF scores are equal, fall through to regular sorting
+                }
+
                 // Apply primary sort
                 let primaryResult = 0;
                 switch(primarySort) {
@@ -461,6 +549,13 @@
                 essay.Year >= yearMin && essay.Year <= yearMax &&
                 essay.ReadingTime >= timeMin && essay.ReadingTime <= timeMax
             );
+
+            // Apply search filter
+            if (searchQuery.trim() !== '') {
+                essaysForTopicCounts = essaysForTopicCounts.filter(essay => {
+                    return computeTFIDF(searchQuery, essay.Title) > 0;
+                });
+            }
 
             // Count essays for each topic/category/item
             const topicCounts = {};
@@ -556,6 +651,13 @@
                 essay.ReadingTime >= timeMin && essay.ReadingTime <= timeMax
             );
 
+            // Apply search filter
+            if (searchQuery.trim() !== '') {
+                essaysForTypeCounts = essaysForTypeCounts.filter(essay => {
+                    return computeTFIDF(searchQuery, essay.Title) > 0;
+                });
+            }
+
             // Count essays for each essay type
             const typeCounts = {};
             essaysForTypeCounts.forEach(essay => {
@@ -631,6 +733,13 @@
                 essay.Year >= yearMin && essay.Year <= yearMax &&
                 essay.ReadingTime >= timeMin && essay.ReadingTime <= timeMax
             );
+
+            // Apply search filter
+            if (searchQuery.trim() !== '') {
+                essaysForAudienceCounts = essaysForAudienceCounts.filter(essay => {
+                    return computeTFIDF(searchQuery, essay.Title) > 0;
+                });
+            }
 
             // Count essays for each audience
             const audienceCounts = {};
@@ -909,6 +1018,19 @@
 
             // Update UI and apply sort
             updateSortBadges();
+            applySortAndFilter();
+        }
+
+        function clearSearch() {
+            // Clear the search input
+            const searchBar = document.querySelector('.search-bar');
+            const searchClear = document.querySelector('.search-clear');
+
+            searchBar.value = '';
+            searchQuery = '';
+            searchClear.classList.remove('visible');
+
+            // Re-apply filters without search
             applySortAndFilter();
         }
 
@@ -1387,10 +1509,30 @@
             .then(data => {
                 allEssays = data.essays;
 
+                // Pre-compute IDF scores for TF-IDF search ranking
+                idfScores = computeIDF(allEssays);
+
                 populateFilters();
                 initRangeSliders(); // Initialize year and reading time sliders
                 updateSortBadges(); // Show initial sort badge
                 applySortAndFilter();
+
+                // Add search functionality
+                const searchBar = document.querySelector('.search-bar');
+                const searchClear = document.querySelector('.search-clear');
+
+                searchBar.addEventListener('input', (e) => {
+                    searchQuery = e.target.value;
+
+                    // Show/hide clear button
+                    if (searchQuery.trim() !== '') {
+                        searchClear.classList.add('visible');
+                    } else {
+                        searchClear.classList.remove('visible');
+                    }
+
+                    applySortAndFilter();
+                });
             })
             .catch(error => {
                 console.error('Error loading essays:', error);

@@ -1083,14 +1083,56 @@
                 childrenContainer.id = `children-${topicName}`;
 
                 // Add direct items (two-level structure)
-                Object.keys(topicData.directItems).sort().forEach(itemName => {
+                // Custom order for specific topics with direct items
+                const directItemKeys = Object.keys(topicData.directItems);
+                if (topicName === 'Society') {
+                    const societyOrder = ['Social Commentary', 'Philosophy', 'Economics and Policy', 'Education'];
+                    directItemKeys.sort((a, b) => {
+                        const indexA = societyOrder.indexOf(a);
+                        const indexB = societyOrder.indexOf(b);
+                        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                        if (indexA !== -1) return -1;
+                        if (indexB !== -1) return 1;
+                        return a.localeCompare(b);
+                    });
+                } else if (topicName === 'Communication') {
+                    const communicationOrder = ['Writing', 'Media'];
+                    directItemKeys.sort((a, b) => {
+                        const indexA = communicationOrder.indexOf(a);
+                        const indexB = communicationOrder.indexOf(b);
+                        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                        if (indexA !== -1) return -1;
+                        if (indexB !== -1) return 1;
+                        return a.localeCompare(b);
+                    });
+                } else {
+                    directItemKeys.sort();
+                }
+
+                directItemKeys.forEach(itemName => {
                     const itemCount = topicData.directItems[itemName];
                     const itemElement = createTreeItem(itemName, itemCount, 2, () => handleDirectItemClick(topicName, itemName), `${topicName}|${itemName}`);
                     childrenContainer.appendChild(itemElement);
                 });
 
                 // Add categories (three-level structure)
-                Object.keys(topicData.categories).sort().forEach(categoryName => {
+                // Custom order for Startups categories
+                const categoryKeys = Object.keys(topicData.categories);
+                if (topicName === 'Startups') {
+                    const startupsOrder = ['The Startup World', 'Getting Started', 'Running a Startup', 'Funding & Finance'];
+                    categoryKeys.sort((a, b) => {
+                        const indexA = startupsOrder.indexOf(a);
+                        const indexB = startupsOrder.indexOf(b);
+                        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                        if (indexA !== -1) return -1;
+                        if (indexB !== -1) return 1;
+                        return a.localeCompare(b);
+                    });
+                } else {
+                    categoryKeys.sort();
+                }
+
+                categoryKeys.forEach(categoryName => {
                     const categoryData = topicData.categories[categoryName];
                     const categoryItem = createTreeItem(categoryName, categoryData.count, 2, () => handleCategoryClick(topicName, categoryName), `${topicName}|${categoryName}`);
                     childrenContainer.appendChild(categoryItem);
@@ -1100,7 +1142,53 @@
                     itemsContainer.className = 'tree-children';
                     itemsContainer.id = `children-${topicName}-${categoryName}`;
 
-                    Object.keys(categoryData.items).sort().forEach(itemName => {
+                    // Custom order for specific Startups categories
+                    const itemKeys = Object.keys(categoryData.items);
+                    if (topicName === 'Startups' && categoryName === 'The Startup World') {
+                        const startupWorldOrder = ['YC', 'Startup Landscape', 'Startup Hubs'];
+                        itemKeys.sort((a, b) => {
+                            const indexA = startupWorldOrder.indexOf(a);
+                            const indexB = startupWorldOrder.indexOf(b);
+                            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                            if (indexA !== -1) return -1;
+                            if (indexB !== -1) return 1;
+                            return a.localeCompare(b);
+                        });
+                    } else if (topicName === 'Startups' && categoryName === 'Getting Started') {
+                        const gettingStartedOrder = ['Starting a Company', 'Ideas'];
+                        itemKeys.sort((a, b) => {
+                            const indexA = gettingStartedOrder.indexOf(a);
+                            const indexB = gettingStartedOrder.indexOf(b);
+                            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                            if (indexA !== -1) return -1;
+                            if (indexB !== -1) return 1;
+                            return a.localeCompare(b);
+                        });
+                    } else if (topicName === 'Startups' && categoryName === 'Running a Startup') {
+                        const runningStartupOrder = ['Founder Life', 'Strategy and Growth', 'Failure'];
+                        itemKeys.sort((a, b) => {
+                            const indexA = runningStartupOrder.indexOf(a);
+                            const indexB = runningStartupOrder.indexOf(b);
+                            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                            if (indexA !== -1) return -1;
+                            if (indexB !== -1) return 1;
+                            return a.localeCompare(b);
+                        });
+                    } else if (topicName === 'Startups' && categoryName === 'Funding & Finance') {
+                        const fundingFinanceOrder = ['Funding and Investing', 'Runway', 'Exits'];
+                        itemKeys.sort((a, b) => {
+                            const indexA = fundingFinanceOrder.indexOf(a);
+                            const indexB = fundingFinanceOrder.indexOf(b);
+                            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                            if (indexA !== -1) return -1;
+                            if (indexB !== -1) return 1;
+                            return a.localeCompare(b);
+                        });
+                    } else {
+                        itemKeys.sort();
+                    }
+
+                    itemKeys.forEach(itemName => {
                         const itemCount = categoryData.items[itemName];
                         const itemElement = createTreeItem(itemName, itemCount, 3, () => handleItemClick(topicName, categoryName, itemName), `${topicName}|${categoryName}|${itemName}`);
                         itemsContainer.appendChild(itemElement);

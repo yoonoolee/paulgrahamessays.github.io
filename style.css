@@ -93,8 +93,8 @@ h1 {
 }
 
 .right-pane {
-    flex: 1;
-    min-width: 400px;
+    flex: 0 0 auto;
+    min-width: 600px;
     background: white;
     display: none;
     flex-direction: column;

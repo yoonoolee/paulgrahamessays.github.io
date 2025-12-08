@@ -43,28 +43,6 @@
                 </div>
             </div>
 
-            <div class="filter-group">
-                <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Reading Time (min)</label>
-                <div class="filter-content collapsed">
-                    <div class="dual-slider-container">
-                        <input type="range" id="timeMinSlider" class="dual-slider dual-slider-min" step="1" oninput="updateTimeLabels(); applySortAndFilter()">
-                        <input type="range" id="timeMaxSlider" class="dual-slider dual-slider-max" step="1" oninput="updateTimeLabels(); applySortAndFilter()">
-                    </div>
-                    <div class="slider-label"><span id="timeMinLabel"></span> - <span id="timeMaxLabel"></span> min</div>
-                </div>
-            </div>
-
-            <div class="filter-group">
-                <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Year</label>
-                <div class="filter-content collapsed">
-                    <div class="dual-slider-container">
-                        <input type="range" id="yearMinSlider" class="dual-slider dual-slider-min" step="1" oninput="updateYearLabels(); applySortAndFilter()">
-                        <input type="range" id="yearMaxSlider" class="dual-slider dual-slider-max" step="1" oninput="updateYearLabels(); applySortAndFilter()">
-                    </div>
-                    <div class="slider-label"><span id="yearMinLabel"></span> - <span id="yearMaxLabel"></span></div>
-                </div>
-            </div>
-
             <div class="section-divider">
                 <h3 class="section-title">Sort</h3>
             </div>
@@ -104,9 +82,6 @@
         </div>
 
         <div class="right-pane" id="rightPane">
-            <div class="preview-header">
-                <div class="preview-title" id="previewTitle"></div>
-            </div>
             <div class="preview-container" id="previewContainer"></div>
         </div>
     </div>
@@ -159,18 +134,24 @@
 
         let currentlySelectedEssay = null;
 
-        function togglePreview(essay) {
+        function togglePreview(essay, titleElement) {
             const rightPane = document.getElementById('rightPane');
-            const previewTitle = document.getElementById('previewTitle');
             const previewContainer = document.getElementById('previewContainer');
 
             // If clicking the same essay, close the preview
             if (currentlySelectedEssay && currentlySelectedEssay.Title === essay.Title) {
                 rightPane.classList.remove('visible');
                 currentlySelectedEssay = null;
+                // Remove selected class from all titles
+                document.querySelectorAll('.essay-title').forEach(t => t.classList.remove('selected'));
             } else {
+                // Remove selected class from all titles
+                document.querySelectorAll('.essay-title').forEach(t => t.classList.remove('selected'));
+                // Add selected class to clicked title
+                if (titleElement) {
+                    titleElement.classList.add('selected');
+                }
                 // Open preview with new essay
-                previewTitle.textContent = essay.Title;
                 previewContainer.innerHTML = `<iframe class="preview-iframe" src="${essay.URL}"></iframe>`;
                 rightPane.classList.add('visible');
                 currentlySelectedEssay = essay;
@@ -181,6 +162,8 @@
             const rightPane = document.getElementById('rightPane');
             rightPane.classList.remove('visible');
             currentlySelectedEssay = null;
+            // Remove selected class from all titles
+            document.querySelectorAll('.essay-title').forEach(t => t.classList.remove('selected'));
         }
 
         // ========== FILTER SECTION COLLAPSE ==========
@@ -288,38 +271,6 @@
             return null;
         }
 
-        function updateTimeLabels() {
-            const minSlider = document.getElementById('timeMinSlider');
-            const maxSlider = document.getElementById('timeMaxSlider');
-            let minValue = parseInt(minSlider.value);
-            let maxValue = parseInt(maxSlider.value);
-
-            // Ensure min doesn't exceed max
-            if (minValue > maxValue) {
-                minSlider.value = maxValue;
-                minValue = maxValue;
-            }
-
-            document.getElementById('timeMinLabel').textContent = minValue;
-            document.getElementById('timeMaxLabel').textContent = maxValue;
-        }
-
-        function updateYearLabels() {
-            const minSlider = document.getElementById('yearMinSlider');
-            const maxSlider = document.getElementById('yearMaxSlider');
-            let minValue = parseInt(minSlider.value);
-            let maxValue = parseInt(maxSlider.value);
-
-            // Ensure min doesn't exceed max
-            if (minValue > maxValue) {
-                minSlider.value = maxValue;
-                minValue = maxValue;
-            }
-
-            document.getElementById('yearMinLabel').textContent = minValue;
-            document.getElementById('yearMaxLabel').textContent = maxValue;
-        }
-
         function applySortAndFilter() {
             let essays = [...allEssays];
 
@@ -391,16 +342,6 @@
                 );
             }
 
-            // Filter by reading time (sliders)
-            const minTime = parseInt(document.getElementById('timeMinSlider').value);
-            const maxTime = parseInt(document.getElementById('timeMaxSlider').value);
-            essays = essays.filter(essay => essay.ReadingTime >= minTime && essay.ReadingTime <= maxTime);
-
-            // Filter by year (sliders)
-            const minYear = parseInt(document.getElementById('yearMinSlider').value);
-            const maxYear = parseInt(document.getElementById('yearMaxSlider').value);
-            essays = essays.filter(essay => essay.Year >= minYear && essay.Year <= maxYear);
-
             // Sort - with primary and secondary criteria
             essays.sort((a, b) => {
                 // Apply primary sort
@@ -460,20 +401,6 @@
                     essay.Audience && selectedAudiences.some(aud => essay.Audience.includes(aud))
                 );
             }
-
-            // Apply reading time filter
-            const minTime = parseInt(document.getElementById('timeMinSlider').value);
-            const maxTime = parseInt(document.getElementById('timeMaxSlider').value);
-            essaysForTopicCounts = essaysForTopicCounts.filter(essay =>
-                essay.ReadingTime >= minTime && essay.ReadingTime <= maxTime
-            );
-
-            // Apply year filter
-            const minYear = parseInt(document.getElementById('yearMinSlider').value);
-            const maxYear = parseInt(document.getElementById('yearMaxSlider').value);
-            essaysForTopicCounts = essaysForTopicCounts.filter(essay =>
-                essay.Year >= minYear && essay.Year <= maxYear
-            );
 
             // Apply view filter
             if (currentView === 'bookmarked') {
@@ -564,12 +491,6 @@
                 );
             }
 
-            // Apply reading time and year filters
-            essaysForTypeCounts = essaysForTypeCounts.filter(essay =>
-                essay.ReadingTime >= minTime && essay.ReadingTime <= maxTime &&
-                essay.Year >= minYear && essay.Year <= maxYear
-            );
-
             if (currentView === 'bookmarked') {
                 const bookmarks = getBookmarks();
                 essaysForTypeCounts = essaysForTypeCounts.filter(essay => bookmarks.includes(essay.Title));
@@ -639,12 +560,6 @@
                     essay.EssayType && selectedEssayTypes.some(type => essay.EssayType.includes(type))
                 );
             }
-
-            // Apply reading time and year filters
-            essaysForAudienceCounts = essaysForAudienceCounts.filter(essay =>
-                essay.ReadingTime >= minTime && essay.ReadingTime <= maxTime &&
-                essay.Year >= minYear && essay.Year <= maxYear
-            );
 
             if (currentView === 'bookmarked') {
                 const bookmarks = getBookmarks();
@@ -1026,10 +941,28 @@
                     toggleBookmark(essay.Title);
                 };
 
-                // Create title
+                // Create title with external link icon
                 const title = document.createElement('div');
                 title.className = 'essay-title';
-                title.textContent = essay.Title;
+
+                // Apply selected class if this is the currently selected essay
+                if (currentlySelectedEssay && currentlySelectedEssay.Title === essay.Title) {
+                    title.classList.add('selected');
+                }
+
+                const titleText = document.createElement('span');
+                titleText.textContent = essay.Title;
+
+                const externalIcon = document.createElement('a');
+                externalIcon.className = 'external-link-icon';
+                externalIcon.href = essay.URL;
+                externalIcon.target = '_blank';
+                externalIcon.onclick = (e) => {
+                    e.stopPropagation(); // Prevent triggering the preview
+                };
+
+                title.appendChild(titleText);
+                title.appendChild(externalIcon);
 
                 // Create tags container
                 const tagsContainer = document.createElement('div');
@@ -1105,7 +1038,11 @@
                     if (e.target.classList.contains('bookmark-btn')) {
                         return;
                     }
-                    togglePreview(essay);
+                    // Don't trigger if clicking the external link icon
+                    if (e.target.classList.contains('external-link-icon')) {
+                        return;
+                    }
+                    togglePreview(essay, title);
                 };
 
                 container.appendChild(item);
@@ -1118,40 +1055,6 @@
             .then(response => response.json())
             .then(data => {
                 allEssays = data.essays;
-
-                // Calculate dynamic min/max for reading time
-                const readingTimes = allEssays.map(e => e.ReadingTime);
-                const minTime = Math.min(...readingTimes);
-                const maxTime = Math.max(...readingTimes);
-
-                // Calculate dynamic min/max for year
-                const years = allEssays.map(e => e.Year);
-                const minYear = Math.min(...years);
-                const maxYear = Math.max(...years);
-
-                // Update reading time sliders
-                const timeMinSlider = document.getElementById('timeMinSlider');
-                const timeMaxSlider = document.getElementById('timeMaxSlider');
-                timeMinSlider.min = minTime;
-                timeMinSlider.max = maxTime;
-                timeMinSlider.value = minTime;
-                timeMaxSlider.min = minTime;
-                timeMaxSlider.max = maxTime;
-                timeMaxSlider.value = maxTime;
-
-                // Update year sliders
-                const yearMinSlider = document.getElementById('yearMinSlider');
-                const yearMaxSlider = document.getElementById('yearMaxSlider');
-                yearMinSlider.min = minYear;
-                yearMinSlider.max = maxYear;
-                yearMinSlider.value = minYear;
-                yearMaxSlider.min = minYear;
-                yearMaxSlider.max = maxYear;
-                yearMaxSlider.value = maxYear;
-
-                // Update labels
-                updateTimeLabels();
-                updateYearLabels();
 
                 populateFilters();
                 updateSortBadges(); // Show initial sort badge

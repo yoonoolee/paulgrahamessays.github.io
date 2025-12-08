@@ -18,14 +18,6 @@
 
     <div class="main-content">
         <div class="filters-sidebar">
-            <div class="filter-group">
-                <label class="filter-label">View</label>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" onclick="toggleView('all')">All</button>
-                    <button class="filter-btn" onclick="toggleView('bookmarked')">Bookmarked</button>
-                </div>
-            </div>
-
             <div class="section-divider">
                 <h3 class="section-title">Filter</h3>
             </div>
@@ -55,10 +47,10 @@
                 <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Reading Time (min)</label>
                 <div class="filter-content collapsed">
                     <div class="dual-slider-container">
-                        <input type="range" id="timeMinSlider" class="dual-slider dual-slider-min" min="5" max="70" step="5" value="5" oninput="updateTimeLabels(); applySortAndFilter()">
-                        <input type="range" id="timeMaxSlider" class="dual-slider dual-slider-max" min="5" max="70" step="5" value="70" oninput="updateTimeLabels(); applySortAndFilter()">
+                        <input type="range" id="timeMinSlider" class="dual-slider dual-slider-min" step="1" oninput="updateTimeLabels(); applySortAndFilter()">
+                        <input type="range" id="timeMaxSlider" class="dual-slider dual-slider-max" step="1" oninput="updateTimeLabels(); applySortAndFilter()">
                     </div>
-                    <div class="slider-label"><span id="timeMinLabel">5</span> - <span id="timeMaxLabel">70</span> min</div>
+                    <div class="slider-label"><span id="timeMinLabel"></span> - <span id="timeMaxLabel"></span> min</div>
                 </div>
             </div>
 
@@ -66,10 +58,10 @@
                 <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Year</label>
                 <div class="filter-content collapsed">
                     <div class="dual-slider-container">
-                        <input type="range" id="yearMinSlider" class="dual-slider dual-slider-min" min="1996" max="2025" value="1996" oninput="updateYearLabels(); applySortAndFilter()">
-                        <input type="range" id="yearMaxSlider" class="dual-slider dual-slider-max" min="1996" max="2025" value="2025" oninput="updateYearLabels(); applySortAndFilter()">
+                        <input type="range" id="yearMinSlider" class="dual-slider dual-slider-min" step="1" oninput="updateYearLabels(); applySortAndFilter()">
+                        <input type="range" id="yearMaxSlider" class="dual-slider dual-slider-max" step="1" oninput="updateYearLabels(); applySortAndFilter()">
                     </div>
-                    <div class="slider-label"><span id="yearMinLabel">1996</span> - <span id="yearMaxLabel">2025</span></div>
+                    <div class="slider-label"><span id="yearMinLabel"></span> - <span id="yearMaxLabel"></span></div>
                 </div>
             </div>
 
@@ -114,7 +106,6 @@
         <div class="right-pane" id="rightPane">
             <div class="preview-header">
                 <div class="preview-title" id="previewTitle"></div>
-                <button class="close-preview-btn" onclick="closePreview()">Close Preview</button>
             </div>
             <div class="preview-container" id="previewContainer"></div>
         </div>
@@ -166,19 +157,30 @@
 
         // ========== PREVIEW FUNCTIONS ==========
 
-        function openPreview(essay) {
+        let currentlySelectedEssay = null;
+
+        function togglePreview(essay) {
             const rightPane = document.getElementById('rightPane');
             const previewTitle = document.getElementById('previewTitle');
             const previewContainer = document.getElementById('previewContainer');
 
-            previewTitle.textContent = essay.Title;
-            previewContainer.innerHTML = `<iframe class="preview-iframe" src="${essay.URL}"></iframe>`;
-            rightPane.classList.add('visible');
+            // If clicking the same essay, close the preview
+            if (currentlySelectedEssay && currentlySelectedEssay.Title === essay.Title) {
+                rightPane.classList.remove('visible');
+                currentlySelectedEssay = null;
+            } else {
+                // Open preview with new essay
+                previewTitle.textContent = essay.Title;
+                previewContainer.innerHTML = `<iframe class="preview-iframe" src="${essay.URL}"></iframe>`;
+                rightPane.classList.add('visible');
+                currentlySelectedEssay = essay;
+            }
         }
 
         function closePreview() {
             const rightPane = document.getElementById('rightPane');
             rightPane.classList.remove('visible');
+            currentlySelectedEssay = null;
         }
 
         // ========== FILTER SECTION COLLAPSE ==========
@@ -1098,12 +1100,12 @@
                 item.appendChild(bookmarkBtn);
                 item.appendChild(contentWrapper);
 
-                // Add click handler to open preview
+                // Add click handler to toggle preview
                 item.onclick = (e) => {
                     if (e.target.classList.contains('bookmark-btn')) {
                         return;
                     }
-                    openPreview(essay);
+                    togglePreview(essay);
                 };
 
                 container.appendChild(item);
@@ -1116,6 +1118,41 @@
             .then(response => response.json())
             .then(data => {
                 allEssays = data.essays;
+
+                // Calculate dynamic min/max for reading time
+                const readingTimes = allEssays.map(e => e.ReadingTime);
+                const minTime = Math.min(...readingTimes);
+                const maxTime = Math.max(...readingTimes);
+
+                // Calculate dynamic min/max for year
+                const years = allEssays.map(e => e.Year);
+                const minYear = Math.min(...years);
+                const maxYear = Math.max(...years);
+
+                // Update reading time sliders
+                const timeMinSlider = document.getElementById('timeMinSlider');
+                const timeMaxSlider = document.getElementById('timeMaxSlider');
+                timeMinSlider.min = minTime;
+                timeMinSlider.max = maxTime;
+                timeMinSlider.value = minTime;
+                timeMaxSlider.min = minTime;
+                timeMaxSlider.max = maxTime;
+                timeMaxSlider.value = maxTime;
+
+                // Update year sliders
+                const yearMinSlider = document.getElementById('yearMinSlider');
+                const yearMaxSlider = document.getElementById('yearMaxSlider');
+                yearMinSlider.min = minYear;
+                yearMinSlider.max = maxYear;
+                yearMinSlider.value = minYear;
+                yearMaxSlider.min = minYear;
+                yearMaxSlider.max = maxYear;
+                yearMaxSlider.value = maxYear;
+
+                // Update labels
+                updateTimeLabels();
+                updateYearLabels();
+
                 populateFilters();
                 updateSortBadges(); // Show initial sort badge
                 applySortAndFilter();

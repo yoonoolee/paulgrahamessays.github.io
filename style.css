@@ -75,16 +75,17 @@ h1 {
 }
 
 .filters-sidebar {
-    width: 280px;
-    background-color: #fafafa;
-    padding: 2rem 1.5rem;
-    border-right: 1px solid #e5e7eb;
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    background-color: white;
+    padding: 2rem 2rem 2rem 4rem;
     overflow-y: auto;
-    flex-shrink: 0;
 }
 
 .middle-pane {
     flex: 1;
+    min-width: 400px;
     overflow-y: auto;
     background-color: white;
     padding: 2rem 3rem;
@@ -92,7 +93,8 @@ h1 {
 }
 
 .right-pane {
-    flex: 0.6;
+    flex: 1;
+    min-width: 400px;
     background: white;
     display: none;
     flex-direction: column;

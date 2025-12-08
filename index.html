@@ -20,6 +20,7 @@
         <div class="filters-sidebar">
             <div class="section-divider">
                 <h3 class="section-title">Filter</h3>
+                <span class="reset-filters-btn" onclick="resetFilters()">Reset Filter ×</span>
             </div>
 
             <div class="filter-group">
@@ -43,8 +44,45 @@
                 </div>
             </div>
 
+            <div class="filter-group">
+                <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Year</label>
+                <div class="filter-content collapsed">
+                    <div class="range-slider-container">
+                        <div class="range-values">
+                            <span>Min: <span class="range-value" id="yearMinValue">1996</span></span>
+                            <span>Max: <span class="range-value" id="yearMaxValue">2025</span></span>
+                        </div>
+                        <div class="dual-range-wrapper">
+                            <div class="range-track-bg"></div>
+                            <div class="range-track-fill" id="yearRangeTrack"></div>
+                            <input type="range" id="yearMinSlider" class="range-input range-min" min="1996" max="2025" value="1996" step="1">
+                            <input type="range" id="yearMaxSlider" class="range-input range-max" min="1996" max="2025" value="2025" step="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Reading Time (min)</label>
+                <div class="filter-content collapsed">
+                    <div class="range-slider-container">
+                        <div class="range-values">
+                            <span>Min: <span class="range-value" id="timeMinValue">0</span></span>
+                            <span>Max: <span class="range-value" id="timeMaxValue">70</span></span>
+                        </div>
+                        <div class="dual-range-wrapper">
+                            <div class="range-track-bg"></div>
+                            <div class="range-track-fill" id="timeRangeTrack"></div>
+                            <input type="range" id="timeMinSlider" class="range-input range-min" min="0" max="70" value="0" step="5">
+                            <input type="range" id="timeMaxSlider" class="range-input range-max" min="0" max="70" value="70" step="5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="section-divider">
                 <h3 class="section-title">Sort</h3>
+                <span class="reset-filters-btn" onclick="resetSort()">Reset Sort ×</span>
             </div>
 
             <div class="filter-group">
@@ -184,6 +222,10 @@
         let selectedTopicPaths = []; // Tracks multiple selected topic paths [[topic, category, item], ...]
         let selectedEssayTypes = []; // Tracks multiple selected essay types
         let selectedAudiences = []; // Tracks multiple selected audiences
+        let yearMin = 1996;
+        let yearMax = 2025;
+        let timeMin = 0;
+        let timeMax = 60;
 
         function toggleView(view) {
             currentView = view;
@@ -342,6 +384,12 @@
                 );
             }
 
+            // Filter by year range
+            essays = essays.filter(essay => essay.Year >= yearMin && essay.Year <= yearMax);
+
+            // Filter by reading time range
+            essays = essays.filter(essay => essay.ReadingTime >= timeMin && essay.ReadingTime <= timeMax);
+
             // Sort - with primary and secondary criteria
             essays.sort((a, b) => {
                 // Apply primary sort
@@ -407,6 +455,12 @@
                 const bookmarks = getBookmarks();
                 essaysForTopicCounts = essaysForTopicCounts.filter(essay => bookmarks.includes(essay.Title));
             }
+
+            // Apply year and reading time filters
+            essaysForTopicCounts = essaysForTopicCounts.filter(essay =>
+                essay.Year >= yearMin && essay.Year <= yearMax &&
+                essay.ReadingTime >= timeMin && essay.ReadingTime <= timeMax
+            );
 
             // Count essays for each topic/category/item
             const topicCounts = {};
@@ -496,6 +550,12 @@
                 essaysForTypeCounts = essaysForTypeCounts.filter(essay => bookmarks.includes(essay.Title));
             }
 
+            // Apply year and reading time filters
+            essaysForTypeCounts = essaysForTypeCounts.filter(essay =>
+                essay.Year >= yearMin && essay.Year <= yearMax &&
+                essay.ReadingTime >= timeMin && essay.ReadingTime <= timeMax
+            );
+
             // Count essays for each essay type
             const typeCounts = {};
             essaysForTypeCounts.forEach(essay => {
@@ -565,6 +625,12 @@
                 const bookmarks = getBookmarks();
                 essaysForAudienceCounts = essaysForAudienceCounts.filter(essay => bookmarks.includes(essay.Title));
             }
+
+            // Apply year and reading time filters
+            essaysForAudienceCounts = essaysForAudienceCounts.filter(essay =>
+                essay.Year >= yearMin && essay.Year <= yearMax &&
+                essay.ReadingTime >= timeMin && essay.ReadingTime <= timeMax
+            );
 
             // Count essays for each audience
             const audienceCounts = {};
@@ -778,6 +844,183 @@
             }
             updateTreeSelection();
             applySortAndFilter();
+        }
+
+        // ========== RESET FILTERS ==========
+
+        function resetFilters() {
+            // Clear all selections
+            selectedTopicPaths = [];
+            selectedEssayTypes = [];
+            selectedAudiences = [];
+
+            // Reset range sliders to full range
+            const yearMinSlider = document.getElementById('yearMinSlider');
+            const yearMaxSlider = document.getElementById('yearMaxSlider');
+            const timeMinSlider = document.getElementById('timeMinSlider');
+            const timeMaxSlider = document.getElementById('timeMaxSlider');
+
+            if (yearMinSlider) {
+                const minYear = parseInt(yearMinSlider.min);
+                const maxYear = parseInt(yearMaxSlider.max);
+                yearMin = minYear;
+                yearMax = maxYear;
+                yearMinSlider.value = yearMin;
+                yearMaxSlider.value = yearMax;
+                document.getElementById('yearMinValue').textContent = yearMin;
+                document.getElementById('yearMaxValue').textContent = yearMax;
+                updateRangeFill('year', minYear, maxYear);
+            }
+
+            if (timeMinSlider) {
+                const minTime = parseInt(timeMinSlider.min);
+                const maxTime = parseInt(timeMaxSlider.max);
+                timeMin = minTime;
+                timeMax = maxTime;
+                timeMinSlider.value = timeMin;
+                timeMaxSlider.value = timeMax;
+                document.getElementById('timeMinValue').textContent = timeMin;
+                document.getElementById('timeMaxValue').textContent = timeMax;
+                updateRangeFill('time', minTime, maxTime);
+            }
+
+            // Collapse all filter sections
+            document.querySelectorAll('.filters-sidebar .filter-label').forEach(label => {
+                label.classList.add('collapsed');
+                label.nextElementSibling.classList.add('collapsed');
+            });
+
+            // Update UI and apply filters
+            updateTreeSelection();
+            applySortAndFilter();
+        }
+
+        function resetSort() {
+            // Reset to default sort (newest first)
+            primarySort = 'date-desc';
+            secondarySort = null;
+            currentSort = 'date-desc';
+
+            // Collapse all filter sections (both filter and sort sections)
+            document.querySelectorAll('.filters-sidebar .filter-label').forEach(label => {
+                label.classList.add('collapsed');
+                label.nextElementSibling.classList.add('collapsed');
+            });
+
+            // Update UI and apply sort
+            updateSortBadges();
+            applySortAndFilter();
+        }
+
+        // ========== RANGE SLIDER FUNCTIONS ==========
+
+        function initRangeSliders() {
+            // Calculate min and max from the data
+            const years = allEssays.map(e => e.Year);
+            const times = allEssays.map(e => e.ReadingTime);
+
+            const minYear = Math.min(...years);
+            const maxYear = Math.max(...years);
+            const minTime = Math.min(...times);
+            const maxTime = Math.max(...times);
+
+            // Update slider attributes
+            document.getElementById('yearMinSlider').min = minYear;
+            document.getElementById('yearMinSlider').max = maxYear;
+            document.getElementById('yearMinSlider').value = minYear;
+            document.getElementById('yearMaxSlider').min = minYear;
+            document.getElementById('yearMaxSlider').max = maxYear;
+            document.getElementById('yearMaxSlider').value = maxYear;
+
+            document.getElementById('timeMinSlider').min = minTime;
+            document.getElementById('timeMinSlider').max = maxTime;
+            document.getElementById('timeMinSlider').value = minTime;
+            document.getElementById('timeMaxSlider').min = minTime;
+            document.getElementById('timeMaxSlider').max = maxTime;
+            document.getElementById('timeMaxSlider').value = maxTime;
+
+            // Update global variables
+            yearMin = minYear;
+            yearMax = maxYear;
+            timeMin = minTime;
+            timeMax = maxTime;
+
+            // Update displayed values
+            document.getElementById('yearMinValue').textContent = minYear;
+            document.getElementById('yearMaxValue').textContent = maxYear;
+            document.getElementById('timeMinValue').textContent = minTime;
+            document.getElementById('timeMaxValue').textContent = maxTime;
+
+            // Add event listeners
+            const yearMinSlider = document.getElementById('yearMinSlider');
+            const yearMaxSlider = document.getElementById('yearMaxSlider');
+            const timeMinSlider = document.getElementById('timeMinSlider');
+            const timeMaxSlider = document.getElementById('timeMaxSlider');
+
+            yearMinSlider.addEventListener('input', (e) => {
+                const value = parseInt(e.target.value);
+                if (value <= yearMax) {
+                    yearMin = value;
+                    document.getElementById('yearMinValue').textContent = value;
+                    updateRangeFill('year', minYear, maxYear);
+                    applySortAndFilter();
+                } else {
+                    e.target.value = yearMax;
+                }
+            });
+
+            yearMaxSlider.addEventListener('input', (e) => {
+                const value = parseInt(e.target.value);
+                if (value >= yearMin) {
+                    yearMax = value;
+                    document.getElementById('yearMaxValue').textContent = value;
+                    updateRangeFill('year', minYear, maxYear);
+                    applySortAndFilter();
+                } else {
+                    e.target.value = yearMin;
+                }
+            });
+
+            timeMinSlider.addEventListener('input', (e) => {
+                const value = parseInt(e.target.value);
+                if (value <= timeMax) {
+                    timeMin = value;
+                    document.getElementById('timeMinValue').textContent = value;
+                    updateRangeFill('time', minTime, maxTime);
+                    applySortAndFilter();
+                } else {
+                    e.target.value = timeMax;
+                }
+            });
+
+            timeMaxSlider.addEventListener('input', (e) => {
+                const value = parseInt(e.target.value);
+                if (value >= timeMin) {
+                    timeMax = value;
+                    document.getElementById('timeMaxValue').textContent = value;
+                    updateRangeFill('time', minTime, maxTime);
+                    applySortAndFilter();
+                } else {
+                    e.target.value = timeMin;
+                }
+            });
+
+            // Initial fill update
+            updateRangeFill('year', minYear, maxYear);
+            updateRangeFill('time', minTime, maxTime);
+        }
+
+        function updateRangeFill(type, min, max) {
+            const trackFill = document.getElementById(type === 'year' ? 'yearRangeTrack' : 'timeRangeTrack');
+            const currentMin = type === 'year' ? yearMin : timeMin;
+            const currentMax = type === 'year' ? yearMax : timeMax;
+
+            const range = max - min;
+            const leftPercent = ((currentMin - min) / range) * 100;
+            const rightPercent = ((currentMax - min) / range) * 100;
+
+            trackFill.style.left = leftPercent + '%';
+            trackFill.style.width = (rightPercent - leftPercent) + '%';
         }
 
         function populateFilters() {
@@ -1057,6 +1300,7 @@
                 allEssays = data.essays;
 
                 populateFilters();
+                initRangeSliders(); // Initialize year and reading time sliders
                 updateSortBadges(); // Show initial sort badge
                 applySortAndFilter();
             })

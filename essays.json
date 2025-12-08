@@ -87,7 +87,7 @@
       "Date": "01/2025",
       "Year": 2025,
       "WordCount": 6245,
-      "ReadingTime": 40,
+      "ReadingTime": 35,
       "Topics": [
         {
           "topic": "Society",
@@ -320,7 +320,7 @@
       "Date": "03/2024",
       "Year": 2024,
       "WordCount": 2846,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Startups",
@@ -369,7 +369,7 @@
       "Date": "03/2024",
       "Year": 2024,
       "WordCount": 4391,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Communication",
@@ -396,7 +396,7 @@
       "Date": "10/2023",
       "Year": 2023,
       "WordCount": 4312,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Personal growth",
@@ -628,7 +628,7 @@
       "Date": "09/2022",
       "Year": 2022,
       "WordCount": 2221,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Startups",
@@ -670,7 +670,7 @@
       "Date": "04/2022",
       "Year": 2022,
       "WordCount": 2139,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Personal growth",
@@ -869,7 +869,7 @@
       "Date": "06/2021",
       "Year": 2021,
       "WordCount": 2536,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Personal growth",
@@ -1044,7 +1044,7 @@
       "Date": "04/2021",
       "Year": 2021,
       "WordCount": 2626,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Society",
@@ -1406,7 +1406,7 @@
       "Date": "10/2020",
       "Year": 2020,
       "WordCount": 2541,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Personal growth",
@@ -1489,7 +1489,7 @@
       "Date": "07/2020",
       "Year": 2020,
       "WordCount": 2001,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Personal growth",
@@ -1580,7 +1580,7 @@
       "Date": "02/2020",
       "Year": 2020,
       "WordCount": 2876,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Communication",
@@ -1782,7 +1782,7 @@
       "Date": "12/2019",
       "Year": 2019,
       "WordCount": 4056,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Society",
@@ -1871,7 +1871,7 @@
       "Date": "11/2019",
       "Year": 2019,
       "WordCount": 2647,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Personal growth",
@@ -1991,7 +1991,7 @@
       "Date": "04/2016",
       "Year": 2016,
       "WordCount": 2647,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Startups",
@@ -2619,7 +2619,7 @@
       "Date": "10/2014",
       "Year": 2014,
       "WordCount": 4652,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Startups",
@@ -2670,7 +2670,7 @@
       "Date": "09/2013",
       "Year": 2013,
       "WordCount": 10797,
-      "ReadingTime": 60,
+      "ReadingTime": 55,
       "Topics": [
         {
           "topic": "Startups",
@@ -2771,7 +2771,7 @@
       "Date": "07/2013",
       "Year": 2013,
       "WordCount": 4423,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Startups",
@@ -2806,7 +2806,7 @@
       "Date": "06/2013",
       "Year": 2013,
       "WordCount": 2988,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Startups",
@@ -2950,7 +2950,7 @@
       "Date": "09/2012",
       "Year": 2012,
       "WordCount": 2182,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Startups",
@@ -3573,7 +3573,7 @@
       "Date": "08/2010",
       "Year": 2010,
       "WordCount": 2062,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Startups",
@@ -3802,7 +3802,7 @@
       "Date": "11/2009",
       "Year": 2009,
       "WordCount": 2162,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Technology",
@@ -4454,7 +4454,7 @@
       "Date": "02/2007",
       "Year": 2007,
       "WordCount": 2898,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Startups",
@@ -4561,7 +4561,7 @@
       "Date": "12/2008",
       "Year": 2008,
       "WordCount": 2398,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Society",
@@ -4741,7 +4741,7 @@
       "Date": "08/2008",
       "Year": 2008,
       "WordCount": 4871,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Startups",
@@ -4907,7 +4907,7 @@
       "Date": "04/2008",
       "Year": 2008,
       "WordCount": 2968,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Startups",
@@ -4975,7 +4975,7 @@
       "Date": "04/2008",
       "Year": 2008,
       "WordCount": 2703,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Society",
@@ -5050,7 +5050,7 @@
       "Date": "06/2008",
       "Year": 2008,
       "WordCount": 2559,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Personal growth",
@@ -5261,7 +5261,7 @@
       "Date": "09/2007",
       "Year": 2007,
       "WordCount": 4795,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Personal growth",
@@ -5309,7 +5309,7 @@
       "Date": "09/2007",
       "Year": 2007,
       "WordCount": 2240,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Society",
@@ -5488,7 +5488,7 @@
       "Date": "04/2007",
       "Year": 2007,
       "WordCount": 6268,
-      "ReadingTime": 40,
+      "ReadingTime": 35,
       "Topics": [
         {
           "topic": "Startups",
@@ -5588,7 +5588,7 @@
       "Date": "03/2007",
       "Year": 2007,
       "WordCount": 6315,
-      "ReadingTime": 40,
+      "ReadingTime": 35,
       "Topics": [
         {
           "topic": "Startups",
@@ -5738,7 +5738,7 @@
       "Date": "10/2006",
       "Year": 2006,
       "WordCount": 6483,
-      "ReadingTime": 40,
+      "ReadingTime": 35,
       "Topics": [
         {
           "topic": "Startups",
@@ -5766,7 +5766,7 @@
       "Date": "09/2010",
       "Year": 2010,
       "WordCount": 2848,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Startups",
@@ -5847,7 +5847,7 @@
       "Date": "06/2006",
       "Year": 2006,
       "WordCount": 6102,
-      "ReadingTime": 40,
+      "ReadingTime": 35,
       "Topics": [
         {
           "topic": "Startups",
@@ -5880,7 +5880,7 @@
       "Date": "05/2006",
       "Year": 2006,
       "WordCount": 4809,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Startups",
@@ -5947,7 +5947,7 @@
       "Date": "04/2006",
       "Year": 2006,
       "WordCount": 4879,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Startups",
@@ -6012,7 +6012,7 @@
       "Date": "03/2006",
       "Year": 2006,
       "WordCount": 4701,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Technology",
@@ -6117,7 +6117,7 @@
       "Date": "01/2006",
       "Year": 2006,
       "WordCount": 4752,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Personal growth",
@@ -6197,7 +6197,7 @@
       "Date": "11/2005",
       "Year": 2005,
       "WordCount": 8982,
-      "ReadingTime": 50,
+      "ReadingTime": 45,
       "Topics": [
         {
           "topic": "Startups",
@@ -6286,7 +6286,7 @@
       "Date": "10/2005",
       "Year": 2005,
       "WordCount": 2588,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Startups",
@@ -6320,7 +6320,7 @@
       "Date": "08/2005",
       "Year": 2005,
       "WordCount": 2867,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Society",
@@ -6408,7 +6408,7 @@
       "Date": "08/2005",
       "Year": 2005,
       "WordCount": 4400,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Technology",
@@ -6446,7 +6446,7 @@
       "Date": "05/2005",
       "Year": 1995,
       "WordCount": 4822,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Startups",
@@ -6479,7 +6479,7 @@
       "Date": "01/2006",
       "Year": 2006,
       "WordCount": 2419,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Communication",
@@ -6839,7 +6839,7 @@
       "Date": "10/2004",
       "Year": 2004,
       "WordCount": 4289,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Communication",
@@ -6911,7 +6911,7 @@
       "Date": "09/2004",
       "Year": 2004,
       "WordCount": 4555,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Communication",
@@ -7221,7 +7221,7 @@
       "Date": "04/2003",
       "Year": 2003,
       "WordCount": 4808,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Technology",
@@ -7274,7 +7274,7 @@
       "Date": "08/2002",
       "Year": 2002,
       "WordCount": 4345,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Technology",
@@ -7301,7 +7301,7 @@
       "Date": "01/2003",
       "Year": 2003,
       "WordCount": 2674,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Technology",
@@ -7450,7 +7450,7 @@
       "Date": "02/2002",
       "Year": 2002,
       "WordCount": 4358,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Technology",
@@ -7587,7 +7587,7 @@
       "Date": "05/2001",
       "Year": 2001,
       "WordCount": 2950,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Technology",
@@ -7674,7 +7674,7 @@
       "Date": "01/2003",
       "Year": 2003,
       "WordCount": 4499,
-      "ReadingTime": 30,
+      "ReadingTime": 25,
       "Topics": [
         {
           "topic": "Technology",
@@ -7729,7 +7729,7 @@
       "Date": "01/1995",
       "Year": 1995,
       "WordCount": 2466,
-      "ReadingTime": 20,
+      "ReadingTime": 15,
       "Topics": [
         {
           "topic": "Technology",

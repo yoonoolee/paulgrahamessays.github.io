@@ -136,21 +136,10 @@
               ]
             }
           ]
-        },
-        {
-          "topic": "Technology",
-          "subtopics": [
-            {
-              "items": [
-                "Industry Analysis and Trends"
-              ]
-            }
-          ]
         }
       ],
       "Audience": [
-        "Writers",
-        "General"
+        "Writers"
       ],
       "EssayType": [
         "Commentary"
@@ -170,8 +159,7 @@
           "subtopics": [
             {
               "items": [
-                "Career",
-                "Life advice"
+                "Career"
               ]
             }
           ]
@@ -182,12 +170,11 @@
             {
               "category": "Getting Started",
               "items": [
-                "Starting a Company",
-                "Ideas"
+                "Starting a Company"
               ]
             },
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -218,14 +205,19 @@
             {
               "category": "Running a Startup",
               "items": [
-                "Strategy and Growth",
-                "Founder Life"
+                "Strategy and Growth"
               ]
             },
             {
               "category": "Getting Started",
               "items": [
                 "Starting a Company"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
+                "Founder Life"
               ]
             }
           ]
@@ -264,7 +256,12 @@
             {
               "category": "Running a Startup",
               "items": [
-                "Strategy and Growth",
+                "Strategy and Growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -307,7 +304,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC"
+                "Y Combinator"
               ]
             }
           ]
@@ -467,7 +464,7 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -658,7 +655,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC",
+                "Y Combinator",
                 "Startup Landscape"
               ]
             },
@@ -867,7 +864,7 @@
               ]
             },
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -992,7 +989,7 @@
               ]
             },
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -1091,12 +1088,6 @@
               "category": "Getting Started",
               "items": [
                 "Starting a Company"
-              ]
-            },
-            {
-              "category": "Running a Startup",
-              "items": [
-                "Founder Life"
               ]
             },
             {
@@ -1217,7 +1208,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC"
+                "Y Combinator"
               ]
             }
           ]
@@ -1270,7 +1261,7 @@
               ]
             },
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -1311,7 +1302,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC",
+                "Y Combinator",
                 "Startup Landscape"
               ]
             },
@@ -1464,7 +1455,7 @@
               ]
             },
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -1503,7 +1494,7 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -1703,7 +1694,7 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -1775,12 +1766,6 @@
                 "Ideas",
                 "Starting a Company"
               ]
-            },
-            {
-              "category": "Running a Startup",
-              "items": [
-                "Founder Life"
-              ]
             }
           ]
         }
@@ -1836,7 +1821,6 @@
             {
               "items": [
                 "Education",
-                "Philosophy",
                 "Social Commentary"
               ]
             }
@@ -1847,19 +1831,7 @@
           "subtopics": [
             {
               "items": [
-                "Life advice",
                 "Career"
-              ]
-            }
-          ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            {
-              "category": "The Startup World",
-              "items": [
-                "YC"
               ]
             }
           ]
@@ -2164,7 +2136,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC"
+                "Y Combinator"
               ]
             }
           ]
@@ -2282,14 +2254,13 @@
             {
               "category": "Running a Startup",
               "items": [
-                "Strategy and Growth",
-                "Founder Life"
+                "Strategy and Growth"
               ]
             },
             {
               "category": "The Startup World",
               "items": [
-                "Startup Landscape"
+                "Founder Life"
               ]
             }
           ]
@@ -2378,7 +2349,7 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -2423,7 +2394,7 @@
               ]
             },
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -2506,12 +2477,6 @@
         {
           "topic": "Startups",
           "subtopics": [
-            {
-              "category": "Running a Startup",
-              "items": [
-                "Strategy and Growth"
-              ]
-            },
             {
               "category": "The Startup World",
               "items": [
@@ -2622,12 +2587,6 @@
                 "Strategy and Growth",
                 "Failure"
               ]
-            },
-            {
-              "category": "The Startup World",
-              "items": [
-                "YC"
-              ]
             }
           ]
         }
@@ -2655,7 +2614,12 @@
               "category": "Running a Startup",
               "items": [
                 "Failure",
-                "Strategy and Growth",
+                "Strategy and Growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -2705,12 +2669,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC"
-              ]
-            },
-            {
-              "category": "Running a Startup",
-              "items": [
+                "Y Combinator",
                 "Founder Life"
               ]
             }
@@ -2788,12 +2747,6 @@
               ]
             },
             {
-              "category": "Running a Startup",
-              "items": [
-                "Strategy and Growth"
-              ]
-            },
-            {
               "category": "The Startup World",
               "items": [
                 "Startup Landscape"
@@ -2852,16 +2805,15 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
+              "category": "Getting Started", 
               "items": [
-                "Strategy and Growth",
-                "Founder Life"
+                "Starting a Company"
               ]
             },
             {
-              "category": "The Startup World",
+              "category": "Running a Startup",
               "items": [
-                "YC"
+                "Strategy and Growth"
               ]
             }
           ]
@@ -2896,7 +2848,8 @@
             {
               "category": "The Startup World",
               "items": [
-                "Startup Landscape"
+                "Startup Landscape",
+                "Y Combinator"
               ]
             }
           ]
@@ -2969,7 +2922,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC"
+                "Y Combinator"
               ]
             }
           ]
@@ -2977,7 +2930,7 @@
       ],
       "Audience": [
         "Founders",
-        "General"
+        "Hackers and Makers"
       ],
       "EssayType": [
         "Commentary"
@@ -3044,7 +2997,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC",
+                "Y Combinator",
                 "Startup Landscape"
               ]
             }
@@ -3131,7 +3084,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC"
+                "Y Combinator"
               ]
             }
           ]
@@ -3200,16 +3153,6 @@
           ]
         },
         {
-          "topic": "Society",
-          "subtopics": [
-            {
-              "items": [
-                "Social Commentary"
-              ]
-            }
-          ]
-        },
-        {
           "topic": "Technology",
           "subtopics": [
             {
@@ -3224,8 +3167,7 @@
         "Founders"
       ],
       "EssayType": [
-        "Commentary",
-        "Memoir"
+        "Commentary"
       ],
       "ID": 143
     },
@@ -3244,19 +3186,7 @@
               "category": "Running a Startup",
               "items": [
                 "Strategy and Growth",
-                "Founder Life"
-              ]
-            },
-            {
-              "category": "Getting Started",
-              "items": [
-                "Starting a Company"
-              ]
-            },
-            {
-              "category": "The Startup World",
-              "items": [
-                "YC"
+                "Failure"
               ]
             }
           ]
@@ -3277,7 +3207,6 @@
       ],
       "EssayType": [
         "Commentary",
-        "Thought Pieces",
         "Memoir"
       ],
       "ID": 142
@@ -3303,7 +3232,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC"
+                "Y Combinator"
               ]
             }
           ]
@@ -3360,8 +3289,8 @@
               "category": "The Startup World",
               "items": [
                 "Startup Hubs",
-                "YC",
-                "Startup Landscape"
+                "Startup Landscape",
+                "Founder Life"
               ]
             },
             {
@@ -3373,8 +3302,7 @@
             {
               "category": "Running a Startup",
               "items": [
-                "Strategy and Growth",
-                "Founder Life"
+                "Strategy and Growth"
               ]
             }
           ]
@@ -3448,15 +3376,9 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Getting Started",
-              "items": [
-                "Ideas"
-              ]
-            },
-            {
               "category": "The Startup World",
               "items": [
-                "YC"
+                "Y Combinator"
               ]
             },
             {
@@ -3806,7 +3728,7 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -3942,8 +3864,7 @@
             {
               "category": "Running a Startup",
               "items": [
-                "Strategy and Growth",
-                "Founder Life"
+                "Strategy and Growth"
               ]
             },
             {
@@ -3956,8 +3877,8 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC",
-                "Startup Landscape"
+                "Startup Landscape",
+                "Founder Life"
               ]
             }
           ]
@@ -4107,7 +4028,7 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]
@@ -4139,20 +4060,14 @@
               "category": "The Startup World",
               "items": [
                 "Startup Hubs",
-                "YC",
-                "Startup Landscape"
+                "Startup Landscape",
+                "Founder Life"
               ]
             },
             {
               "category": "Getting Started",
               "items": [
                 "Starting a Company"
-              ]
-            },
-            {
-              "category": "Running a Startup",
-              "items": [
-                "Founder Life"
               ]
             }
           ]
@@ -4236,8 +4151,7 @@
             {
               "category": "Running a Startup",
               "items": [
-                "Strategy and Growth",
-                "Founder Life"
+                "Strategy and Growth"
               ]
             },
             {
@@ -4279,25 +4193,10 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
-              "items": [
-                "Founder Life"
-              ]
-            },
-            {
               "category": "The Startup World",
               "items": [
-                "Startup Landscape"
-              ]
-            }
-          ]
-        },
-        {
-          "topic": "Society",
-          "subtopics": [
-            {
-              "items": [
-                "Social Commentary"
+                "Startup Landscape",
+                "Founder Life"
               ]
             }
           ]
@@ -4305,6 +4204,7 @@
       ],
       "Audience": [
         "Hackers and Makers",
+        "Founders",
         "Writers",
         "General"
       ],
@@ -4421,12 +4321,6 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
-              "items": [
-                "Founder Life"
-              ]
-            },
-            {
               "category": "The Startup World",
               "items": [
                 "Startup Landscape"
@@ -4457,7 +4351,12 @@
             {
               "category": "Running a Startup",
               "items": [
-                "Strategy and Growth",
+                "Strategy and Growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -4468,7 +4367,6 @@
           "subtopics": [
             {
               "items": [
-                "Life advice",
                 "Career"
               ]
             }
@@ -4584,7 +4482,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC"
+                "Y Combinator"
               ]
             }
           ]
@@ -4613,8 +4511,7 @@
               "category": "Running a Startup",
               "items": [
                 "Strategy and Growth",
-                "Failure",
-                "Founder Life"
+                "Failure"
               ]
             },
             {
@@ -4627,7 +4524,8 @@
             {
               "category": "The Startup World",
               "items": [
-                "Startup Landscape"
+                "Startup Landscape",
+                "Founder Life"
               ]
             }
           ]
@@ -4911,15 +4809,10 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
-              "items": [
-                "Strategy and Growth"
-              ]
-            },
-            {
               "category": "The Startup World",
               "items": [
-                "Startup Landscape"
+                "Startup Landscape",
+                "Founder Life"
               ]
             }
           ]
@@ -5050,7 +4943,12 @@
             {
               "category": "Running a Startup",
               "items": [
-                "Strategy and Growth",
+                "Strategy and Growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -5209,12 +5107,6 @@
               "items": [
                 "Strategy and Growth"
               ]
-            },
-            {
-              "category": "The Startup World",
-              "items": [
-                "YC"
-              ]
             }
           ]
         }
@@ -5224,7 +5116,7 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces"
+        "Commentary"
       ],
       "ID": 89
     },
@@ -5248,7 +5140,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC",
+                "Y Combinator",
                 "Startup Landscape"
               ]
             },
@@ -5311,7 +5203,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC",
+                "Y Combinator",
                 "Startup Landscape"
               ]
             },
@@ -5325,8 +5217,7 @@
         }
       ],
       "Audience": [
-        "Founders",
-        "General"
+        "Founders"
       ],
       "EssayType": [
         "Memoir"
@@ -5497,7 +5388,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC"
+                "Y Combinator"
               ]
             }
           ]
@@ -5814,7 +5705,12 @@
             {
               "category": "Running a Startup",
               "items": [
-                "Strategy and Growth",
+                "Strategy and Growth"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
                 "Founder Life"
               ]
             }
@@ -5871,8 +5767,7 @@
               "category": "Running a Startup",
               "items": [
                 "Failure",
-                "Strategy and Growth",
-                "Founder Life"
+                "Strategy and Growth"
               ]
             },
             {
@@ -6198,7 +6093,6 @@
           "subtopics": [
             {
               "items": [
-                "Social Commentary",
                 "Economics and Policy"
               ]
             }
@@ -6218,8 +6112,7 @@
       ],
       "Audience": [
         "Hackers and Makers",
-        "Founders",
-        "General"
+        "Founders"
       ],
       "EssayType": [
         "Commentary"
@@ -6269,7 +6162,7 @@
             {
               "category": "The Startup World",
               "items": [
-                "YC"
+                "Y Combinator"
               ]
             }
           ]
@@ -6470,15 +6363,9 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
-              "items": [
-                "Founder Life"
-              ]
-            },
-            {
               "category": "The Startup World",
               "items": [
-                "Startup Landscape"
+                "Y Combinator"
               ]
             }
           ]
@@ -6488,8 +6375,7 @@
         "Founders"
       ],
       "EssayType": [
-        "Memoir",
-        "Commentary"
+        "Memoir"
       ],
       "ID": 50
     },
@@ -6506,7 +6392,8 @@
           "subtopics": [
             {
               "items": [
-                "Economics and Policy"
+                "Economics and Policy",
+                "Social Commentary"
               ]
             }
           ]
@@ -6879,7 +6766,7 @@
               ]
             },
             {
-              "category": "Running a Startup",
+              "category": "The Startup World",
               "items": [
                 "Founder Life"
               ]

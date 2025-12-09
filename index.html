@@ -229,6 +229,9 @@
         let timeMax = 60;
         let searchQuery = '';
         let idfScores = {}; // Pre-computed IDF scores for all terms
+        let essayContent = null; // Essay content loaded on page load
+        let invertedIndex = {}; // Maps terms to essay IDs containing them (for fast search)
+        let searchDebounceTimer = null; // Timer for debounced search
 
         // ========== TF-IDF FUNCTIONS ==========
 
@@ -245,6 +248,7 @@
         /**
          * Compute IDF scores for all terms in the corpus
          * IDF(term) = log(N / df) where N = total docs, df = docs containing term
+         * Uses title + content
          */
         function computeIDF(essays) {
             const N = essays.length;
@@ -252,8 +256,19 @@
 
             // Count document frequency for each term
             essays.forEach(essay => {
-                const tokens = new Set(tokenize(essay.Title)); // Use Set to count each term once per doc
-                tokens.forEach(token => {
+                let allTokens = new Set(tokenize(essay.Title));
+
+                // Include content if available
+                if (essayContent) {
+                    const contentEntry = essayContent.find(c => c.ID === essay.ID);
+                    if (contentEntry && contentEntry.Content) {
+                        const contentTokens = tokenize(contentEntry.Content);
+                        contentTokens.forEach(token => allTokens.add(token));
+                    }
+                }
+
+                // Use Set to count each term once per doc
+                allTokens.forEach(token => {
                     termDocFreq[token] = (termDocFreq[token] || 0) + 1;
                 });
             });
@@ -268,31 +283,102 @@
         }
 
         /**
-         * Compute TF-IDF score for a query against a document
-         * Returns sum of (TF * IDF) for each query term
+         * Build inverted index: maps each term to list of essay IDs containing it
+         * This allows us to quickly find which essays contain query terms
          */
-        function computeTFIDF(query, documentTitle) {
-            const queryTokens = tokenize(query);
-            const docTokens = tokenize(documentTitle);
+        function buildInvertedIndex(essays) {
+            const index = {};
 
+            essays.forEach(essay => {
+                const titleTokens = new Set(tokenize(essay.Title));
+
+                // Add content tokens if available
+                if (essayContent) {
+                    const contentEntry = essayContent.find(c => c.ID === essay.ID);
+                    if (contentEntry && contentEntry.Content) {
+                        const contentTokens = tokenize(contentEntry.Content);
+                        contentTokens.forEach(token => titleTokens.add(token));
+                    }
+                }
+
+                // For each unique token in this essay, add essay ID to index
+                titleTokens.forEach(token => {
+                    if (!index[token]) {
+                        index[token] = [];
+                    }
+                    index[token].push(essay.ID);
+                });
+            });
+
+            return index;
+        }
+
+        /**
+         * Compute TF-IDF score for a query against a document
+         * Returns weighted sum of (TF * IDF) for title and content
+         * Title matches are weighted 10x more than content matches
+         */
+        function computeTFIDF(query, essay) {
+            const queryTokens = tokenize(query);
             if (queryTokens.length === 0) return 0;
 
-            // Compute term frequency in document
-            const tf = {};
-            docTokens.forEach(token => {
-                tf[token] = (tf[token] || 0) + 1;
+            // Compute TF for title
+            const titleTokens = tokenize(essay.Title);
+            const titleTF = {};
+            titleTokens.forEach(token => {
+                titleTF[token] = (titleTF[token] || 0) + 1;
             });
 
-            // Compute TF-IDF score
-            let score = 0;
+            // Compute TF-IDF score for title (weighted 3x)
+            let titleScore = 0;
             queryTokens.forEach(queryTerm => {
-                const termFreq = tf[queryTerm] || 0;
+                const termFreq = titleTF[queryTerm] || 0;
                 const idf = idfScores[queryTerm] || 0;
-                score += termFreq * idf;
+                titleScore += termFreq * idf;
             });
 
-            return score;
+            // Also search content
+            let contentScore = 0;
+            if (essayContent) {
+                const contentEntry = essayContent.find(c => c.ID === essay.ID);
+                if (contentEntry && contentEntry.Content) {
+                    const contentTokens = tokenize(contentEntry.Content);
+                    const contentTF = {};
+                    contentTokens.forEach(token => {
+                        contentTF[token] = (contentTF[token] || 0) + 1;
+                    });
+
+                    queryTokens.forEach(queryTerm => {
+                        const termFreq = contentTF[queryTerm] || 0;
+                        const idf = idfScores[queryTerm] || 0;
+                        contentScore += termFreq * idf;
+                    });
+                }
+            }
+
+            // Return weighted score: title * 10 + content * 1
+            return (titleScore * 10) + contentScore;
         }
+
+        /**
+         * Get candidate essays that might match the query using inverted index
+         * Only searches essays that contain at least one query term
+         */
+        function getCandidateEssays(query, allEssays) {
+            const queryTokens = tokenize(query);
+            if (queryTokens.length === 0) return [];
+
+            // Get all essay IDs that contain at least one query term
+            const candidateIDs = new Set();
+            queryTokens.forEach(token => {
+                const essayIDs = invertedIndex[token] || [];
+                essayIDs.forEach(id => candidateIDs.add(id));
+            });
+
+            // Return only essays with matching IDs
+            return allEssays.filter(essay => candidateIDs.has(essay.ID));
+        }
+
 
         function toggleView(view) {
             currentView = view;
@@ -460,12 +546,17 @@
             // Filter by search query and compute TF-IDF scores
             const hasSearchQuery = searchQuery.trim() !== '';
             if (hasSearchQuery) {
-                // Filter essays that contain at least one query term
-                essays = essays.filter(essay => {
-                    const score = computeTFIDF(searchQuery, essay.Title);
-                    essay._tfidfScore = score; // Store score for sorting
-                    return score > 0;
-                });
+                // Use inverted index to get only candidate essays (essays containing query terms)
+                const candidates = getCandidateEssays(searchQuery, essays);
+
+                // Compute TF-IDF scores only for candidates
+                const scoredEssays = candidates.map(essay => {
+                    const score = computeTFIDF(searchQuery, essay);
+                    essay._tfidfScore = score;
+                    return essay;
+                }).filter(essay => essay._tfidfScore > 0);
+
+                essays = scoredEssays;
             }
 
             // Sort - with primary and secondary criteria
@@ -550,10 +641,11 @@
                 essay.ReadingTime >= timeMin && essay.ReadingTime <= timeMax
             );
 
-            // Apply search filter
+            // Apply search filter using inverted index
             if (searchQuery.trim() !== '') {
-                essaysForTopicCounts = essaysForTopicCounts.filter(essay => {
-                    return computeTFIDF(searchQuery, essay.Title) > 0;
+                const candidates = getCandidateEssays(searchQuery, essaysForTopicCounts);
+                essaysForTopicCounts = candidates.filter(essay => {
+                    return computeTFIDF(searchQuery, essay) > 0;
                 });
             }
 
@@ -651,10 +743,11 @@
                 essay.ReadingTime >= timeMin && essay.ReadingTime <= timeMax
             );
 
-            // Apply search filter
+            // Apply search filter using inverted index
             if (searchQuery.trim() !== '') {
-                essaysForTypeCounts = essaysForTypeCounts.filter(essay => {
-                    return computeTFIDF(searchQuery, essay.Title) > 0;
+                const candidates = getCandidateEssays(searchQuery, essaysForTypeCounts);
+                essaysForTypeCounts = candidates.filter(essay => {
+                    return computeTFIDF(searchQuery, essay) > 0;
                 });
             }
 
@@ -734,10 +827,11 @@
                 essay.ReadingTime >= timeMin && essay.ReadingTime <= timeMax
             );
 
-            // Apply search filter
+            // Apply search filter using inverted index
             if (searchQuery.trim() !== '') {
-                essaysForAudienceCounts = essaysForAudienceCounts.filter(essay => {
-                    return computeTFIDF(searchQuery, essay.Title) > 0;
+                const candidates = getCandidateEssays(searchQuery, essaysForAudienceCounts);
+                essaysForAudienceCounts = candidates.filter(essay => {
+                    return computeTFIDF(searchQuery, essay) > 0;
                 });
             }
 
@@ -1433,20 +1527,24 @@
                 timeTag.textContent = essay.ReadingTime + ' min';
                 tagsContainer.appendChild(timeTag);
 
-                // Add topic tags (more specific with subtopics)
+                // Add topic tags (grouped by topic)
                 essay.Topics.forEach(topic => {
                     if (topic.subtopics && topic.subtopics.length > 0) {
-                        // Show topic with each subtopic item
+                        // Collect all subtopic items for this topic
+                        const allItems = [];
                         topic.subtopics.forEach(subObj => {
                             if (subObj.items && subObj.items.length > 0) {
-                                subObj.items.forEach(item => {
-                                    const topicTag = document.createElement('span');
-                                    topicTag.className = 'tag topic-tag';
-                                    topicTag.textContent = `${topic.topic}: ${item}`;
-                                    tagsContainer.appendChild(topicTag);
-                                });
+                                allItems.push(...subObj.items);
                             }
                         });
+
+                        // Create a single tag with all items
+                        if (allItems.length > 0) {
+                            const topicTag = document.createElement('span');
+                            topicTag.className = 'tag topic-tag';
+                            topicTag.textContent = `${topic.topic}: ${allItems.join(', ')}`;
+                            tagsContainer.appendChild(topicTag);
+                        }
                     } else {
                         // No subtopics, just show the topic
                         const topicTag = document.createElement('span');
@@ -1456,24 +1554,20 @@
                     }
                 });
 
-                // Add essay type tags
+                // Add essay type tags (grouped)
                 if (essay.EssayType && essay.EssayType.length > 0) {
-                    essay.EssayType.forEach(type => {
-                        const typeTag = document.createElement('span');
-                        typeTag.className = 'tag type-tag';
-                        typeTag.textContent = type;
-                        tagsContainer.appendChild(typeTag);
-                    });
+                    const typeTag = document.createElement('span');
+                    typeTag.className = 'tag type-tag';
+                    typeTag.textContent = essay.EssayType.join(', ');
+                    tagsContainer.appendChild(typeTag);
                 }
 
-                // Add audience tags
+                // Add audience tags (grouped)
                 if (essay.Audience && essay.Audience.length > 0) {
-                    essay.Audience.forEach(audience => {
-                        const audienceTag = document.createElement('span');
-                        audienceTag.className = 'tag audience-tag';
-                        audienceTag.textContent = audience;
-                        tagsContainer.appendChild(audienceTag);
-                    });
+                    const audienceTag = document.createElement('span');
+                    audienceTag.className = 'tag audience-tag';
+                    audienceTag.textContent = essay.Audience.join(', ');
+                    tagsContainer.appendChild(audienceTag);
                 }
 
                 // Create content wrapper
@@ -1504,20 +1598,31 @@
 
         // ========== LOAD DATA ==========
 
-        fetch('./essays.json')
-            .then(response => response.json())
-            .then(data => {
-                allEssays = data.essays;
+        // Load both essays.json and essay-content.json in parallel
+        Promise.all([
+            fetch('./essays.json').then(r => r.json()),
+            fetch('./essay-content.json').then(r => r.json())
+        ])
+            .then(([essaysData, contentData]) => {
+                allEssays = essaysData.essays;
+                essayContent = contentData.content;
 
-                // Pre-compute IDF scores for TF-IDF search ranking
+                console.log('Building search index...');
+
+                // Pre-compute IDF scores with full content
                 idfScores = computeIDF(allEssays);
+
+                // Build inverted index for fast search
+                invertedIndex = buildInvertedIndex(allEssays);
+
+                console.log('Search index ready!');
 
                 populateFilters();
                 initRangeSliders(); // Initialize year and reading time sliders
                 updateSortBadges(); // Show initial sort badge
                 applySortAndFilter();
 
-                // Add search functionality
+                // Add search functionality with debouncing
                 const searchBar = document.querySelector('.search-bar');
                 const searchClear = document.querySelector('.search-clear');
 
@@ -1531,11 +1636,15 @@
                         searchClear.classList.remove('visible');
                     }
 
-                    applySortAndFilter();
+                    // Debounce: wait 300ms after user stops typing
+                    clearTimeout(searchDebounceTimer);
+                    searchDebounceTimer = setTimeout(() => {
+                        applySortAndFilter();
+                    }, 300);
                 });
             })
             .catch(error => {
-                console.error('Error loading essays:', error);
+                console.error('Error loading data:', error);
                 document.getElementById('essayList').innerHTML =
                     '<p style="text-align: center; padding: 2rem; color: #e53e3e;">Error loading essays. Please refresh the page.</p>';
             });

@@ -191,7 +191,10 @@
                     titleElement.classList.add('selected');
                 }
                 // Open preview with new essay
-                previewContainer.innerHTML = `<iframe class="preview-iframe" src="${essay.URL}"></iframe>`;
+                // Special handling for Ansi Common Lisp chapters (different page layout)
+                const noOffsetTitles = ['Chapter 1 of Ansi Common Lisp', 'Chapter 2 of Ansi Common Lisp'];
+                const iframeClass = noOffsetTitles.includes(essay.Title) ? 'preview-iframe-no-offset' : 'preview-iframe';
+                previewContainer.innerHTML = `<iframe class="${iframeClass}" src="${essay.URL}"></iframe>`;
                 rightPane.classList.add('visible');
                 currentlySelectedEssay = essay;
             }
@@ -316,7 +319,7 @@
         /**
          * Compute TF-IDF score for a query against a document
          * Returns weighted sum of (TF * IDF) for title and content
-         * Title matches are weighted 10x more than content matches
+         * Title matches are weighted 30x more than content matches
          */
         function computeTFIDF(query, essay) {
             const queryTokens = tokenize(query);
@@ -356,8 +359,8 @@
                 }
             }
 
-            // Return weighted score: title * 10 + content * 1
-            return (titleScore * 10) + contentScore;
+            // Return weighted score: title * 30 + content * 1
+            return (titleScore * 30) + contentScore;
         }
 
         /**

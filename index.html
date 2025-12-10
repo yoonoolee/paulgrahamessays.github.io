@@ -130,49 +130,6 @@
     </div>
 
     <script>
-        // ========== BOOKMARK FUNCTIONS ==========
-
-        function getBookmarks() {
-            return JSON.parse(localStorage.getItem('pg-bookmarks') || '[]');
-        }
-
-        function isBookmarked(title) {
-            return getBookmarks().includes(title);
-        }
-
-        function toggleBookmark(title) {
-            let bookmarks = getBookmarks();
-
-            if (bookmarks.includes(title)) {
-                bookmarks = bookmarks.filter(b => b !== title);
-            } else {
-                bookmarks.push(title);
-            }
-
-            localStorage.setItem('pg-bookmarks', JSON.stringify(bookmarks));
-
-            // Update the star icon without reloading
-            updateBookmarkButton(title);
-
-            // Refresh the list if we're in bookmarked view
-            if (currentView === 'bookmarked') {
-                applySortAndFilter();
-            }
-        }
-
-        function updateBookmarkButton(title) {
-            const buttons = document.querySelectorAll(`[data-title="${title}"]`);
-            buttons.forEach(btn => {
-                if (isBookmarked(title)) {
-                    btn.classList.add('bookmarked');
-                    btn.innerHTML = '★';
-                } else {
-                    btn.classList.remove('bookmarked');
-                    btn.innerHTML = '☆';
-                }
-            });
-        }
-
         // ========== PREVIEW FUNCTIONS ==========
 
         let currentlySelectedEssay = null;
@@ -258,7 +215,6 @@
         // ========== LIST RENDERING ==========
 
         let allEssays = [];
-        let currentView = 'all'; // 'all' or 'bookmarked'
         let primarySort = 'date-desc'; // Primary sort criterion
         let secondarySort = null; // Secondary sort criterion
         let userHasSelectedSort = false; // Track if user explicitly selected a sort option
@@ -514,12 +470,6 @@
         function applySortAndFilter() {
             let essays = [...allEssays];
 
-            // Filter by view (all or bookmarked)
-            if (currentView === 'bookmarked') {
-                const bookmarks = getBookmarks();
-                essays = essays.filter(essay => bookmarks.includes(essay.Title));
-            }
-
             // Filter by topic tree selection - match ANY selected path
             if (selectedTopicPaths.length > 0) {
                 essays = essays.filter(essay => essayMatchesTopicPaths(essay, selectedTopicPaths));
@@ -685,12 +635,6 @@
                 );
             }
 
-            // Apply view filter
-            if (currentView === 'bookmarked') {
-                const bookmarks = getBookmarks();
-                essaysForTopicCounts = essaysForTopicCounts.filter(essay => bookmarks.includes(essay.Title));
-            }
-
             // Apply year and reading time filters
             essaysForTopicCounts = essaysForTopicCounts.filter(essay =>
                 essay.Year >= yearMin && essay.Year <= yearMax &&
@@ -780,11 +724,6 @@
                 );
             }
 
-            if (currentView === 'bookmarked') {
-                const bookmarks = getBookmarks();
-                essaysForTypeCounts = essaysForTypeCounts.filter(essay => bookmarks.includes(essay.Title));
-            }
-
             // Apply year and reading time filters
             essaysForTypeCounts = essaysForTypeCounts.filter(essay =>
                 essay.Year >= yearMin && essay.Year <= yearMax &&
@@ -837,11 +776,6 @@
                 essaysForAudienceCounts = essaysForAudienceCounts.filter(essay =>
                     essay.EssayType && selectedEssayTypes.some(type => essay.EssayType.includes(type))
                 );
-            }
-
-            if (currentView === 'bookmarked') {
-                const bookmarks = getBookmarks();
-                essaysForAudienceCounts = essaysForAudienceCounts.filter(essay => bookmarks.includes(essay.Title));
             }
 
             // Apply year and reading time filters
@@ -1543,16 +1477,6 @@
                     item.classList.add('selected');
                 }
 
-                // Create bookmark button
-                const bookmarkBtn = document.createElement('button');
-                bookmarkBtn.className = 'bookmark-btn' + (isBookmarked(essay.Title) ? ' bookmarked' : '');
-                bookmarkBtn.innerHTML = isBookmarked(essay.Title) ? '★' : '☆';
-                bookmarkBtn.setAttribute('data-title', essay.Title);
-                bookmarkBtn.onclick = (e) => {
-                    e.stopPropagation();
-                    toggleBookmark(essay.Title);
-                };
-
                 // Create title
                 const title = document.createElement('div');
                 title.className = 'essay-title';
@@ -1669,14 +1593,10 @@
                 contentWrapper.appendChild(tagsContainer);
 
                 // Assemble the item
-                item.appendChild(bookmarkBtn);
                 item.appendChild(contentWrapper);
 
                 // Add click handler to toggle preview
-                item.onclick = (e) => {
-                    if (e.target.classList.contains('bookmark-btn')) {
-                        return;
-                    }
+                item.onclick = () => {
                     togglePreview(essay, title);
                 };
 

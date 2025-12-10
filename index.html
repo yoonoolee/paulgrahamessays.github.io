@@ -27,28 +27,28 @@
                 <span class="reset-filters-btn" onclick="resetFilters()">Reset Filter ×</span>
             </div>
 
-            <div class="filter-group">
+            <div class="filter-group filter-section">
                 <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Topics</label>
                 <div class="filter-content collapsed">
                     <div id="topicTree" class="topic-tree"></div>
                 </div>
             </div>
 
-            <div class="filter-group">
+            <div class="filter-group filter-section">
                 <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Essay Type</label>
                 <div class="filter-content collapsed">
                     <div id="essayTypeTree" class="topic-tree"></div>
                 </div>
             </div>
 
-            <div class="filter-group">
+            <div class="filter-group filter-section">
                 <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Audience</label>
                 <div class="filter-content collapsed">
                     <div id="audienceTree" class="topic-tree"></div>
                 </div>
             </div>
 
-            <div class="filter-group">
+            <div class="filter-group filter-section">
                 <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Year</label>
                 <div class="filter-content collapsed">
                     <div class="range-slider-container">
@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-            <div class="filter-group">
+            <div class="filter-group filter-section">
                 <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Reading Time (min)</label>
                 <div class="filter-content collapsed">
                     <div class="range-slider-container">
@@ -89,7 +89,7 @@
                 <span class="reset-filters-btn" onclick="resetSort()">Reset Sort ×</span>
             </div>
 
-            <div class="filter-group">
+            <div class="filter-group sort-section">
                 <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Date</label>
                 <div class="filter-content collapsed">
                     <div class="topic-tree" id="dateSortTree">
@@ -103,7 +103,7 @@
                 </div>
             </div>
 
-            <div class="filter-group">
+            <div class="filter-group sort-section">
                 <label class="filter-label collapsed" onclick="toggleFilterSection(this)">Length</label>
                 <div class="filter-content collapsed">
                     <div class="topic-tree" id="lengthSortTree">
@@ -124,6 +124,7 @@
         </div>
 
         <div class="right-pane" id="rightPane">
+            <div class="preview-header" id="previewHeader"></div>
             <div class="preview-container" id="previewContainer"></div>
         </div>
     </div>
@@ -178,12 +179,14 @@
 
         function togglePreview(essay, titleElement) {
             const rightPane = document.getElementById('rightPane');
+            const previewHeader = document.getElementById('previewHeader');
             const previewContainer = document.getElementById('previewContainer');
 
             // If clicking the same essay, close the preview
             if (currentlySelectedEssay && currentlySelectedEssay.Title === essay.Title) {
                 rightPane.classList.remove('visible');
                 currentlySelectedEssay = null;
+                previewHeader.innerHTML = '';
                 // Remove selected class from all titles
                 document.querySelectorAll('.essay-title').forEach(t => t.classList.remove('selected'));
             } else {
@@ -193,11 +196,39 @@
                 if (titleElement) {
                     titleElement.classList.add('selected');
                 }
+
+                // Add "Go to Original Essay" button in header
+                previewHeader.innerHTML = `
+                    <a href="${essay.URL}" target="_blank" class="go-to-original-btn">
+                        Go to Original Essay
+                    </a>
+                `;
+
                 // Open preview with new essay
-                // Special handling for Ansi Common Lisp chapters (different page layout)
-                const noOffsetTitles = ['Chapter 1 of Ansi Common Lisp', 'Chapter 2 of Ansi Common Lisp'];
-                const iframeClass = noOffsetTitles.includes(essay.Title) ? 'preview-iframe-no-offset' : 'preview-iframe';
+                // Only apply left offset for paulgraham.com URLs
+                const isPaulGrahamSite = essay.URL.includes('paulgraham.com');
+                const iframeClass = isPaulGrahamSite ? 'preview-iframe' : 'preview-iframe-no-offset';
                 previewContainer.innerHTML = `<iframe class="${iframeClass}" src="${essay.URL}"></iframe>`;
+
+                // Listen for iframe navigation to block it and show a message
+                const iframe = previewContainer.querySelector('iframe');
+                let isInitialLoad = true;
+
+                iframe.addEventListener('load', function() {
+                    // Skip the initial load
+                    if (isInitialLoad) {
+                        isInitialLoad = false;
+                        return;
+                    }
+
+                    // User clicked a link - replace iframe with message
+                    previewContainer.innerHTML = `
+                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #f9fafb; color: #6b7280; font-size: 1.1rem; padding: 2rem; text-align: center;">
+                            To navigate to other links, please open the original essay in a new tab.
+                        </div>
+                    `;
+                });
+
                 rightPane.classList.add('visible');
                 currentlySelectedEssay = essay;
             }
@@ -205,8 +236,10 @@
 
         function closePreview() {
             const rightPane = document.getElementById('rightPane');
+            const previewHeader = document.getElementById('previewHeader');
             rightPane.classList.remove('visible');
             currentlySelectedEssay = null;
+            previewHeader.innerHTML = '';
             // Remove selected class from all titles
             document.querySelectorAll('.essay-title').forEach(t => t.classList.remove('selected'));
         }
@@ -582,9 +615,17 @@
                 switch(primarySort) {
                     case 'date-desc':
                         primaryResult = b.Year - a.Year;
+                        // If same year, sort by month
+                        if (primaryResult === 0) {
+                            primaryResult = (b.Month || 0) - (a.Month || 0);
+                        }
                         break;
                     case 'date-asc':
                         primaryResult = a.Year - b.Year;
+                        // If same year, sort by month
+                        if (primaryResult === 0) {
+                            primaryResult = (a.Month || 0) - (b.Month || 0);
+                        }
                         break;
                     case 'length-desc':
                         primaryResult = b.WordCount - a.WordCount;
@@ -598,9 +639,17 @@
                 if (primaryResult === 0 && secondarySort) {
                     switch(secondarySort) {
                         case 'date-desc':
-                            return b.Year - a.Year;
+                            const yearDiff = b.Year - a.Year;
+                            if (yearDiff === 0) {
+                                return (b.Month || 0) - (a.Month || 0);
+                            }
+                            return yearDiff;
                         case 'date-asc':
-                            return a.Year - b.Year;
+                            const yearDiffAsc = a.Year - b.Year;
+                            if (yearDiffAsc === 0) {
+                                return (a.Month || 0) - (b.Month || 0);
+                            }
+                            return yearDiffAsc;
                         case 'length-desc':
                             return b.WordCount - a.WordCount;
                         case 'length-asc':
@@ -656,26 +705,49 @@
             }
 
             // Count essays for each topic/category/item
+            // Use a Set to ensure each essay is only counted once per filter key
             const topicCounts = {};
             essaysForTopicCounts.forEach(essay => {
+                const countedKeys = new Set(); // Track what we've counted for this essay
+
                 essay.Topics.forEach(t => {
                     const topicName = t.topic;
-                    topicCounts[topicName] = (topicCounts[topicName] || 0) + 1;
+
+                    // Only count each essay once per topic
+                    if (!countedKeys.has(topicName)) {
+                        topicCounts[topicName] = (topicCounts[topicName] || 0) + 1;
+                        countedKeys.add(topicName);
+                    }
 
                     if (t.subtopics) {
                         t.subtopics.forEach(subObj => {
                             if (subObj.category && subObj.items) {
                                 const categoryKey = `${topicName}|${subObj.category}`;
-                                topicCounts[categoryKey] = (topicCounts[categoryKey] || 0) + 1;
+
+                                // Only count each essay once per category
+                                if (!countedKeys.has(categoryKey)) {
+                                    topicCounts[categoryKey] = (topicCounts[categoryKey] || 0) + 1;
+                                    countedKeys.add(categoryKey);
+                                }
 
                                 subObj.items.forEach(item => {
                                     const itemKey = `${topicName}|${subObj.category}|${item}`;
-                                    topicCounts[itemKey] = (topicCounts[itemKey] || 0) + 1;
+
+                                    // Only count each essay once per item
+                                    if (!countedKeys.has(itemKey)) {
+                                        topicCounts[itemKey] = (topicCounts[itemKey] || 0) + 1;
+                                        countedKeys.add(itemKey);
+                                    }
                                 });
                             } else if (subObj.items) {
                                 subObj.items.forEach(item => {
                                     const itemKey = `${topicName}|${item}`;
-                                    topicCounts[itemKey] = (topicCounts[itemKey] || 0) + 1;
+
+                                    // Only count each essay once per item
+                                    if (!countedKeys.has(itemKey)) {
+                                        topicCounts[itemKey] = (topicCounts[itemKey] || 0) + 1;
+                                        countedKeys.add(itemKey);
+                                    }
                                 });
                             }
                         });
@@ -758,11 +830,17 @@
             }
 
             // Count essays for each essay type
+            // Use a Set to ensure each essay is only counted once per type
             const typeCounts = {};
             essaysForTypeCounts.forEach(essay => {
                 if (essay.EssayType) {
+                    const countedTypes = new Set();
                     essay.EssayType.forEach(type => {
-                        typeCounts[`type:${type}`] = (typeCounts[`type:${type}`] || 0) + 1;
+                        const typeKey = `type:${type}`;
+                        if (!countedTypes.has(typeKey)) {
+                            typeCounts[typeKey] = (typeCounts[typeKey] || 0) + 1;
+                            countedTypes.add(typeKey);
+                        }
                     });
                 }
             });
@@ -842,11 +920,17 @@
             }
 
             // Count essays for each audience
+            // Use a Set to ensure each essay is only counted once per audience
             const audienceCounts = {};
             essaysForAudienceCounts.forEach(essay => {
                 if (essay.Audience) {
+                    const countedAudiences = new Set();
                     essay.Audience.forEach(aud => {
-                        audienceCounts[`audience:${aud}`] = (audienceCounts[`audience:${aud}`] || 0) + 1;
+                        const audKey = `audience:${aud}`;
+                        if (!countedAudiences.has(audKey)) {
+                            audienceCounts[audKey] = (audienceCounts[audKey] || 0) + 1;
+                            countedAudiences.add(audKey);
+                        }
                     });
                 }
             });
@@ -893,6 +977,27 @@
             return item;
         }
 
+        // ========== PATH HELPER FUNCTIONS ==========
+
+        function pathsEqual(path1, path2) {
+            return path1.length === path2.length &&
+                   path1.every((item, i) => item === path2[i]);
+        }
+
+        function isAncestor(ancestorPath, childPath) {
+            // An ancestor is shorter and matches the beginning of the child
+            return childPath.length > ancestorPath.length &&
+                   ancestorPath.every((item, i) => item === childPath[i]);
+        }
+
+        function isDescendant(descendantPath, parentPath) {
+            // A descendant is longer and the parent matches its beginning
+            return descendantPath.length > parentPath.length &&
+                   parentPath.every((item, i) => item === descendantPath[i]);
+        }
+
+        // ========== TOPIC SELECTION HANDLERS ==========
+
         function handleTopicClick(topicName) {
             // Toggle expansion
             const childrenContainer = document.getElementById(`children-${topicName}`);
@@ -926,67 +1031,59 @@
         }
 
         function toggleTopicSelection(path) {
-            // Check if this path is already selected
-            const pathString = JSON.stringify(path);
-            const existingIndex = selectedTopicPaths.findIndex(p => JSON.stringify(p) === pathString);
+            const isSelected = selectedTopicPaths.some(p => pathsEqual(p, path));
+            const hasDescendants = selectedTopicPaths.some(p => isDescendant(p, path));
 
-            // Also check if any descendants are selected (even if this path itself isn't)
-            const hasDescendants = selectedTopicPaths.some(p =>
-                p.length > path.length &&
-                path.every((item, index) => item === p[index])
-            );
+            if (isSelected || hasDescendants) {
+                // DESELECTING: Remove this path and all its descendants
+                selectedTopicPaths = selectedTopicPaths.filter(p =>
+                    !pathsEqual(p, path) && !isDescendant(p, path)
+                );
 
-            if (existingIndex >= 0 || hasDescendants) {
-                // Deselecting - remove it and any descendants
-                selectedTopicPaths = selectedTopicPaths.filter(existingPath => {
-                    // Remove the path itself
-                    if (JSON.stringify(existingPath) === pathString) return false;
+                // Collapse all children containers under this path
+                collapseChildrenContainers(path);
 
-                    // Remove any descendants (children, grandchildren, etc.)
-                    const isDescendant = existingPath.length > path.length &&
-                                        path.every((item, index) => item === existingPath[index]);
-                    return !isDescendant;
-                });
-
-                // If this path has a parent and no siblings are selected, re-select the parent
+                // If this path has a parent and no other children remain under that parent,
+                // re-select the parent
                 if (path.length > 1) {
                     const parentPath = path.slice(0, -1);
-                    const hasSiblings = selectedTopicPaths.some(p => {
-                        // Check if any selected path is a sibling (same parent, different last element)
-                        return p.length === path.length &&
-                               p.slice(0, -1).every((item, index) => item === parentPath[index]) &&
-                               p[p.length - 1] !== path[p.length - 1];
-                    });
+                    const hasOtherChildren = selectedTopicPaths.some(p => isDescendant(p, parentPath));
 
-                    if (!hasSiblings) {
+                    if (!hasOtherChildren) {
                         selectedTopicPaths.push(parentPath);
                     }
                 }
             } else {
-                // Before adding, remove any ancestor or descendant paths
-                selectedTopicPaths = selectedTopicPaths.filter(existingPath => {
-                    const existingPathString = JSON.stringify(existingPath);
-
-                    // Check if existingPath is an ancestor of the new path
-                    // (e.g., ["Startups"] is ancestor of ["Startups", "Funding and Finance"])
-                    const isAncestor = path.length > existingPath.length &&
-                                      existingPath.every((item, index) => item === path[index]);
-
-                    // Check if existingPath is a descendant of the new path
-                    // (e.g., ["Startups", "Funding and Finance", "Exits"] is descendant of ["Startups"])
-                    const isDescendant = existingPath.length > path.length &&
-                                        path.every((item, index) => item === existingPath[index]);
-
-                    // Keep the path only if it's neither an ancestor nor descendant
-                    return !isAncestor && !isDescendant;
-                });
-
-                // Add the new path
+                // SELECTING: Remove any ancestors or descendants first, then add this path
+                selectedTopicPaths = selectedTopicPaths.filter(p =>
+                    !isAncestor(p, path) && !isDescendant(p, path)
+                );
                 selectedTopicPaths.push(path);
             }
 
             updateTreeSelection();
             applySortAndFilter();
+        }
+
+        function collapseChildrenContainers(path) {
+            // Collapse the children container for this path and all descendants
+            if (path.length === 1) {
+                // Topic level: collapse children-{topicName}
+                const container = document.getElementById(`children-${path[0]}`);
+                if (container) {
+                    container.classList.remove('expanded');
+                }
+                // Also collapse all nested children under this topic
+                const allContainers = document.querySelectorAll(`[id^="children-${path[0]}-"]`);
+                allContainers.forEach(c => c.classList.remove('expanded'));
+            } else if (path.length === 2) {
+                // Category level: collapse children-{topicName}-{categoryName}
+                const container = document.getElementById(`children-${path[0]}-${path[1]}`);
+                if (container) {
+                    container.classList.remove('expanded');
+                }
+            }
+            // For item level (length === 3), there are no children to collapse
         }
 
         function updateTreeSelection() {
@@ -1093,10 +1190,15 @@
                 updateRangeFill('time', minTime, maxTime);
             }
 
-            // Collapse all filter sections
-            document.querySelectorAll('.filters-sidebar .filter-label').forEach(label => {
+            // Collapse only filter sections (not sort sections)
+            document.querySelectorAll('.filter-section .filter-label').forEach(label => {
                 label.classList.add('collapsed');
                 label.nextElementSibling.classList.add('collapsed');
+            });
+
+            // Collapse all expanded categories in the topic tree
+            document.querySelectorAll('[id^="children-"]').forEach(container => {
+                container.classList.remove('expanded');
             });
 
             // Update UI and apply filters
@@ -1110,8 +1212,8 @@
             secondarySort = null;
             currentSort = 'date-desc';
 
-            // Collapse all filter sections (both filter and sort sections)
-            document.querySelectorAll('.filters-sidebar .filter-label').forEach(label => {
+            // Collapse only sort sections (not filter sections)
+            document.querySelectorAll('.sort-section .filter-label').forEach(label => {
                 label.classList.add('collapsed');
                 label.nextElementSibling.classList.add('collapsed');
             });
@@ -1459,8 +1561,17 @@
 
             const audienceTree = document.getElementById('audienceTree');
             audienceTree.innerHTML = '';
-            // Sort audiences by count (descending)
-            Object.keys(audienceCounts).sort((a, b) => audienceCounts[b] - audienceCounts[a]).forEach(audience => {
+            // Sort audiences by custom order
+            const audienceOrder = ['General', 'Founders', 'Hackers and Makers', 'Investors', 'Writers'];
+            const sortedAudiences = Object.keys(audienceCounts).sort((a, b) => {
+                const indexA = audienceOrder.indexOf(a);
+                const indexB = audienceOrder.indexOf(b);
+                if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                if (indexA !== -1) return -1;
+                if (indexB !== -1) return 1;
+                return a.localeCompare(b);
+            });
+            sortedAudiences.forEach(audience => {
                 const count = audienceCounts[audience];
                 const item = createTreeItem(audience, count, 1, () => handleAudienceClick(audience), `audience:${audience}`);
                 audienceTree.appendChild(item);
@@ -1506,16 +1617,7 @@
                 const titleText = document.createElement('span');
                 titleText.textContent = essay.Title;
 
-                const externalIcon = document.createElement('a');
-                externalIcon.className = 'external-link-icon';
-                externalIcon.href = essay.URL;
-                externalIcon.target = '_blank';
-                externalIcon.onclick = (e) => {
-                    e.stopPropagation(); // Prevent triggering the preview
-                };
-
                 title.appendChild(titleText);
-                title.appendChild(externalIcon);
 
                 // Create tags container
                 const tagsContainer = document.createElement('div');

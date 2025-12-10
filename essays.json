@@ -1,9 +1,11 @@
 {
   "essays": [
     {
+      "ID": 230,
       "Title": "The Shape of the Essay Field",
       "URL": "https://www.paulgraham.com/field.html",
       "Date": "06/2025",
+      "Month": 6,
       "Year": 2025,
       "WordCount": 781,
       "ReadingTime": 5,
@@ -24,13 +26,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 230
+      ]
     },
     {
+      "ID": 229,
       "Title": "Good Writing",
       "URL": "https://www.paulgraham.com/goodwriting.html",
       "Date": "05/2025",
+      "Month": 5,
       "Year": 2025,
       "WordCount": 1659,
       "ReadingTime": 10,
@@ -51,13 +54,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 229
+      ]
     },
     {
+      "ID": 228,
       "Title": "What to Do",
       "URL": "https://www.paulgraham.com/do.html",
       "Date": "03/2025",
+      "Month": 3,
       "Year": 2025,
       "WordCount": 1602,
       "ReadingTime": 10,
@@ -79,13 +83,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 228
+      ]
     },
     {
+      "ID": 227,
       "Title": "The Origins of Wokeness",
       "URL": "https://www.paulgraham.com/woke.html",
       "Date": "01/2025",
+      "Month": 1,
       "Year": 2025,
       "WordCount": 6245,
       "ReadingTime": 35,
@@ -106,13 +111,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 227
+      ]
     },
     {
+      "ID": 226,
       "Title": "Writes and Write-Nots",
       "URL": "https://www.paulgraham.com/writes.html",
       "Date": "10/2024",
+      "Month": 10,
       "Year": 2024,
       "WordCount": 557,
       "ReadingTime": 5,
@@ -143,13 +149,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 226
+      ]
     },
     {
+      "ID": 225,
       "Title": "When To Do What You Love",
       "URL": "https://www.paulgraham.com/when.html",
       "Date": "09/2024",
+      "Month": 9,
       "Year": 2024,
       "WordCount": 1566,
       "ReadingTime": 10,
@@ -188,13 +195,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 225
+      ]
     },
     {
+      "ID": 224,
       "Title": "Founder Mode",
       "URL": "https://www.paulgraham.com/foundermode.html",
       "Date": "09/2024",
+      "Month": 9,
       "Year": 2024,
       "WordCount": 1258,
       "ReadingTime": 10,
@@ -228,13 +236,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 224
+      ]
     },
     {
+      "ID": 223,
       "Title": "The Right Kind of Stubborn",
       "URL": "https://www.paulgraham.com/persistence.html",
       "Date": "07/2024",
+      "Month": 7,
       "Year": 2024,
       "WordCount": 1965,
       "ReadingTime": 10,
@@ -274,13 +283,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 223
+      ]
     },
     {
+      "ID": 222,
       "Title": "The Reddits",
       "URL": "https://www.paulgraham.com/reddits.html",
       "Date": "03/2024",
+      "Month": 3,
       "Year": 2024,
       "WordCount": 1170,
       "ReadingTime": 10,
@@ -293,12 +303,6 @@
               "items": [
                 "Ideas",
                 "Starting a Company"
-              ]
-            },
-            {
-              "category": "Running a Startup",
-              "items": [
-                "Strategy and Growth"
               ]
             },
             {
@@ -315,13 +319,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 222
+      ]
     },
     {
+      "ID": 221,
       "Title": "How to Start Google",
       "URL": "https://www.paulgraham.com/google.html",
       "Date": "03/2024",
+      "Month": 3,
       "Year": 2024,
       "WordCount": 2846,
       "ReadingTime": 15,
@@ -365,13 +370,14 @@
       "EssayType": [
         "How-to Guides",
         "Commentary"
-      ],
-      "ID": 221
+      ]
     },
     {
+      "ID": 220,
       "Title": "The Best Essay",
       "URL": "https://www.paulgraham.com/best.html",
       "Date": "03/2024",
+      "Month": 3,
       "Year": 2024,
       "WordCount": 4391,
       "ReadingTime": 25,
@@ -393,13 +399,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 220
+      ]
     },
     {
+      "ID": 219,
       "Title": "Superlinear Returns",
       "URL": "https://www.paulgraham.com/superlinear.html",
       "Date": "10/2023",
+      "Month": 10,
       "Year": 2023,
       "WordCount": 4312,
       "ReadingTime": 25,
@@ -409,8 +416,7 @@
           "subtopics": [
             {
               "items": [
-                "Career",
-                "Life advice"
+                "Career"
               ]
             }
           ]
@@ -439,13 +445,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 219
+      ]
     },
     {
+      "ID": 218,
       "Title": "How to Do Great Work",
       "URL": "https://www.paulgraham.com/greatwork.html",
       "Date": "07/2023",
+      "Month": 7,
       "Year": 2023,
       "WordCount": 11946,
       "ReadingTime": 60,
@@ -478,13 +485,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 218
+      ]
     },
     {
+      "ID": 217,
       "Title": "How to Get New Ideas",
       "URL": "https://www.paulgraham.com/getideas.html",
       "Date": "01/2023",
+      "Month": 1,
       "Year": 2023,
       "WordCount": 153,
       "ReadingTime": 5,
@@ -517,13 +525,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 217
+      ]
     },
     {
+      "ID": 216,
       "Title": "The Need to Read",
       "URL": "https://www.paulgraham.com/read.html",
       "Date": "11/2022",
+      "Month": 11,
       "Year": 2022,
       "WordCount": 467,
       "ReadingTime": 5,
@@ -556,13 +565,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 216
+      ]
     },
     {
+      "ID": 215,
       "Title": "What You (Want to)* Want",
       "URL": "https://www.paulgraham.com/want.html",
       "Date": "11/2022",
+      "Month": 11,
       "Year": 2022,
       "WordCount": 526,
       "ReadingTime": 5,
@@ -593,13 +603,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 215
+      ]
     },
     {
+      "ID": 214,
       "Title": "Alien Truth",
       "URL": "https://www.paulgraham.com/alien.html",
       "Date": "10/2022",
+      "Month": 10,
       "Year": 2022,
       "WordCount": 686,
       "ReadingTime": 5,
@@ -631,13 +642,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 214
+      ]
     },
     {
+      "ID": 213,
       "Title": "What I've Learned from Users",
       "URL": "https://www.paulgraham.com/users.html",
       "Date": "09/2022",
+      "Month": 9,
       "Year": 2022,
       "WordCount": 2221,
       "ReadingTime": 15,
@@ -674,13 +686,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 213
+      ]
     },
     {
+      "ID": 212,
       "Title": "Heresy",
       "URL": "https://www.paulgraham.com/heresy.html",
       "Date": "04/2022",
+      "Month": 4,
       "Year": 2022,
       "WordCount": 2139,
       "ReadingTime": 15,
@@ -713,13 +726,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 212
+      ]
     },
     {
+      "ID": 211,
       "Title": "Putting Ideas into Words",
       "URL": "https://www.paulgraham.com/words.html",
       "Date": "02/2022",
+      "Month": 2,
       "Year": 2022,
       "WordCount": 1182,
       "ReadingTime": 10,
@@ -741,13 +755,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 211
+      ]
     },
     {
+      "ID": 210,
       "Title": "Is There Such a Thing as Good Taste?",
       "URL": "https://www.paulgraham.com/goodtaste.html",
       "Date": "11/2021",
+      "Month": 11,
       "Year": 2021,
       "WordCount": 1135,
       "ReadingTime": 10,
@@ -768,13 +783,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 210
+      ]
     },
     {
+      "ID": 209,
       "Title": "Beyond Smart",
       "URL": "https://www.paulgraham.com/smart.html",
       "Date": "10/2021",
+      "Month": 10,
       "Year": 2021,
       "WordCount": 1443,
       "ReadingTime": 10,
@@ -805,13 +821,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 209
+      ]
     },
     {
+      "ID": 208,
       "Title": "Weird Languages",
       "URL": "https://www.paulgraham.com/weird.html",
       "Date": "08/2021",
+      "Month": 8,
       "Year": 2021,
       "WordCount": 352,
       "ReadingTime": 5,
@@ -833,13 +850,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 208
+      ]
     },
     {
+      "ID": 207,
       "Title": "How to Work Hard",
       "URL": "https://www.paulgraham.com/hwh.html",
       "Date": "06/2021",
+      "Month": 6,
       "Year": 2021,
       "WordCount": 3359,
       "ReadingTime": 20,
@@ -879,13 +897,14 @@
       "EssayType": [
         "How-to Guides",
         "Memoir"
-      ],
-      "ID": 207
+      ]
     },
     {
+      "ID": 206,
       "Title": "A Project of One's Own",
       "URL": "https://www.paulgraham.com/own.html",
       "Date": "06/2021",
+      "Month": 6,
       "Year": 2021,
       "WordCount": 2536,
       "ReadingTime": 15,
@@ -919,13 +938,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 206
+      ]
     },
     {
+      "ID": 205,
       "Title": "Fierce Nerds",
       "URL": "https://www.paulgraham.com/fn.html",
       "Date": "05/2021",
+      "Month": 5,
       "Year": 2021,
       "WordCount": 1268,
       "ReadingTime": 10,
@@ -957,13 +977,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 205
+      ]
     },
     {
+      "ID": 204,
       "Title": "Crazy New Ideas",
       "URL": "https://www.paulgraham.com/newideas.html",
       "Date": "05/2021",
+      "Month": 5,
       "Year": 2021,
       "WordCount": 1351,
       "ReadingTime": 10,
@@ -1004,13 +1025,14 @@
       "EssayType": [
         "Thought Pieces",
         "Commentary"
-      ],
-      "ID": 204
+      ]
     },
     {
+      "ID": 203,
       "Title": "An NFT That Saves Lives",
       "URL": "https://www.paulgraham.com/nft.html",
       "Date": "05/2021",
+      "Month": 5,
       "Year": 2021,
       "WordCount": 321,
       "ReadingTime": 5,
@@ -1032,13 +1054,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 203
+      ]
     },
     {
+      "ID": 202,
       "Title": "The Real Reason to End the Death Penalty",
       "URL": "https://www.paulgraham.com/real.html",
       "Date": "04/2021",
+      "Month": 4,
       "Year": 2021,
       "WordCount": 792,
       "ReadingTime": 5,
@@ -1059,13 +1082,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 202
+      ]
     },
     {
+      "ID": 201,
       "Title": "How People Get Rich Now",
       "URL": "https://www.paulgraham.com/richnow.html",
       "Date": "04/2021",
+      "Month": 4,
       "Year": 2021,
       "WordCount": 2626,
       "ReadingTime": 15,
@@ -1084,12 +1108,6 @@
         {
           "topic": "Startups",
           "subtopics": [
-            {
-              "category": "Getting Started",
-              "items": [
-                "Starting a Company"
-              ]
-            },
             {
               "category": "The Startup World",
               "items": [
@@ -1115,13 +1133,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 201
+      ]
     },
     {
+      "ID": 200,
       "Title": "Write Simply",
       "URL": "https://www.paulgraham.com/simply.html",
       "Date": "03/2021",
+      "Month": 3,
       "Year": 2021,
       "WordCount": 513,
       "ReadingTime": 5,
@@ -1143,13 +1162,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 200
+      ]
     },
     {
+      "ID": 199,
       "Title": "Donate Unrestricted",
       "URL": "https://www.paulgraham.com/donate.html",
       "Date": "03/2021",
+      "Month": 3,
       "Year": 2021,
       "WordCount": 492,
       "ReadingTime": 5,
@@ -1170,13 +1190,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 199
+      ]
     },
     {
+      "ID": 198,
       "Title": "What I Worked On",
       "URL": "https://www.paulgraham.com/worked.html",
       "Date": "03/2015",
+      "Month": 3,
       "Year": 2015,
       "WordCount": 13902,
       "ReadingTime": 70,
@@ -1196,7 +1217,6 @@
           "subtopics": [
             {
               "items": [
-                "Life advice",
                 "Career"
               ]
             }
@@ -1219,13 +1239,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 198
+      ]
     },
     {
+      "ID": 197,
       "Title": "Earnestness",
       "URL": "https://www.paulgraham.com/earnest.html",
       "Date": "12/2020",
+      "Month": 12,
       "Year": 2020,
       "WordCount": 1699,
       "ReadingTime": 10,
@@ -1275,13 +1296,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 197
+      ]
     },
     {
+      "ID": 196,
       "Title": "Billionaires Build",
       "URL": "https://www.paulgraham.com/ace.html",
       "Date": "12/2020",
+      "Month": 12,
       "Year": 2020,
       "WordCount": 3444,
       "ReadingTime": 20,
@@ -1327,13 +1349,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 196
+      ]
     },
     {
+      "ID": 195,
       "Title": "The Airbnbs",
       "URL": "https://www.paulgraham.com/airbnbs.html",
       "Date": "12/2020",
+      "Month": 12,
       "Year": 2020,
       "WordCount": 1105,
       "ReadingTime": 10,
@@ -1353,12 +1376,6 @@
               "items": [
                 "Strategy and Growth"
               ]
-            },
-            {
-              "category": "Funding & Finance",
-              "items": [
-                "Exits"
-              ]
             }
           ]
         }
@@ -1369,13 +1386,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 195
+      ]
     },
     {
+      "ID": 194,
       "Title": "How to Think for Yourself",
       "URL": "https://www.paulgraham.com/think.html",
       "Date": "11/2020",
+      "Month": 11,
       "Year": 2020,
       "WordCount": 3497,
       "ReadingTime": 20,
@@ -1421,15 +1439,15 @@
       ],
       "EssayType": [
         "How-to Guides",
-        "Thought Pieces",
-        "Commentary"
-      ],
-      "ID": 194
+        "Thought Pieces"
+      ]
     },
     {
+      "ID": 193,
       "Title": "Early Work",
       "URL": "https://www.paulgraham.com/early.html",
       "Date": "10/2020",
+      "Month": 10,
       "Year": 2020,
       "WordCount": 2541,
       "ReadingTime": 15,
@@ -1469,13 +1487,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 193
+      ]
     },
     {
+      "ID": 192,
       "Title": "Modeling a Wealth Tax",
       "URL": "https://www.paulgraham.com/wtax.html",
       "Date": "08/2020",
+      "Month": 8,
       "Year": 2020,
       "WordCount": 449,
       "ReadingTime": 5,
@@ -1508,13 +1527,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 192
+      ]
     },
     {
+      "ID": 191,
       "Title": "The Four Quadrants of Conformism",
       "URL": "https://www.paulgraham.com/conformism.html",
       "Date": "07/2020",
+      "Month": 7,
       "Year": 2020,
       "WordCount": 2001,
       "ReadingTime": 15,
@@ -1524,7 +1544,8 @@
           "subtopics": [
             {
               "items": [
-                "Career"
+                "Career",
+                "Life advice"
               ]
             }
           ]
@@ -1547,13 +1568,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 191
+      ]
     },
     {
+      "ID": 190,
       "Title": "Orthodox Privilege",
       "URL": "https://www.paulgraham.com/orth.html",
       "Date": "07/2020",
+      "Month": 7,
       "Year": 2020,
       "WordCount": 653,
       "ReadingTime": 5,
@@ -1575,13 +1597,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 190
+      ]
     },
     {
+      "ID": 189,
       "Title": "Coronavirus and Credibility",
       "URL": "https://www.paulgraham.com/cred.html",
       "Date": "04/2020",
+      "Month": 4,
       "Year": 2020,
       "WordCount": 246,
       "ReadingTime": 5,
@@ -1602,13 +1625,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 189
+      ]
     },
     {
+      "ID": 188,
       "Title": "How to Write Usefully",
       "URL": "https://www.paulgraham.com/useful.html",
       "Date": "02/2020",
+      "Month": 2,
       "Year": 2020,
       "WordCount": 2876,
       "ReadingTime": 15,
@@ -1629,13 +1653,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 188
+      ]
     },
     {
+      "ID": 187,
       "Title": "Being a Noob",
       "URL": "https://www.paulgraham.com/noob.html",
       "Date": "01/2020",
+      "Month": 1,
       "Year": 2020,
       "WordCount": 392,
       "ReadingTime": 5,
@@ -1665,17 +1690,19 @@
       ],
       "Audience": [
         "Founders",
-        "General"
+        "General",
+        "Hackers and Makers"
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 187
+      ]
     },
     {
+      "ID": 186,
       "Title": "Haters",
       "URL": "https://www.paulgraham.com/fh.html",
       "Date": "01/2020",
+      "Month": 1,
       "Year": 2020,
       "WordCount": 1400,
       "ReadingTime": 10,
@@ -1685,7 +1712,7 @@
           "subtopics": [
             {
               "items": [
-                "Life advice"
+                "Career"
               ]
             }
           ]
@@ -1709,13 +1736,14 @@
       "EssayType": [
         "Thought Pieces",
         "Commentary"
-      ],
-      "ID": 186
+      ]
     },
     {
+      "ID": 185,
       "Title": "The Two Kinds of Moderate",
       "URL": "https://www.paulgraham.com/mod.html",
       "Date": "12/2019",
+      "Month": 12,
       "Year": 2019,
       "WordCount": 675,
       "ReadingTime": 5,
@@ -1736,13 +1764,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 185
+      ]
     },
     {
+      "ID": 184,
       "Title": "Fashionable Problems",
       "URL": "https://www.paulgraham.com/fp.html",
       "Date": "12/2019",
+      "Month": 12,
       "Year": 2019,
       "WordCount": 198,
       "ReadingTime": 5,
@@ -1763,8 +1792,7 @@
             {
               "category": "Getting Started",
               "items": [
-                "Ideas",
-                "Starting a Company"
+                "Ideas"
               ]
             }
           ]
@@ -1776,13 +1804,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 184
+      ]
     },
     {
+      "ID": 183,
       "Title": "Having Kids",
       "URL": "https://www.paulgraham.com/kids.html",
       "Date": "12/2019",
+      "Month": 12,
       "Year": 2019,
       "WordCount": 1545,
       "ReadingTime": 10,
@@ -1804,13 +1833,14 @@
       "EssayType": [
         "Thought Pieces",
         "Memoir"
-      ],
-      "ID": 183
+      ]
     },
     {
+      "ID": 182,
       "Title": "The Lesson to Unlearn",
       "URL": "https://www.paulgraham.com/lesson.html",
       "Date": "12/2019",
+      "Month": 12,
       "Year": 2019,
       "WordCount": 4056,
       "ReadingTime": 25,
@@ -1843,13 +1873,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 182
+      ]
     },
     {
+      "ID": 181,
       "Title": "Novelty and Heresy",
       "URL": "https://www.paulgraham.com/nov.html",
       "Date": "11/2019",
+      "Month": 11,
       "Year": 2019,
       "WordCount": 266,
       "ReadingTime": 5,
@@ -1882,13 +1913,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 181
+      ]
     },
     {
+      "ID": 180,
       "Title": "The Bus Ticket Theory of Genius",
       "URL": "https://www.paulgraham.com/genius.html",
       "Date": "11/2019",
+      "Month": 11,
       "Year": 2019,
       "WordCount": 2647,
       "ReadingTime": 15,
@@ -1911,13 +1943,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 180
+      ]
     },
     {
+      "ID": 179,
       "Title": "General and Surprising",
       "URL": "https://www.paulgraham.com/sun.html",
       "Date": "09/2017",
+      "Month": 9,
       "Year": 2017,
       "WordCount": 445,
       "ReadingTime": 5,
@@ -1938,13 +1971,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 179
+      ]
     },
     {
+      "ID": 178,
       "Title": "Charisma / Power",
       "URL": "https://www.paulgraham.com/pow.html",
       "Date": "01/2017",
+      "Month": 1,
       "Year": 2017,
       "WordCount": 124,
       "ReadingTime": 5,
@@ -1965,13 +1999,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 178
+      ]
     },
     {
+      "ID": 177,
       "Title": "The Risk of Discovery",
       "URL": "https://www.paulgraham.com/disc.html",
       "Date": "01/2017",
+      "Month": 1,
       "Year": 2017,
       "WordCount": 222,
       "ReadingTime": 5,
@@ -1981,7 +2016,6 @@
           "subtopics": [
             {
               "items": [
-                "Life advice",
                 "Career"
               ]
             }
@@ -1993,8 +2027,7 @@
             {
               "category": "Getting Started",
               "items": [
-                "Ideas",
-                "Starting a Company"
+                "Ideas"
               ]
             }
           ]
@@ -2005,14 +2038,15 @@
         "General"
       ],
       "EssayType": [
-        "Commentary"
-      ],
-      "ID": 177
+        "Thought Pieces"
+      ]
     },
     {
+      "ID": 176,
       "Title": "How to Make Pittsburgh a Startup Hub",
       "URL": "https://www.paulgraham.com/pgh.html",
       "Date": "04/2016",
+      "Month": 4,
       "Year": 2016,
       "WordCount": 2647,
       "ReadingTime": 15,
@@ -2034,13 +2068,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 176
+      ]
     },
     {
+      "ID": 175,
       "Title": "Life is Short",
       "URL": "https://www.paulgraham.com/vb.html",
       "Date": "01/2016",
+      "Month": 1,
       "Year": 2016,
       "WordCount": 1694,
       "ReadingTime": 10,
@@ -2061,13 +2096,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 175
+      ]
     },
     {
+      "ID": 174,
       "Title": "Economic Inequality",
       "URL": "https://www.paulgraham.com/ineq.html",
       "Date": "01/2016",
+      "Month": 1,
       "Year": 2016,
       "WordCount": 3482,
       "ReadingTime": 20,
@@ -2090,13 +2126,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 174
+      ]
     },
     {
+      "ID": 173,
       "Title": "The Refragmentation",
       "URL": "https://www.paulgraham.com/re.html",
       "Date": "01/2016",
+      "Month": 1,
       "Year": 2016,
       "WordCount": 7320,
       "ReadingTime": 40,
@@ -2119,13 +2156,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 173
+      ]
     },
     {
+      "ID": 172,
       "Title": "Jessica Livingston",
       "URL": "https://www.paulgraham.com/jessica.html",
       "Date": "11/2015",
+      "Month": 11,
       "Year": 2015,
       "WordCount": 1983,
       "ReadingTime": 10,
@@ -2147,13 +2185,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 172
+      ]
     },
     {
+      "ID": 171,
       "Title": "A Way to Detect Bias",
       "URL": "https://www.paulgraham.com/bias.html",
       "Date": "10/2015",
+      "Month": 10,
       "Year": 2015,
       "WordCount": 582,
       "ReadingTime": 5,
@@ -2173,16 +2212,16 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces",
         "How-to Guides",
         "Commentary"
-      ],
-      "ID": 171
+      ]
     },
     {
+      "ID": 170,
       "Title": "Write Like You Talk",
       "URL": "https://www.paulgraham.com/talk.html",
       "Date": "10/2015",
+      "Month": 10,
       "Year": 2015,
       "WordCount": 717,
       "ReadingTime": 5,
@@ -2203,13 +2242,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 170
+      ]
     },
     {
+      "ID": 169,
       "Title": "Default Alive or Default Dead?",
       "URL": "https://www.paulgraham.com/aord.html",
       "Date": "10/2015",
+      "Month": 10,
       "Year": 2015,
       "WordCount": 1521,
       "ReadingTime": 10,
@@ -2237,13 +2277,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 169
+      ]
     },
     {
+      "ID": 168,
       "Title": "Why It's Safe for Founders to Be Nice",
       "URL": "https://www.paulgraham.com/safe.html",
       "Date": "08/2015",
+      "Month": 8,
       "Year": 2015,
       "WordCount": 807,
       "ReadingTime": 5,
@@ -2271,13 +2312,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 168
+      ]
     },
     {
+      "ID": 167,
       "Title": "Change Your Name",
       "URL": "https://www.paulgraham.com/name.html",
       "Date": "08/2015",
+      "Month": 8,
       "Year": 2015,
       "WordCount": 774,
       "ReadingTime": 5,
@@ -2305,13 +2347,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 167
+      ]
     },
     {
+      "ID": 166,
       "Title": "What Microsoft Is this the Altair Basic of?",
       "URL": "https://www.paulgraham.com/altair.html",
       "Date": "02/2015",
+      "Month": 2,
       "Year": 2015,
       "WordCount": 385,
       "ReadingTime": 5,
@@ -2322,8 +2365,7 @@
             {
               "category": "Getting Started",
               "items": [
-                "Ideas",
-                "Starting a Company"
+                "Ideas"
               ]
             }
           ]
@@ -2334,13 +2376,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 166
+      ]
     },
     {
+      "ID": 165,
       "Title": "The Ronco Principle",
       "URL": "https://www.paulgraham.com/ronco.html",
       "Date": "01/2015",
+      "Month": 1,
       "Year": 2015,
       "WordCount": 644,
       "ReadingTime": 5,
@@ -2363,13 +2406,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 165
+      ]
     },
     {
+      "ID": 164,
       "Title": "What Doesn't Seem Like Work?",
       "URL": "https://www.paulgraham.com/work.html",
       "Date": "01/2015",
+      "Month": 1,
       "Year": 2015,
       "WordCount": 496,
       "ReadingTime": 5,
@@ -2388,12 +2432,6 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Getting Started",
-              "items": [
-                "Starting a Company"
-              ]
-            },
-            {
               "category": "The Startup World",
               "items": [
                 "Founder Life"
@@ -2407,15 +2445,16 @@
         "General"
       ],
       "EssayType": [
-        "Commentary",
+        "Thought Pieces",
         "Memoir"
-      ],
-      "ID": 164
+      ]
     },
     {
+      "ID": 163,
       "Title": "Don't Talk to Corp Dev",
       "URL": "https://www.paulgraham.com/corpdev.html",
       "Date": "01/2015",
+      "Month": 1,
       "Year": 2015,
       "WordCount": 1308,
       "ReadingTime": 10,
@@ -2443,13 +2482,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 163
+      ]
     },
     {
+      "ID": 162,
       "Title": "Let the Other 95% of Great Programmers In",
       "URL": "https://www.paulgraham.com/95.html",
       "Date": "12/2014",
+      "Month": 12,
       "Year": 2014,
       "WordCount": 946,
       "ReadingTime": 5,
@@ -2493,13 +2533,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 162
+      ]
     },
     {
+      "ID": 161,
       "Title": "How to Be an Expert in a Changing World",
       "URL": "https://www.paulgraham.com/ecw.html",
       "Date": "12/2014",
+      "Month": 12,
       "Year": 2014,
       "WordCount": 1090,
       "ReadingTime": 10,
@@ -2520,8 +2561,13 @@
             {
               "category": "Getting Started",
               "items": [
-                "Ideas",
-                "Starting a Company"
+                "Ideas"
+              ]
+            },
+            {
+              "category": "The Startup World",
+              "items": [
+                "Founder Life"
               ]
             }
           ]
@@ -2534,13 +2580,14 @@
       "EssayType": [
         "How-to Guides",
         "Commentary"
-      ],
-      "ID": 161
+      ]
     },
     {
+      "ID": 160,
       "Title": "How You Know",
       "URL": "https://www.paulgraham.com/know.html",
       "Date": "12/2014",
+      "Month": 12,
       "Year": 2014,
       "WordCount": 652,
       "ReadingTime": 5,
@@ -2561,13 +2608,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 160
+      ]
     },
     {
+      "ID": 159,
       "Title": "The Fatal Pinch",
       "URL": "https://www.paulgraham.com/pinch.html",
       "Date": "12/2014",
+      "Month": 12,
       "Year": 2014,
       "WordCount": 1620,
       "ReadingTime": 10,
@@ -2596,13 +2644,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 159
+      ]
     },
     {
+      "ID": 158,
       "Title": "Mean People Fail",
       "URL": "https://www.paulgraham.com/mean.html",
       "Date": "11/2014",
+      "Month": 11,
       "Year": 2014,
       "WordCount": 1164,
       "ReadingTime": 10,
@@ -2613,8 +2662,7 @@
             {
               "category": "Running a Startup",
               "items": [
-                "Failure",
-                "Strategy and Growth"
+                "Failure"
               ]
             },
             {
@@ -2645,13 +2693,14 @@
         "Thought Pieces",
         "Commentary",
         "Memoir"
-      ],
-      "ID": 158
+      ]
     },
     {
+      "ID": 157,
       "Title": "Before the Startup",
       "URL": "https://www.paulgraham.com/before.html",
       "Date": "10/2014",
+      "Month": 10,
       "Year": 2014,
       "WordCount": 4652,
       "ReadingTime": 25,
@@ -2692,13 +2741,14 @@
       "EssayType": [
         "Memoir",
         "Commentary"
-      ],
-      "ID": 157
+      ]
     },
     {
+      "ID": 156,
       "Title": "How to Raise Money",
       "URL": "https://www.paulgraham.com/fr.html",
       "Date": "09/2013",
+      "Month": 9,
       "Year": 2013,
       "WordCount": 10797,
       "ReadingTime": 55,
@@ -2711,12 +2761,6 @@
               "items": [
                 "Funding and Investing"
               ]
-            },
-            {
-              "category": "Running a Startup",
-              "items": [
-                "Strategy and Growth"
-              ]
             }
           ]
         }
@@ -2726,13 +2770,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 156
+      ]
     },
     {
+      "ID": 155,
       "Title": "Investor Herd Dynamics",
       "URL": "https://www.paulgraham.com/herd.html",
       "Date": "08/2013",
+      "Month": 8,
       "Year": 2013,
       "WordCount": 1124,
       "ReadingTime": 10,
@@ -2762,13 +2807,14 @@
       "EssayType": [
         "Commentary",
         "How-to Guides"
-      ],
-      "ID": 155
+      ]
     },
     {
+      "ID": 154,
       "Title": "How to Convince Investors",
       "URL": "https://www.paulgraham.com/convince.html",
       "Date": "08/2013",
+      "Month": 8,
       "Year": 2013,
       "WordCount": 3746,
       "ReadingTime": 20,
@@ -2790,13 +2836,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 154
+      ]
     },
     {
+      "ID": 153,
       "Title": "Do Things that Don't Scale",
       "URL": "https://www.paulgraham.com/ds.html",
       "Date": "07/2013",
+      "Month": 7,
       "Year": 2013,
       "WordCount": 4423,
       "ReadingTime": 25,
@@ -2805,7 +2852,7 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Getting Started", 
+              "category": "Getting Started",
               "items": [
                 "Starting a Company"
               ]
@@ -2825,13 +2872,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 153
+      ]
     },
     {
+      "ID": 152,
       "Title": "Startup Investing Trends",
       "URL": "https://www.paulgraham.com/invtrend.html",
       "Date": "06/2013",
+      "Month": 6,
       "Year": 2013,
       "WordCount": 2988,
       "ReadingTime": 15,
@@ -2861,13 +2909,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 152
+      ]
     },
     {
+      "ID": 151,
       "Title": "How to Get Startup Ideas",
       "URL": "https://www.paulgraham.com/startupideas.html",
       "Date": "11/2012",
+      "Month": 11,
       "Year": 2012,
       "WordCount": 7298,
       "ReadingTime": 40,
@@ -2880,12 +2929,6 @@
               "items": [
                 "Ideas"
               ]
-            },
-            {
-              "category": "Running a Startup",
-              "items": [
-                "Strategy and Growth"
-              ]
             }
           ]
         }
@@ -2895,13 +2938,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 151
+      ]
     },
     {
+      "ID": 150,
       "Title": "The Hardware Renaissance",
       "URL": "https://www.paulgraham.com/hw.html",
       "Date": "10/2012",
+      "Month": 10,
       "Year": 2012,
       "WordCount": 415,
       "ReadingTime": 5,
@@ -2934,13 +2978,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 150
+      ]
     },
     {
+      "ID": 149,
       "Title": "Startup = Growth",
       "URL": "https://www.paulgraham.com/growth.html",
       "Date": "09/2012",
+      "Month": 9,
       "Year": 2012,
       "WordCount": 5426,
       "ReadingTime": 30,
@@ -2965,6 +3010,12 @@
               "items": [
                 "Startup Landscape"
               ]
+            },
+            {
+              "category": "Funding & Finance",
+              "items": [
+                "Exits"
+              ]
             }
           ]
         }
@@ -2974,13 +3025,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 149
+      ]
     },
     {
+      "ID": 148,
       "Title": "Black Swan Farming",
       "URL": "https://www.paulgraham.com/swan.html",
       "Date": "09/2012",
+      "Month": 9,
       "Year": 2012,
       "WordCount": 2182,
       "ReadingTime": 15,
@@ -3011,13 +3063,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 148
+      ]
     },
     {
+      "ID": 147,
       "Title": "The Top of My Todo List",
       "URL": "https://www.paulgraham.com/todo.html",
       "Date": "04/2012",
+      "Month": 4,
       "Year": 2012,
       "WordCount": 242,
       "ReadingTime": 5,
@@ -3039,13 +3092,14 @@
       "EssayType": [
         "Commentary",
         "Thought Pieces"
-      ],
-      "ID": 147
+      ]
     },
     {
+      "ID": 146,
       "Title": "Writing and Speaking",
       "URL": "https://www.paulgraham.com/speak.html",
       "Date": "03/2012",
+      "Month": 3,
       "Year": 2012,
       "WordCount": 1213,
       "ReadingTime": 10,
@@ -3067,13 +3121,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 146
+      ]
     },
     {
+      "ID": 145,
       "Title": "How Y Combinator Started",
       "URL": "https://www.paulgraham.com/ycstart.html",
       "Date": "03/2012",
+      "Month": 3,
       "Year": 2012,
       "WordCount": 1454,
       "ReadingTime": 10,
@@ -3096,13 +3151,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 145
+      ]
     },
     {
+      "ID": 144,
       "Title": "Defining Property",
       "URL": "https://www.paulgraham.com/property.html",
       "Date": "03/2012",
+      "Month": 3,
       "Year": 2012,
       "WordCount": 1002,
       "ReadingTime": 10,
@@ -3124,13 +3180,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 144
+      ]
     },
     {
+      "ID": 143,
       "Title": "Frighteningly Ambitious Startup Ideas",
       "URL": "https://www.paulgraham.com/ambitious.html",
       "Date": "03/2012",
+      "Month": 3,
       "Year": 2012,
       "WordCount": 3810,
       "ReadingTime": 20,
@@ -3168,13 +3225,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 143
+      ]
     },
     {
+      "ID": 142,
       "Title": "A Word to the Resourceful",
       "URL": "https://www.paulgraham.com/word.html",
       "Date": "01/2012",
+      "Month": 1,
       "Year": 2012,
       "WordCount": 809,
       "ReadingTime": 5,
@@ -3208,13 +3266,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 142
+      ]
     },
     {
+      "ID": 141,
       "Title": "Schlep Blindness",
       "URL": "https://www.paulgraham.com/schlep.html",
       "Date": "01/2012",
+      "Month": 1,
       "Year": 2012,
       "WordCount": 855,
       "ReadingTime": 5,
@@ -3244,13 +3303,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 141
+      ]
     },
     {
+      "ID": 140,
       "Title": "Snapshot: Viaweb, June 1998",
       "URL": "https://www.paulgraham.com/vw.html",
       "Date": "01/2012",
+      "Month": 1,
       "Year": 2012,
       "WordCount": 884,
       "ReadingTime": 5,
@@ -3271,13 +3331,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 140
+      ]
     },
     {
+      "ID": 139,
       "Title": "Why Startup Hubs Work",
       "URL": "https://www.paulgraham.com/hubs.html",
       "Date": "10/2011",
+      "Month": 10,
       "Year": 2011,
       "WordCount": 1829,
       "ReadingTime": 10,
@@ -3294,12 +3355,6 @@
               ]
             },
             {
-              "category": "Getting Started",
-              "items": [
-                "Starting a Company"
-              ]
-            },
-            {
               "category": "Running a Startup",
               "items": [
                 "Strategy and Growth"
@@ -3313,13 +3368,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 139
+      ]
     },
     {
+      "ID": 138,
       "Title": "The Patent Pledge",
       "URL": "https://www.paulgraham.com/patentpledge.html",
       "Date": "08/2011",
+      "Month": 8,
       "Year": 2011,
       "WordCount": 691,
       "ReadingTime": 5,
@@ -3361,13 +3417,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 138
+      ]
     },
     {
+      "ID": 137,
       "Title": "Subject: Airbnb",
       "URL": "https://www.paulgraham.com/airbnb.html",
       "Date": "03/2011",
+      "Month": 3,
       "Year": 2011,
       "WordCount": 1368,
       "ReadingTime": 10,
@@ -3396,13 +3453,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 137
+      ]
     },
     {
+      "ID": 136,
       "Title": "Founder Control",
       "URL": "https://www.paulgraham.com/control.html",
       "Date": "12/2010",
+      "Month": 12,
       "Year": 2010,
       "WordCount": 782,
       "ReadingTime": 5,
@@ -3436,13 +3494,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 136
+      ]
     },
     {
+      "ID": 135,
       "Title": "Tablets",
       "URL": "https://www.paulgraham.com/tablets.html",
       "Date": "12/2010",
+      "Month": 12,
       "Year": 2010,
       "WordCount": 551,
       "ReadingTime": 5,
@@ -3463,13 +3522,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 135
+      ]
     },
     {
+      "ID": 134,
       "Title": "What We Look for in Founders",
       "URL": "https://www.paulgraham.com/founders.html",
       "Date": "10/2010",
+      "Month": 10,
       "Year": 2010,
       "WordCount": 808,
       "ReadingTime": 5,
@@ -3478,9 +3538,10 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Getting Started",
+              "category": "The Startup World",
               "items": [
-                "Starting a Company"
+                "Founder Life",
+                "Y Combinator"
               ]
             }
           ]
@@ -3491,13 +3552,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 134
+      ]
     },
     {
+      "ID": 133,
       "Title": "The New Funding Landscape",
       "URL": "https://www.paulgraham.com/superangels.html",
       "Date": "10/2010",
+      "Month": 10,
       "Year": 2010,
       "WordCount": 3615,
       "ReadingTime": 20,
@@ -3526,13 +3588,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 133
+      ]
     },
     {
+      "ID": 132,
       "Title": "Where to See Silicon Valley",
       "URL": "https://www.paulgraham.com/seesv.html",
       "Date": "10/2010",
+      "Month": 10,
       "Year": 2010,
       "WordCount": 1091,
       "ReadingTime": 10,
@@ -3555,13 +3618,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 132
+      ]
     },
     {
+      "ID": 131,
       "Title": "High Resolution Fundraising",
       "URL": "https://www.paulgraham.com/hiresfund.html",
       "Date": "09/2010",
+      "Month": 9,
       "Year": 2010,
       "WordCount": 716,
       "ReadingTime": 5,
@@ -3584,13 +3648,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 131
+      ]
     },
     {
+      "ID": 130,
       "Title": "What Happened to Yahoo",
       "URL": "https://www.paulgraham.com/yahoo.html",
       "Date": "08/2010",
+      "Month": 8,
       "Year": 2010,
       "WordCount": 2062,
       "ReadingTime": 15,
@@ -3630,13 +3695,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 130
+      ]
     },
     {
+      "ID": 129,
       "Title": "The Future of Startup Funding",
       "URL": "https://www.paulgraham.com/future.html",
       "Date": "08/2010",
+      "Month": 8,
       "Year": 2010,
       "WordCount": 3938,
       "ReadingTime": 20,
@@ -3665,13 +3731,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 129
+      ]
     },
     {
+      "ID": 128,
       "Title": "The Acceleration of Addictiveness",
       "URL": "https://www.paulgraham.com/addiction.html",
       "Date": "07/2010",
+      "Month": 7,
       "Year": 2010,
       "WordCount": 1298,
       "ReadingTime": 10,
@@ -3702,13 +3769,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 128
+      ]
     },
     {
+      "ID": 127,
       "Title": "The Top Idea in Your Mind",
       "URL": "https://www.paulgraham.com/top.html",
       "Date": "07/2010",
+      "Month": 7,
       "Year": 2010,
       "WordCount": 1191,
       "ReadingTime": 10,
@@ -3752,13 +3820,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 127
+      ]
     },
     {
+      "ID": 126,
       "Title": "How to Lose Time and Money",
       "URL": "https://www.paulgraham.com/selfindulgence.html",
       "Date": "07/2010",
+      "Month": 7,
       "Year": 2010,
       "WordCount": 685,
       "ReadingTime": 5,
@@ -3791,13 +3860,14 @@
       "EssayType": [
         "How-to Guides",
         "Commentary"
-      ],
-      "ID": 126
+      ]
     },
     {
+      "ID": 125,
       "Title": "Organic Startup Ideas",
       "URL": "https://www.paulgraham.com/organic.html",
       "Date": "04/2010",
+      "Month": 4,
       "Year": 2010,
       "WordCount": 1020,
       "ReadingTime": 10,
@@ -3819,13 +3889,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 125
+      ]
     },
     {
+      "ID": 124,
       "Title": "Apple's Mistake",
       "URL": "https://www.paulgraham.com/apple.html",
       "Date": "11/2009",
+      "Month": 11,
       "Year": 2009,
       "WordCount": 2162,
       "ReadingTime": 15,
@@ -3847,13 +3918,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 124
+      ]
     },
     {
+      "ID": 123,
       "Title": "What Startups Are Really Like",
       "URL": "https://www.paulgraham.com/really.html",
       "Date": "10/2009",
+      "Month": 10,
       "Year": 2009,
       "WordCount": 5122,
       "ReadingTime": 30,
@@ -3889,13 +3961,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 123
+      ]
     },
     {
+      "ID": 122,
       "Title": "Persuade xor Discover",
       "URL": "https://www.paulgraham.com/discover.html",
       "Date": "09/2009",
+      "Month": 9,
       "Year": 2009,
       "WordCount": 1315,
       "ReadingTime": 10,
@@ -3928,13 +4001,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 122
+      ]
     },
     {
+      "ID": 121,
       "Title": "Post-Medium Publishing",
       "URL": "https://www.paulgraham.com/publishing.html",
       "Date": "09/2009",
+      "Month": 9,
       "Year": 2009,
       "WordCount": 1792,
       "ReadingTime": 10,
@@ -3976,13 +4050,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 121
+      ]
     },
     {
+      "ID": 120,
       "Title": "The List of N Things",
       "URL": "https://www.paulgraham.com/nthings.html",
       "Date": "09/2009",
+      "Month": 9,
       "Year": 2009,
       "WordCount": 1464,
       "ReadingTime": 10,
@@ -4003,13 +4078,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 120
+      ]
     },
     {
+      "ID": 119,
       "Title": "The Anatomy of Determination",
       "URL": "https://www.paulgraham.com/determination.html",
       "Date": "09/2009",
+      "Month": 9,
       "Year": 2009,
       "WordCount": 1523,
       "ReadingTime": 10,
@@ -4042,13 +4118,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 119
+      ]
     },
     {
+      "ID": 118,
       "Title": "What Kate Saw in Silicon Valley",
       "URL": "https://www.paulgraham.com/kate.html",
       "Date": "08/2009",
+      "Month": 8,
       "Year": 2009,
       "WordCount": 821,
       "ReadingTime": 5,
@@ -4063,12 +4140,6 @@
                 "Startup Landscape",
                 "Founder Life"
               ]
-            },
-            {
-              "category": "Getting Started",
-              "items": [
-                "Starting a Company"
-              ]
             }
           ]
         }
@@ -4078,13 +4149,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 118
+      ]
     },
     {
+      "ID": 117,
       "Title": "The Trouble with the Segway",
       "URL": "https://www.paulgraham.com/segway.html",
       "Date": "07/2009",
+      "Month": 7,
       "Year": 2009,
       "WordCount": 387,
       "ReadingTime": 5,
@@ -4109,32 +4181,21 @@
               ]
             }
           ]
-        },
-        {
-          "topic": "Society",
-          "subtopics": [
-            {
-              "items": [
-                "Social Commentary"
-              ]
-            }
-          ]
         }
       ],
       "Audience": [
-        "Founders",
-        "General"
+        "Founders"
       ],
       "EssayType": [
-        "Commentary",
-        "Thought Pieces"
-      ],
-      "ID": 117
+        "Commentary"
+      ]
     },
     {
+      "ID": 116,
       "Title": "Ramen Profitable",
       "URL": "https://www.paulgraham.com/ramenprofitable.html",
       "Date": "07/2009",
+      "Month": 7,
       "Year": 2009,
       "WordCount": 1858,
       "ReadingTime": 10,
@@ -4153,12 +4214,6 @@
               "items": [
                 "Strategy and Growth"
               ]
-            },
-            {
-              "category": "Getting Started",
-              "items": [
-                "Starting a Company"
-              ]
             }
           ]
         }
@@ -4168,13 +4223,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 116
+      ]
     },
     {
+      "ID": 115,
       "Title": "Maker's Schedule, Manager's Schedule",
       "URL": "https://www.paulgraham.com/makersschedule.html",
       "Date": "07/2009",
+      "Month": 7,
       "Year": 2009,
       "WordCount": 1170,
       "ReadingTime": 10,
@@ -4210,13 +4266,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 115
+      ]
     },
     {
+      "ID": 114,
       "Title": "A Local Revolution?",
       "URL": "https://www.paulgraham.com/revolution.html",
       "Date": "04/2009",
+      "Month": 4,
       "Year": 2009,
       "WordCount": 1356,
       "ReadingTime": 10,
@@ -4238,13 +4295,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 114
+      ]
     },
     {
+      "ID": 113,
       "Title": "Why Twitter is a Big Deal",
       "URL": "https://www.paulgraham.com/twitter.html",
       "Date": "04/2009",
+      "Month": 4,
       "Year": 2009,
       "WordCount": 153,
       "ReadingTime": 5,
@@ -4265,13 +4323,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 113
+      ]
     },
     {
+      "ID": 112,
       "Title": "The Founder Visa",
       "URL": "https://www.paulgraham.com/foundervisa.html",
       "Date": "04/2009",
+      "Month": 4,
       "Year": 2009,
       "WordCount": 408,
       "ReadingTime": 5,
@@ -4306,13 +4365,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 112
+      ]
     },
     {
+      "ID": 111,
       "Title": "Five Founders",
       "URL": "https://www.paulgraham.com/5founders.html",
       "Date": "04/2009",
+      "Month": 4,
       "Year": 2009,
       "WordCount": 761,
       "ReadingTime": 5,
@@ -4334,13 +4394,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 111
+      ]
     },
     {
+      "ID": 110,
       "Title": "Relentlessly Resourceful",
       "URL": "https://www.paulgraham.com/relres.html",
       "Date": "03/2009",
+      "Month": 3,
       "Year": 2009,
       "WordCount": 1021,
       "ReadingTime": 10,
@@ -4378,13 +4439,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 110
+      ]
     },
     {
+      "ID": 109,
       "Title": "How to Be an Angel Investor",
       "URL": "https://www.paulgraham.com/angelinvesting.html",
       "Date": "03/2009",
+      "Month": 3,
       "Year": 2009,
       "WordCount": 4000,
       "ReadingTime": 20,
@@ -4408,13 +4470,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 109
+      ]
     },
     {
+      "ID": 108,
       "Title": "Why TV Lost",
       "URL": "https://www.paulgraham.com/convergence.html",
       "Date": "03/2009",
+      "Month": 3,
       "Year": 2009,
       "WordCount": 1551,
       "ReadingTime": 10,
@@ -4436,13 +4499,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 108
+      ]
     },
     {
+      "ID": 107,
       "Title": "Can You Buy a Silicon Valley? Maybe.",
       "URL": "https://www.paulgraham.com/maybe.html",
       "Date": "02/2009",
+      "Month": 2,
       "Year": 2009,
       "WordCount": 1937,
       "ReadingTime": 10,
@@ -4465,13 +4529,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 107
+      ]
     },
     {
+      "ID": 106,
       "Title": "What I've Learned from Hacker News",
       "URL": "https://www.paulgraham.com/hackernews.html",
       "Date": "02/2007",
+      "Month": 2,
       "Year": 2007,
       "WordCount": 2898,
       "ReadingTime": 15,
@@ -4493,13 +4558,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 106
+      ]
     },
     {
+      "ID": 105,
       "Title": "Startups in 13 Sentences",
       "URL": "https://www.paulgraham.com/13sentences.html",
       "Date": "02/2009",
+      "Month": 2,
       "Year": 2009,
       "WordCount": 1356,
       "ReadingTime": 10,
@@ -4536,13 +4602,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 105
+      ]
     },
     {
+      "ID": 104,
       "Title": "Keep Your Identity Small",
       "URL": "https://www.paulgraham.com/identity.html",
       "Date": "02/2009",
+      "Month": 2,
       "Year": 2009,
       "WordCount": 886,
       "ReadingTime": 5,
@@ -4573,15 +4640,15 @@
         "General"
       ],
       "EssayType": [
-        "Thought Pieces",
-        "Commentary"
-      ],
-      "ID": 104
+        "Thought Pieces"
+      ]
     },
     {
+      "ID": 103,
       "Title": "After Credentials",
       "URL": "https://www.paulgraham.com/credentials.html",
       "Date": "12/2008",
+      "Month": 12,
       "Year": 2008,
       "WordCount": 2398,
       "ReadingTime": 15,
@@ -4605,13 +4672,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 103
+      ]
     },
     {
+      "ID": 102,
       "Title": "Could VC be a Casualty of the Recession?",
       "URL": "https://www.paulgraham.com/divergence.html",
       "Date": "12/2008",
+      "Month": 12,
       "Year": 2008,
       "WordCount": 1360,
       "ReadingTime": 10,
@@ -4628,7 +4696,8 @@
             {
               "category": "Funding & Finance",
               "items": [
-                "Funding and Investing"
+                "Funding and Investing",
+                "Runway"
               ]
             },
             {
@@ -4656,13 +4725,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 102
+      ]
     },
     {
+      "ID": 101,
       "Title": "The High-Res Society",
       "URL": "https://www.paulgraham.com/highres.html",
       "Date": "12/2008",
+      "Month": 12,
       "Year": 2008,
       "WordCount": 1542,
       "ReadingTime": 10,
@@ -4693,13 +4763,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 101
+      ]
     },
     {
+      "ID": 100,
       "Title": "The Other Half of \"Artists Ship\"",
       "URL": "https://www.paulgraham.com/artistsship.html",
       "Date": "11/2008",
+      "Month": 11,
       "Year": 2008,
       "WordCount": 1315,
       "ReadingTime": 10,
@@ -4720,13 +4791,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 100
+      ]
     },
     {
+      "ID": 99,
       "Title": "Why to Start a Startup in a Bad Economy",
       "URL": "https://www.paulgraham.com/badeconomy.html",
       "Date": "10/2008",
+      "Month": 10,
       "Year": 2008,
       "WordCount": 1125,
       "ReadingTime": 10,
@@ -4760,13 +4832,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 99
+      ]
     },
     {
+      "ID": 98,
       "Title": "A Fundraising Survival Guide",
       "URL": "https://www.paulgraham.com/fundraising.html",
       "Date": "08/2008",
+      "Month": 8,
       "Year": 2008,
       "WordCount": 4871,
       "ReadingTime": 25,
@@ -4794,13 +4867,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 98
+      ]
     },
     {
+      "ID": 97,
       "Title": "The Pooled-Risk Company Management Company",
       "URL": "https://www.paulgraham.com/prcmc.html",
       "Date": "07/2008",
+      "Month": 7,
       "Year": 2008,
       "WordCount": 1267,
       "ReadingTime": 10,
@@ -4814,6 +4888,12 @@
                 "Startup Landscape",
                 "Founder Life"
               ]
+            },
+            {
+              "category": "Funding & Finance",
+              "items": [
+                "Exits"
+              ]
             }
           ]
         }
@@ -4823,13 +4903,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 97
+      ]
     },
     {
+      "ID": 96,
       "Title": "Cities and Ambition",
       "URL": "https://www.paulgraham.com/cities.html",
       "Date": "05/2008",
+      "Month": 5,
       "Year": 2008,
       "WordCount": 3636,
       "ReadingTime": 20,
@@ -4862,13 +4943,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 96
+      ]
     },
     {
+      "ID": 95,
       "Title": "Disconnecting Distraction",
       "URL": "https://www.paulgraham.com/distraction.html",
       "Date": "05/2008",
+      "Month": 5,
       "Year": 2008,
       "WordCount": 1163,
       "ReadingTime": 10,
@@ -4899,13 +4981,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 95
+      ]
     },
     {
+      "ID": 94,
       "Title": "Lies We Tell Kids",
       "URL": "https://www.paulgraham.com/lies.html",
       "Date": "05/2008",
+      "Month": 5,
       "Year": 2008,
       "WordCount": 5295,
       "ReadingTime": 30,
@@ -4926,13 +5009,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 94
+      ]
     },
     {
+      "ID": 93,
       "Title": "Be Good",
       "URL": "https://www.paulgraham.com/good.html",
       "Date": "04/2008",
+      "Month": 4,
       "Year": 2008,
       "WordCount": 2968,
       "ReadingTime": 15,
@@ -4960,13 +5044,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 93
+      ]
     },
     {
+      "ID": 92,
       "Title": "Why There Aren't More Googles",
       "URL": "https://www.paulgraham.com/googles.html",
       "Date": "04/2008",
+      "Month": 4,
       "Year": 2008,
       "WordCount": 1347,
       "ReadingTime": 10,
@@ -4975,15 +5060,10 @@
           "topic": "Startups",
           "subtopics": [
             {
-              "category": "Running a Startup",
-              "items": [
-                "Strategy and Growth"
-              ]
-            },
-            {
               "category": "Funding & Finance",
               "items": [
-                "Funding and Investing"
+                "Funding and Investing",
+                "Exits"
               ]
             },
             {
@@ -5001,13 +5081,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 92
+      ]
     },
     {
+      "ID": 91,
       "Title": "Some Heroes",
       "URL": "https://www.paulgraham.com/heroes.html",
       "Date": "04/2008",
+      "Month": 4,
       "Year": 2008,
       "WordCount": 2703,
       "ReadingTime": 15,
@@ -5028,13 +5109,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 91
+      ]
     },
     {
+      "ID": 90,
       "Title": "How to Disagree",
       "URL": "https://www.paulgraham.com/disagree.html",
       "Date": "03/2008",
+      "Month": 3,
       "Year": 2008,
       "WordCount": 1530,
       "ReadingTime": 10,
@@ -5078,13 +5160,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 90
+      ]
     },
     {
+      "ID": 89,
       "Title": "You Weren't Meant to Have a Boss",
       "URL": "https://www.paulgraham.com/boss.html",
       "Date": "06/2008",
+      "Month": 6,
       "Year": 2008,
       "WordCount": 2559,
       "ReadingTime": 15,
@@ -5117,13 +5200,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 89
+      ]
     },
     {
+      "ID": 88,
       "Title": "A New Venture Animal",
       "URL": "https://www.paulgraham.com/ycombinator.html",
       "Date": "05/2013",
+      "Month": 5,
       "Year": 2013,
       "WordCount": 1990,
       "ReadingTime": 10,
@@ -5159,13 +5243,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 88
+      ]
     },
     {
+      "ID": 87,
       "Title": "Trolls",
       "URL": "https://www.paulgraham.com/trolls.html",
       "Date": "02/2008",
+      "Month": 2,
       "Year": 2008,
       "WordCount": 903,
       "ReadingTime": 5,
@@ -5186,13 +5271,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 87
+      ]
     },
     {
+      "ID": 86,
       "Title": "Six Principles for Making New Things",
       "URL": "https://www.paulgraham.com/newthings.html",
       "Date": "02/2008",
+      "Month": 2,
       "Year": 2008,
       "WordCount": 1173,
       "ReadingTime": 10,
@@ -5221,13 +5307,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 86
+      ]
     },
     {
+      "ID": 85,
       "Title": "Why to Move to a Startup Hub",
       "URL": "https://www.paulgraham.com/startuphubs.html",
       "Date": "10/2007",
+      "Month": 10,
       "Year": 2007,
       "WordCount": 1474,
       "ReadingTime": 10,
@@ -5250,13 +5337,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 85
+      ]
     },
     {
+      "ID": 84,
       "Title": "The Future of Web Startups",
       "URL": "https://www.paulgraham.com/webstartups.html",
       "Date": "10/2007",
+      "Month": 10,
       "Year": 2007,
       "WordCount": 3412,
       "ReadingTime": 20,
@@ -5268,6 +5356,12 @@
               "category": "The Startup World",
               "items": [
                 "Startup Landscape"
+              ]
+            },
+            {
+              "category": "Funding & Finance",
+              "items": [
+                "Exits"
               ]
             }
           ]
@@ -5288,13 +5382,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 84
+      ]
     },
     {
+      "ID": 83,
       "Title": "How to Do Philosophy",
       "URL": "https://www.paulgraham.com/philosophy.html",
       "Date": "09/2007",
+      "Month": 9,
       "Year": 2007,
       "WordCount": 4795,
       "ReadingTime": 25,
@@ -5305,16 +5400,6 @@
             {
               "items": [
                 "Life advice"
-              ]
-            }
-          ]
-        },
-        {
-          "topic": "Communication",
-          "subtopics": [
-            {
-              "items": [
-                "Writing"
               ]
             }
           ]
@@ -5337,13 +5422,14 @@
         "How-to Guides",
         "Thought Pieces",
         "Memoir"
-      ],
-      "ID": 83
+      ]
     },
     {
+      "ID": 82,
       "Title": "News from the Front",
       "URL": "https://www.paulgraham.com/colleges.html",
       "Date": "09/2007",
+      "Month": 9,
       "Year": 2007,
       "WordCount": 2240,
       "ReadingTime": 15,
@@ -5364,13 +5450,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 82
+      ]
     },
     {
+      "ID": 81,
       "Title": "How Not to Die",
       "URL": "https://www.paulgraham.com/die.html",
       "Date": "08/2007",
+      "Month": 8,
       "Year": 2007,
       "WordCount": 1983,
       "ReadingTime": 10,
@@ -5399,13 +5486,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 81
+      ]
     },
     {
+      "ID": 80,
       "Title": "Holding a Program in One's Head",
       "URL": "https://www.paulgraham.com/head.html",
       "Date": "08/2007",
+      "Month": 8,
       "Year": 2007,
       "WordCount": 1852,
       "ReadingTime": 10,
@@ -5428,13 +5516,14 @@
       "EssayType": [
         "Commentary",
         "How-to Guides"
-      ],
-      "ID": 80
+      ]
     },
     {
+      "ID": 79,
       "Title": "Stuff",
       "URL": "https://www.paulgraham.com/stuff.html",
       "Date": "07/2007",
+      "Month": 7,
       "Year": 2007,
       "WordCount": 1265,
       "ReadingTime": 10,
@@ -5465,13 +5554,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 79
+      ]
     },
     {
+      "ID": 78,
       "Title": "The Equity Equation",
       "URL": "https://www.paulgraham.com/equity.html",
       "Date": "07/2007",
+      "Month": 7,
       "Year": 2007,
       "WordCount": 1143,
       "ReadingTime": 10,
@@ -5495,13 +5585,14 @@
       "EssayType": [
         "Commentary",
         "How-to Guides"
-      ],
-      "ID": 78
+      ]
     },
     {
+      "ID": 77,
       "Title": "An Alternative Theory of Unions",
       "URL": "https://www.paulgraham.com/unions.html",
       "Date": "05/2007",
+      "Month": 5,
       "Year": 2007,
       "WordCount": 520,
       "ReadingTime": 5,
@@ -5522,13 +5613,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 77
+      ]
     },
     {
+      "ID": 76,
       "Title": "The Hacker's Guide to Investors",
       "URL": "https://www.paulgraham.com/guidetoinvestors.html",
       "Date": "04/2007",
+      "Month": 4,
       "Year": 2007,
       "WordCount": 6268,
       "ReadingTime": 35,
@@ -5539,7 +5631,8 @@
             {
               "category": "Funding & Finance",
               "items": [
-                "Funding and Investing"
+                "Funding and Investing",
+                "Exits"
               ]
             },
             {
@@ -5559,13 +5652,14 @@
       "EssayType": [
         "Commentary",
         "How-to Guides"
-      ],
-      "ID": 76
+      ]
     },
     {
+      "ID": 75,
       "Title": "Two Kinds of Judgement",
       "URL": "https://www.paulgraham.com/judgement.html",
       "Date": "04/2007",
+      "Month": 4,
       "Year": 2007,
       "WordCount": 750,
       "ReadingTime": 5,
@@ -5598,13 +5692,14 @@
       "EssayType": [
         "Commentary",
         "Thought Pieces"
-      ],
-      "ID": 75
+      ]
     },
     {
+      "ID": 74,
       "Title": "Microsoft is Dead",
       "URL": "https://www.paulgraham.com/microsoft.html",
       "Date": "08/2004",
+      "Month": 8,
       "Year": 2004,
       "WordCount": 1308,
       "ReadingTime": 10,
@@ -5625,13 +5720,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 74
+      ]
     },
     {
+      "ID": 73,
       "Title": "Why to Not Not Start a Startup",
       "URL": "https://www.paulgraham.com/notnot.html",
       "Date": "03/2007",
+      "Month": 3,
       "Year": 2007,
       "WordCount": 6315,
       "ReadingTime": 35,
@@ -5660,13 +5756,14 @@
       "EssayType": [
         "Memoir",
         "Commentary"
-      ],
-      "ID": 73
+      ]
     },
     {
+      "ID": 72,
       "Title": "Is It Worth Being Wise?",
       "URL": "https://www.paulgraham.com/wisdom.html",
       "Date": "02/2007",
+      "Month": 2,
       "Year": 2007,
       "WordCount": 3797,
       "ReadingTime": 20,
@@ -5688,13 +5785,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 72
+      ]
     },
     {
+      "ID": 71,
       "Title": "Learning from Founders",
       "URL": "https://www.paulgraham.com/foundersatwork.html",
       "Date": "01/2007",
+      "Month": 1,
       "Year": 2007,
       "WordCount": 835,
       "ReadingTime": 5,
@@ -5722,13 +5820,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 71
+      ]
     },
     {
+      "ID": 70,
       "Title": "How Art Can Be Good",
       "URL": "https://www.paulgraham.com/goodart.html",
       "Date": "12/2006",
+      "Month": 12,
       "Year": 2006,
       "WordCount": 3674,
       "ReadingTime": 20,
@@ -5749,13 +5848,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 70
+      ]
     },
     {
+      "ID": 69,
       "Title": "The 18 Mistakes That Kill Startups",
       "URL": "https://www.paulgraham.com/startupmistakes.html",
       "Date": "10/2006",
+      "Month": 10,
       "Year": 2006,
       "WordCount": 5673,
       "ReadingTime": 30,
@@ -5773,7 +5873,15 @@
             {
               "category": "The Startup World",
               "items": [
-                "Startup Landscape"
+                "Startup Landscape",
+                "Founder Life"
+              ]
+            },
+            {
+              "category": "Funding & Finance",
+              "items": [
+                "Runway",
+                "Funding and Investing"
               ]
             }
           ]
@@ -5784,13 +5892,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 69
+      ]
     },
     {
+      "ID": 68,
       "Title": "A Student's Guide to Startups",
       "URL": "https://www.paulgraham.com/mit.html",
       "Date": "10/2006",
+      "Month": 10,
       "Year": 2006,
       "WordCount": 6483,
       "ReadingTime": 35,
@@ -5813,13 +5922,14 @@
       "EssayType": [
         "Commentary",
         "How-to Guides"
-      ],
-      "ID": 68
+      ]
     },
     {
+      "ID": 67,
       "Title": "How to Present to Investors",
       "URL": "https://www.paulgraham.com/investors.html",
       "Date": "09/2010",
+      "Month": 9,
       "Year": 2010,
       "WordCount": 2848,
       "ReadingTime": 15,
@@ -5841,13 +5951,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 67
+      ]
     },
     {
+      "ID": 66,
       "Title": "Copy What You Like",
       "URL": "https://www.paulgraham.com/copy.html",
       "Date": "07/2006",
+      "Month": 7,
       "Year": 2006,
       "WordCount": 944,
       "ReadingTime": 5,
@@ -5870,13 +5981,14 @@
       "EssayType": [
         "Thought Pieces",
         "Memoir"
-      ],
-      "ID": 66
+      ]
     },
     {
+      "ID": 65,
       "Title": "The Island Test",
       "URL": "https://www.paulgraham.com/island.html",
       "Date": "07/2006",
+      "Month": 7,
       "Year": 2006,
       "WordCount": 762,
       "ReadingTime": 5,
@@ -5897,13 +6009,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 65
+      ]
     },
     {
+      "ID": 64,
       "Title": "The Power of the Marginal",
       "URL": "https://www.paulgraham.com/marginal.html",
       "Date": "06/2006",
+      "Month": 6,
       "Year": 2006,
       "WordCount": 6102,
       "ReadingTime": 35,
@@ -5931,13 +6044,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 64
+      ]
     },
     {
+      "ID": 63,
       "Title": "Why Startups Condense in America",
       "URL": "https://www.paulgraham.com/america.html",
       "Date": "05/2006",
+      "Month": 5,
       "Year": 2006,
       "WordCount": 4809,
       "ReadingTime": 25,
@@ -5972,13 +6086,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 63
+      ]
     },
     {
+      "ID": 62,
       "Title": "How to Be Silicon Valley",
       "URL": "https://www.paulgraham.com/siliconvalley.html",
       "Date": "05/2006",
+      "Month": 5,
       "Year": 2006,
       "WordCount": 3685,
       "ReadingTime": 20,
@@ -6000,13 +6115,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 62
+      ]
     },
     {
+      "ID": 61,
       "Title": "The Hardest Lessons for Startups to Learn",
       "URL": "https://www.paulgraham.com/startuplessons.html",
       "Date": "04/2006",
+      "Month": 4,
       "Year": 2006,
       "WordCount": 4879,
       "ReadingTime": 25,
@@ -6030,13 +6146,14 @@
       "EssayType": [
         "Commentary",
         "How-to Guides"
-      ],
-      "ID": 61
+      ]
     },
     {
+      "ID": 60,
       "Title": "See Randomness",
       "URL": "https://www.paulgraham.com/randomness.html",
       "Date": "08/2009",
+      "Month": 8,
       "Year": 2009,
       "WordCount": 592,
       "ReadingTime": 5,
@@ -6067,13 +6184,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 60
+      ]
     },
     {
+      "ID": 59,
       "Title": "Are Software Patents Evil?",
       "URL": "https://www.paulgraham.com/softwarepatents.html",
       "Date": "03/2006",
+      "Month": 3,
       "Year": 2006,
       "WordCount": 4701,
       "ReadingTime": 25,
@@ -6116,13 +6234,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 59
+      ]
     },
     {
+      "ID": 58,
       "Title": "6,631,372",
       "URL": "https://www.paulgraham.com/6631327.html",
       "Date": "03/2006",
+      "Month": 3,
       "Year": 2006,
       "WordCount": 694,
       "ReadingTime": 5,
@@ -6145,13 +6264,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 58
+      ]
     },
     {
+      "ID": 57,
       "Title": "Why YC",
       "URL": "https://www.paulgraham.com/whyyc.html",
       "Date": "08/2009",
+      "Month": 8,
       "Year": 2009,
       "WordCount": 379,
       "ReadingTime": 5,
@@ -6173,13 +6293,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 57
+      ]
     },
     {
+      "ID": 56,
       "Title": "How to Do What You Love",
       "URL": "https://www.paulgraham.com/love.html",
       "Date": "01/2006",
+      "Month": 1,
       "Year": 2006,
       "WordCount": 4752,
       "ReadingTime": 25,
@@ -6201,13 +6322,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 56
+      ]
     },
     {
+      "ID": 55,
       "Title": "Good and Bad Procrastination",
       "URL": "https://www.paulgraham.com/procrastination.html",
       "Date": "12/2005",
+      "Month": 12,
       "Year": 2005,
       "WordCount": 1822,
       "ReadingTime": 10,
@@ -6229,13 +6351,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 55
+      ]
     },
     {
+      "ID": 54,
       "Title": "Web 2.0",
       "URL": "https://www.paulgraham.com/web20.html",
       "Date": "06/2004",
+      "Month": 6,
       "Year": 2004,
       "WordCount": 3435,
       "ReadingTime": 20,
@@ -6256,13 +6379,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 54
+      ]
     },
     {
+      "ID": 53,
       "Title": "How to Fund a Startup",
       "URL": "https://www.paulgraham.com/startupfunding.html",
       "Date": "11/2005",
+      "Month": 11,
       "Year": 2005,
       "WordCount": 8982,
       "ReadingTime": 45,
@@ -6273,7 +6397,9 @@
             {
               "category": "Funding & Finance",
               "items": [
-                "Funding and Investing"
+                "Funding and Investing",
+                "Runway",
+                "Exits"
               ]
             }
           ]
@@ -6285,13 +6411,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 53
+      ]
     },
     {
+      "ID": 52,
       "Title": "The Venture Capital Squeeze",
       "URL": "https://www.paulgraham.com/vcsqueeze.html",
       "Date": "11/2005",
+      "Month": 11,
       "Year": 2005,
       "WordCount": 1587,
       "ReadingTime": 10,
@@ -6320,13 +6447,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 52
+      ]
     },
     {
+      "ID": 51,
       "Title": "Ideas for Startups",
       "URL": "https://www.paulgraham.com/ideas.html",
       "Date": "10/2005",
+      "Month": 10,
       "Year": 2005,
       "WordCount": 3976,
       "ReadingTime": 20,
@@ -6348,13 +6476,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 51
+      ]
     },
     {
+      "ID": 50,
       "Title": "What I Did this Summer",
       "URL": "https://www.paulgraham.com/sfp.html",
       "Date": "10/2005",
+      "Month": 10,
       "Year": 2005,
       "WordCount": 2588,
       "ReadingTime": 15,
@@ -6376,13 +6505,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 50
+      ]
     },
     {
+      "ID": 49,
       "Title": "Inequality and Risk",
       "URL": "https://www.paulgraham.com/inequality.html",
       "Date": "08/2005",
+      "Month": 8,
       "Year": 2005,
       "WordCount": 2867,
       "ReadingTime": 15,
@@ -6417,13 +6547,14 @@
       ],
       "EssayType": [
         "Thought Pieces"
-      ],
-      "ID": 49
+      ]
     },
     {
+      "ID": 48,
       "Title": "After the Ladder",
       "URL": "https://www.paulgraham.com/ladder.html",
       "Date": "08/2005",
+      "Month": 8,
       "Year": 2005,
       "WordCount": 594,
       "ReadingTime": 5,
@@ -6467,13 +6598,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 48
+      ]
     },
     {
+      "ID": 47,
       "Title": "What Business Can Learn from Open Source",
       "URL": "https://www.paulgraham.com/opensource.html",
       "Date": "08/2005",
+      "Month": 8,
       "Year": 2005,
       "WordCount": 4400,
       "ReadingTime": 25,
@@ -6506,14 +6638,15 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 47
+      ]
     },
     {
+      "ID": 46,
       "Title": "Hiring is Obsolete",
       "URL": "https://www.paulgraham.com/hiring.html",
       "Date": "05/2005",
-      "Year": 1995,
+      "Month": 5,
+      "Year": 2005,
       "WordCount": 4822,
       "ReadingTime": 25,
       "Topics": [
@@ -6540,13 +6673,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 46
+      ]
     },
     {
+      "ID": 45,
       "Title": "The Submarine",
       "URL": "https://www.paulgraham.com/submarine.html",
       "Date": "01/2006",
+      "Month": 1,
       "Year": 2006,
       "WordCount": 2419,
       "ReadingTime": 15,
@@ -6577,13 +6711,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 45
+      ]
     },
     {
+      "ID": 44,
       "Title": "Why Smart People Have Bad Ideas",
       "URL": "https://www.paulgraham.com/bronze.html",
       "Date": "01/1995",
+      "Month": 1,
       "Year": 1995,
       "WordCount": 3226,
       "ReadingTime": 20,
@@ -6606,13 +6741,14 @@
       "EssayType": [
         "Memoir",
         "Commentary"
-      ],
-      "ID": 44
+      ]
     },
     {
+      "ID": 43,
       "Title": "Return of the Mac",
       "URL": "https://www.paulgraham.com/mac.html",
       "Date": "03/2005",
+      "Month": 3,
       "Year": 2005,
       "WordCount": 1016,
       "ReadingTime": 10,
@@ -6633,15 +6769,15 @@
         "General"
       ],
       "EssayType": [
-        "Commentary",
         "Memoir"
-      ],
-      "ID": 43
+      ]
     },
     {
+      "ID": 42,
       "Title": "Writing, Briefly",
       "URL": "https://www.paulgraham.com/writing44.html",
       "Date": "03/2005",
+      "Month": 3,
       "Year": 2005,
       "WordCount": 481,
       "ReadingTime": 5,
@@ -6662,13 +6798,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 42
+      ]
     },
     {
+      "ID": 41,
       "Title": "Undergraduation",
       "URL": "https://www.paulgraham.com/college.html",
       "Date": "03/2005",
+      "Month": 3,
       "Year": 2005,
       "WordCount": 3686,
       "ReadingTime": 20,
@@ -6709,13 +6846,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 41
+      ]
     },
     {
+      "ID": 40,
       "Title": "A Unified Theory of VC Suckage",
       "URL": "https://www.paulgraham.com/venturecapital.html",
       "Date": "03/2005",
+      "Month": 3,
       "Year": 2005,
       "WordCount": 1484,
       "ReadingTime": 10,
@@ -6744,13 +6882,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 40
+      ]
     },
     {
+      "ID": 39,
       "Title": "How to Start a Startup",
       "URL": "https://www.paulgraham.com/start.html",
       "Date": "03/2005",
+      "Month": 3,
       "Year": 2005,
       "WordCount": 9777,
       "ReadingTime": 50,
@@ -6779,13 +6918,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 39
+      ]
     },
     {
+      "ID": 38,
       "Title": "What You'll Wish You'd Known",
       "URL": "https://www.paulgraham.com/hs.html",
       "Date": "01/2005",
+      "Month": 1,
       "Year": 2005,
       "WordCount": 5085,
       "ReadingTime": 30,
@@ -6800,17 +6940,6 @@
               ]
             }
           ]
-        },
-        {
-          "topic": "Startups",
-          "subtopics": [
-            {
-              "category": "Getting Started",
-              "items": [
-                "Starting a Company"
-              ]
-            }
-          ]
         }
       ],
       "Audience": [
@@ -6819,13 +6948,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 38
+      ]
     },
     {
+      "ID": 37,
       "Title": "Made in USA",
       "URL": "https://www.paulgraham.com/usa.html",
       "Date": "11/2004",
+      "Month": 11,
       "Year": 2004,
       "WordCount": 1859,
       "ReadingTime": 10,
@@ -6857,13 +6987,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 37
+      ]
     },
     {
+      "ID": 36,
       "Title": "It's Charisma, Stupid",
       "URL": "https://www.paulgraham.com/charisma.html",
       "Date": "06/2006",
+      "Month": 6,
       "Year": 2006,
       "WordCount": 1526,
       "ReadingTime": 10,
@@ -6884,13 +7015,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 36
+      ]
     },
     {
+      "ID": 35,
       "Title": "Bradley's Ghost",
       "URL": "https://www.paulgraham.com/polls.html",
       "Date": "11/2004",
+      "Month": 11,
       "Year": 2004,
       "WordCount": 639,
       "ReadingTime": 5,
@@ -6911,13 +7043,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 35
+      ]
     },
     {
+      "ID": 34,
       "Title": "A Version 1.0",
       "URL": "https://www.paulgraham.com/laundry.html",
       "Date": "10/2004",
+      "Month": 10,
       "Year": 2004,
       "WordCount": 4289,
       "ReadingTime": 25,
@@ -6938,13 +7071,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 34
+      ]
     },
     {
+      "ID": 33,
       "Title": "What the Bubble Got Right",
       "URL": "https://www.paulgraham.com/bubble.html",
       "Date": "04/2001",
+      "Month": 4,
       "Year": 2001,
       "WordCount": 3744,
       "ReadingTime": 20,
@@ -6985,13 +7119,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 33
+      ]
     },
     {
+      "ID": 32,
       "Title": "The Age of the Essay",
       "URL": "https://www.paulgraham.com/essay.html",
       "Date": "09/2004",
+      "Month": 9,
       "Year": 2004,
       "WordCount": 4555,
       "ReadingTime": 25,
@@ -7012,13 +7147,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 32
+      ]
     },
     {
+      "ID": 31,
       "Title": "The Python Paradox",
       "URL": "https://www.paulgraham.com/pypar.html",
       "Date": "08/2004",
+      "Month": 8,
       "Year": 2004,
       "WordCount": 484,
       "ReadingTime": 5,
@@ -7045,13 +7181,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 31
+      ]
     },
     {
+      "ID": 30,
       "Title": "Great Hackers",
       "URL": "https://www.paulgraham.com/gh.html",
       "Date": "07/2004",
+      "Month": 7,
       "Year": 2004,
       "WordCount": 5261,
       "ReadingTime": 30,
@@ -7083,13 +7220,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 30
+      ]
     },
     {
+      "ID": 29,
       "Title": "Mind the Gap",
       "URL": "https://www.paulgraham.com/gap.html",
       "Date": "05/2004",
+      "Month": 5,
       "Year": 2004,
       "WordCount": 5764,
       "ReadingTime": 30,
@@ -7120,13 +7258,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 29
+      ]
     },
     {
+      "ID": 28,
       "Title": "How to Make Wealth",
       "URL": "https://www.paulgraham.com/wealth.html",
       "Date": "05/2004",
+      "Month": 5,
       "Year": 2004,
       "WordCount": 9026,
       "ReadingTime": 50,
@@ -7160,13 +7299,14 @@
       "EssayType": [
         "How-to Guides",
         "Commentary"
-      ],
-      "ID": 28
+      ]
     },
     {
+      "ID": 27,
       "Title": "The Word \"Hacker\"",
       "URL": "https://www.paulgraham.com/gba.html",
       "Date": "04/2004",
+      "Month": 4,
       "Year": 2004,
       "WordCount": 1958,
       "ReadingTime": 10,
@@ -7187,13 +7327,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 27
+      ]
     },
     {
+      "ID": 26,
       "Title": "What You Can't Say",
       "URL": "https://www.paulgraham.com/say.html",
       "Date": "01/2004",
+      "Month": 1,
       "Year": 2004,
       "WordCount": 5475,
       "ReadingTime": 30,
@@ -7216,13 +7357,14 @@
       "EssayType": [
         "Commentary",
         "Thought Pieces"
-      ],
-      "ID": 26
+      ]
     },
     {
+      "ID": 25,
       "Title": "Filters that Fight Back",
       "URL": "https://www.paulgraham.com/ffb.html",
       "Date": "08/2003",
+      "Month": 8,
       "Year": 2003,
       "WordCount": 838,
       "ReadingTime": 5,
@@ -7244,13 +7386,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 25
+      ]
     },
     {
+      "ID": 24,
       "Title": "Hackers and Painters",
       "URL": "https://www.paulgraham.com/hp.html",
       "Date": "05/2003",
+      "Month": 5,
       "Year": 2003,
       "WordCount": 5626,
       "ReadingTime": 30,
@@ -7271,13 +7414,14 @@
       ],
       "EssayType": [
         "Memoir"
-      ],
-      "ID": 24
+      ]
     },
     {
+      "ID": 23,
       "Title": "If Lisp is So Great",
       "URL": "https://www.paulgraham.com/iflisp.html",
       "Date": "05/2003",
+      "Month": 5,
       "Year": 2003,
       "WordCount": 429,
       "ReadingTime": 5,
@@ -7305,13 +7449,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 23
+      ]
     },
     {
+      "ID": 22,
       "Title": "The Hundred-Year Language",
       "URL": "https://www.paulgraham.com/hundred.html",
       "Date": "04/2003",
+      "Month": 4,
       "Year": 2003,
       "WordCount": 4808,
       "ReadingTime": 25,
@@ -7333,13 +7478,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 22
+      ]
     },
     {
+      "ID": 21,
       "Title": "Why Nerds are Unpopular",
       "URL": "https://www.paulgraham.com/nerds.html",
       "Date": "02/2003",
+      "Month": 2,
       "Year": 2003,
       "WordCount": 5722,
       "ReadingTime": 30,
@@ -7360,13 +7506,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 21
+      ]
     },
     {
+      "ID": 20,
       "Title": "Better Bayesian Filtering",
       "URL": "https://www.paulgraham.com/better.html",
       "Date": "08/2002",
+      "Month": 8,
       "Year": 2002,
       "WordCount": 4345,
       "ReadingTime": 25,
@@ -7388,13 +7535,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 20
+      ]
     },
     {
+      "ID": 19,
       "Title": "Design and Research",
       "URL": "https://www.paulgraham.com/desres.html",
       "Date": "01/2003",
+      "Month": 1,
       "Year": 2003,
       "WordCount": 2674,
       "ReadingTime": 15,
@@ -7423,13 +7571,14 @@
       "EssayType": [
         "Commentary",
         "How-to Guides"
-      ],
-      "ID": 19
+      ]
     },
     {
+      "ID": 18,
       "Title": "A Plan for Spam",
       "URL": "https://www.paulgraham.com/spam.html",
       "Date": "08/2002",
+      "Month": 8,
       "Year": 2002,
       "WordCount": 5370,
       "ReadingTime": 30,
@@ -7452,13 +7601,14 @@
       "EssayType": [
         "Commentary",
         "How-to Guides"
-      ],
-      "ID": 18
+      ]
     },
     {
+      "ID": 17,
       "Title": "Revenge of the Nerds",
       "URL": "https://www.paulgraham.com/icad.html",
       "Date": "05/2002",
+      "Month": 5,
       "Year": 2002,
       "WordCount": 5858,
       "ReadingTime": 30,
@@ -7485,13 +7635,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 17
+      ]
     },
     {
+      "ID": 16,
       "Title": "Succinctness is Power",
       "URL": "https://www.paulgraham.com/power.html",
       "Date": "05/2002",
+      "Month": 5,
       "Year": 2002,
       "WordCount": 3038,
       "ReadingTime": 20,
@@ -7513,13 +7664,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 16
+      ]
     },
     {
+      "ID": 15,
       "Title": "What Languages Fix",
       "URL": "https://www.paulgraham.com/fix.html",
       "Date": "01/2001",
+      "Month": 1,
       "Year": 2001,
       "WordCount": 222,
       "ReadingTime": 5,
@@ -7542,13 +7694,14 @@
       "EssayType": [
         "Commentary",
         "How-to Guides"
-      ],
-      "ID": 15
+      ]
     },
     {
+      "ID": 14,
       "Title": "Taste for Makers",
       "URL": "https://www.paulgraham.com/taste.html",
       "Date": "02/2002",
+      "Month": 2,
       "Year": 2002,
       "WordCount": 4358,
       "ReadingTime": 25,
@@ -7571,13 +7724,14 @@
       "EssayType": [
         "Commentary",
         "How-to Guides"
-      ],
-      "ID": 14
+      ]
     },
     {
+      "ID": 13,
       "Title": "Why Arc Isn't Especially Object-Oriented",
       "URL": "https://www.paulgraham.com/noop.html",
       "Date": "01/2008",
+      "Month": 1,
       "Year": 2008,
       "WordCount": 497,
       "ReadingTime": 5,
@@ -7599,13 +7753,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 13
+      ]
     },
     {
+      "ID": 12,
       "Title": "What Made Lisp Different",
       "URL": "https://www.paulgraham.com/diff.html",
       "Date": "05/2002",
+      "Month": 5,
       "Year": 2002,
       "WordCount": 709,
       "ReadingTime": 5,
@@ -7627,13 +7782,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 12
+      ]
     },
     {
+      "ID": 11,
       "Title": "The Other Road Ahead",
       "URL": "https://www.paulgraham.com/road.html",
       "Date": "09/2001",
+      "Month": 9,
       "Year": 2001,
       "WordCount": 11997,
       "ReadingTime": 60,
@@ -7656,13 +7812,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 11
+      ]
     },
     {
+      "ID": 10,
       "Title": "The Roots of Lisp",
       "URL": "https://www.paulgraham.com/rootsoflisp.html",
       "Date": "05/2001",
+      "Month": 5,
       "Year": 2001,
       "WordCount": 379,
       "ReadingTime": 5,
@@ -7684,13 +7841,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 10
+      ]
     },
     {
+      "ID": 9,
       "Title": "Five Questions about Language Design",
       "URL": "https://www.paulgraham.com/langdes.html",
       "Date": "05/2001",
+      "Month": 5,
       "Year": 2001,
       "WordCount": 2950,
       "ReadingTime": 15,
@@ -7712,13 +7870,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 9
+      ]
     },
     {
+      "ID": 8,
       "Title": "Being Popular",
       "URL": "https://www.paulgraham.com/popular.html",
       "Date": "05/2001",
+      "Month": 5,
       "Year": 2001,
       "WordCount": 7610,
       "ReadingTime": 40,
@@ -7746,13 +7905,14 @@
       "EssayType": [
         "Commentary",
         "How-to Guides"
-      ],
-      "ID": 8
+      ]
     },
     {
+      "ID": 7,
       "Title": "Java's Cover",
       "URL": "https://www.paulgraham.com/javacover.html",
       "Date": "04/2001",
+      "Month": 4,
       "Year": 2001,
       "WordCount": 1381,
       "ReadingTime": 10,
@@ -7774,13 +7934,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 7
+      ]
     },
     {
+      "ID": 6,
       "Title": "Beating the Averages",
       "URL": "https://www.paulgraham.com/avg.html",
       "Date": "01/2003",
+      "Month": 1,
       "Year": 2003,
       "WordCount": 4499,
       "ReadingTime": 25,
@@ -7803,13 +7964,14 @@
       "EssayType": [
         "Commentary",
         "Memoir"
-      ],
-      "ID": 6
+      ]
     },
     {
+      "ID": 5,
       "Title": "Lisp for Web-Based Applications",
       "URL": "https://www.paulgraham.com/lwba.html",
       "Date": "04/2001",
+      "Month": 4,
       "Year": 2001,
       "WordCount": 62,
       "ReadingTime": 5,
@@ -7831,13 +7993,14 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 5
+      ]
     },
     {
+      "ID": 4,
       "Title": "Chapter 1 of Ansi Common Lisp",
       "URL": "https://sep.turbifycdn.com/ty/cdn/paulgraham/acl1.txt",
       "Date": "01/1995",
+      "Month": 1,
       "Year": 1995,
       "WordCount": 2466,
       "ReadingTime": 15,
@@ -7859,13 +8022,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 4
+      ]
     },
     {
+      "ID": 3,
       "Title": "Chapter 2 of Ansi Common Lisp",
       "URL": "https://sep.turbifycdn.com/ty/cdn/paulgraham/acl2.txt",
       "Date": "01/1995",
+      "Month": 1,
       "Year": 1995,
       "WordCount": 7182,
       "ReadingTime": 40,
@@ -7887,13 +8051,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 3
+      ]
     },
     {
+      "ID": 2,
       "Title": "Programming Bottom-Up",
       "URL": "https://www.paulgraham.com/progbot.html",
       "Date": "01/1993",
+      "Month": 1,
       "Year": 1993,
       "WordCount": 926,
       "ReadingTime": 5,
@@ -7916,13 +8081,14 @@
       ],
       "EssayType": [
         "How-to Guides"
-      ],
-      "ID": 2
+      ]
     },
     {
+      "ID": 1,
       "Title": "This Year We Can End the Death Penalty in California",
       "URL": "https://www.paulgraham.com/prop62.html",
       "Date": "11/2016",
+      "Month": 11,
       "Year": 2016,
       "WordCount": 197,
       "ReadingTime": 5,
@@ -7943,8 +8109,7 @@
       ],
       "EssayType": [
         "Commentary"
-      ],
-      "ID": 1
+      ]
     }
   ]
 }

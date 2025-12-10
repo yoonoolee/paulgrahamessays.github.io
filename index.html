@@ -259,7 +259,6 @@
 
         let allEssays = [];
         let currentView = 'all'; // 'all' or 'bookmarked'
-        let currentSort = 'date-desc';
         let primarySort = 'date-desc'; // Primary sort criterion
         let secondarySort = null; // Secondary sort criterion
         let userHasSelectedSort = false; // Track if user explicitly selected a sort option
@@ -422,18 +421,6 @@
             return allEssays.filter(essay => candidateIDs.has(essay.ID));
         }
 
-
-        function toggleView(view) {
-            currentView = view;
-
-            // Update button states
-            const buttons = document.querySelectorAll('.filter-buttons .filter-btn:not(.sort-btn)');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            applySortAndFilter();
-        }
-
         function setSortOption(sortType) {
             const clickedItem = event.target.closest('.tree-item');
             const sortCategory = sortType.startsWith('date') ? 'date' : 'length';
@@ -443,12 +430,10 @@
                 // Deselecting primary (only if it was already explicitly selected)
                 if (secondarySort) {
                     primarySort = secondarySort;
-                    currentSort = primarySort;
                     secondarySort = null;
                 } else {
                     // No secondary, reset to default and mark as not user-selected
                     primarySort = 'date-desc';
-                    currentSort = 'date-desc';
                     userHasSelectedSort = false;
                 }
             } else if (sortType === secondarySort) {
@@ -465,7 +450,6 @@
                 if (!wasUserSelected || sortCategory === primaryCategory) {
                     // First explicit selection or clicking within same category - make it primary
                     primarySort = sortType;
-                    currentSort = sortType;
                 } else {
                     // Clicking different category - make it secondary
                     secondarySort = sortType;
@@ -538,50 +522,7 @@
 
             // Filter by topic tree selection - match ANY selected path
             if (selectedTopicPaths.length > 0) {
-                essays = essays.filter(essay => {
-                    // Check if essay matches ANY of the selected paths
-                    return selectedTopicPaths.some(selectedPath => {
-                        return essay.Topics.some(t => {
-                            const [topic, secondLevel, thirdLevel] = selectedPath;
-
-                            // Check if topic matches
-                            if (t.topic !== topic) return false;
-
-                            // If only topic is selected, include all essays with this topic
-                            if (!secondLevel) return true;
-
-                            // Check if we have a two-level or three-level path
-                            if (!thirdLevel) {
-                                // Two-level path: could be [topic, directItem] or [topic, category]
-                                if (t.subtopics) {
-                                    // Check if secondLevel is a direct item (no category) or a category
-                                    return t.subtopics.some(subObj => {
-                                        // Check if it's a direct item
-                                        if (!subObj.category && subObj.items && subObj.items.includes(secondLevel)) {
-                                            return true;
-                                        }
-                                        // Check if it's a category
-                                        if (subObj.category === secondLevel) {
-                                            return true;
-                                        }
-                                        return false;
-                                    });
-                                }
-                                return false;
-                            } else {
-                                // Three-level path: [topic, category, item]
-                                if (t.subtopics) {
-                                    return t.subtopics.some(subObj => {
-                                        return subObj.category === secondLevel &&
-                                               subObj.items &&
-                                               subObj.items.includes(thirdLevel);
-                                    });
-                                }
-                                return false;
-                            }
-                        });
-                    });
-                });
+                essays = essays.filter(essay => essayMatchesTopicPaths(essay, selectedTopicPaths));
             }
 
             // Filter by essay type - match ANY selected type
@@ -688,6 +629,44 @@
 
         // ========== UPDATE FILTER COUNTS ==========
 
+        /**
+         * Helper function to check if an essay matches the selected topic paths
+         */
+        function essayMatchesTopicPaths(essay, paths) {
+            return paths.some(selectedPath => {
+                return essay.Topics.some(t => {
+                    const [topic, secondLevel, thirdLevel] = selectedPath;
+
+                    if (t.topic !== topic) return false;
+                    if (!secondLevel) return true;
+
+                    if (!thirdLevel) {
+                        if (t.subtopics) {
+                            return t.subtopics.some(subObj => {
+                                if (!subObj.category && subObj.items && subObj.items.includes(secondLevel)) {
+                                    return true;
+                                }
+                                if (subObj.category === secondLevel) {
+                                    return true;
+                                }
+                                return false;
+                            });
+                        }
+                        return false;
+                    } else {
+                        if (t.subtopics) {
+                            return t.subtopics.some(subObj => {
+                                return subObj.category === secondLevel &&
+                                       subObj.items &&
+                                       subObj.items.includes(thirdLevel);
+                            });
+                        }
+                        return false;
+                    }
+                });
+            });
+        }
+
         function updateFilterCounts(filteredEssays) {
             // For topic counts: exclude topic filters, include everything else
             let essaysForTopicCounts = [...allEssays];
@@ -791,38 +770,7 @@
 
             // Apply topic filters
             if (selectedTopicPaths.length > 0) {
-                essaysForTypeCounts = essaysForTypeCounts.filter(essay => {
-                    return selectedTopicPaths.some(selectedPath => {
-                        return essay.Topics.some(t => {
-                            const [topic, secondLevel, thirdLevel] = selectedPath;
-                            if (t.topic !== topic) return false;
-                            if (!secondLevel) return true;
-                            if (!thirdLevel) {
-                                if (t.subtopics) {
-                                    return t.subtopics.some(subObj => {
-                                        if (!subObj.category && subObj.items && subObj.items.includes(secondLevel)) {
-                                            return true;
-                                        }
-                                        if (subObj.category === secondLevel) {
-                                            return true;
-                                        }
-                                        return false;
-                                    });
-                                }
-                                return false;
-                            } else {
-                                if (t.subtopics) {
-                                    return t.subtopics.some(subObj => {
-                                        return subObj.category === secondLevel &&
-                                               subObj.items &&
-                                               subObj.items.includes(thirdLevel);
-                                    });
-                                }
-                                return false;
-                            }
-                        });
-                    });
-                });
+                essaysForTypeCounts = essaysForTypeCounts.filter(essay => essayMatchesTopicPaths(essay, selectedTopicPaths));
             }
 
             // Apply audience filters
@@ -881,38 +829,7 @@
 
             // Apply topic filters
             if (selectedTopicPaths.length > 0) {
-                essaysForAudienceCounts = essaysForAudienceCounts.filter(essay => {
-                    return selectedTopicPaths.some(selectedPath => {
-                        return essay.Topics.some(t => {
-                            const [topic, secondLevel, thirdLevel] = selectedPath;
-                            if (t.topic !== topic) return false;
-                            if (!secondLevel) return true;
-                            if (!thirdLevel) {
-                                if (t.subtopics) {
-                                    return t.subtopics.some(subObj => {
-                                        if (!subObj.category && subObj.items && subObj.items.includes(secondLevel)) {
-                                            return true;
-                                        }
-                                        if (subObj.category === secondLevel) {
-                                            return true;
-                                        }
-                                        return false;
-                                    });
-                                }
-                                return false;
-                            } else {
-                                if (t.subtopics) {
-                                    return t.subtopics.some(subObj => {
-                                        return subObj.category === secondLevel &&
-                                               subObj.items &&
-                                               subObj.items.includes(thirdLevel);
-                                    });
-                                }
-                                return false;
-                            }
-                        });
-                    });
-                });
+                essaysForAudienceCounts = essaysForAudienceCounts.filter(essay => essayMatchesTopicPaths(essay, selectedTopicPaths));
             }
 
             // Apply essay type filters
@@ -1232,7 +1149,6 @@
             // Reset to default sort (newest first)
             primarySort = 'date-desc';
             secondarySort = null;
-            currentSort = 'date-desc';
             userHasSelectedSort = false; // Mark as not user-selected
 
             // Collapse only sort sections (not filter sections)
@@ -1260,7 +1176,6 @@
                 userHasSelectedSort = false;
                 primarySort = 'date-desc';
                 secondarySort = null;
-                currentSort = 'date-desc';
                 updateSortBadges();
             }
 
@@ -1269,6 +1184,50 @@
         }
 
         // ========== RANGE SLIDER FUNCTIONS ==========
+
+        /**
+         * Helper function to setup a single range slider with event listeners
+         */
+        function setupRangeSlider(sliderId, type, isMin, globalMin, globalMax) {
+            const slider = document.getElementById(sliderId);
+            const valueDisplayId = type === 'year'
+                ? (isMin ? 'yearMinValue' : 'yearMaxValue')
+                : (isMin ? 'timeMinValue' : 'timeMaxValue');
+
+            slider.addEventListener('input', (e) => {
+                const value = parseInt(e.target.value);
+
+                if (isMin) {
+                    const currentMax = type === 'year' ? yearMax : timeMax;
+                    if (value <= currentMax) {
+                        if (type === 'year') {
+                            yearMin = value;
+                        } else {
+                            timeMin = value;
+                        }
+                        document.getElementById(valueDisplayId).textContent = value;
+                        updateRangeFill(type, globalMin, globalMax);
+                        applySortAndFilter();
+                    } else {
+                        e.target.value = currentMax;
+                    }
+                } else {
+                    const currentMin = type === 'year' ? yearMin : timeMin;
+                    if (value >= currentMin) {
+                        if (type === 'year') {
+                            yearMax = value;
+                        } else {
+                            timeMax = value;
+                        }
+                        document.getElementById(valueDisplayId).textContent = value;
+                        updateRangeFill(type, globalMin, globalMax);
+                        applySortAndFilter();
+                    } else {
+                        e.target.value = currentMin;
+                    }
+                }
+            });
+        }
 
         function initRangeSliders() {
             // Calculate min and max from the data
@@ -1307,59 +1266,11 @@
             document.getElementById('timeMinValue').textContent = minTime;
             document.getElementById('timeMaxValue').textContent = maxTime;
 
-            // Add event listeners
-            const yearMinSlider = document.getElementById('yearMinSlider');
-            const yearMaxSlider = document.getElementById('yearMaxSlider');
-            const timeMinSlider = document.getElementById('timeMinSlider');
-            const timeMaxSlider = document.getElementById('timeMaxSlider');
-
-            yearMinSlider.addEventListener('input', (e) => {
-                const value = parseInt(e.target.value);
-                if (value <= yearMax) {
-                    yearMin = value;
-                    document.getElementById('yearMinValue').textContent = value;
-                    updateRangeFill('year', minYear, maxYear);
-                    applySortAndFilter();
-                } else {
-                    e.target.value = yearMax;
-                }
-            });
-
-            yearMaxSlider.addEventListener('input', (e) => {
-                const value = parseInt(e.target.value);
-                if (value >= yearMin) {
-                    yearMax = value;
-                    document.getElementById('yearMaxValue').textContent = value;
-                    updateRangeFill('year', minYear, maxYear);
-                    applySortAndFilter();
-                } else {
-                    e.target.value = yearMin;
-                }
-            });
-
-            timeMinSlider.addEventListener('input', (e) => {
-                const value = parseInt(e.target.value);
-                if (value <= timeMax) {
-                    timeMin = value;
-                    document.getElementById('timeMinValue').textContent = value;
-                    updateRangeFill('time', minTime, maxTime);
-                    applySortAndFilter();
-                } else {
-                    e.target.value = timeMax;
-                }
-            });
-
-            timeMaxSlider.addEventListener('input', (e) => {
-                const value = parseInt(e.target.value);
-                if (value >= timeMin) {
-                    timeMax = value;
-                    document.getElementById('timeMaxValue').textContent = value;
-                    updateRangeFill('time', minTime, maxTime);
-                    applySortAndFilter();
-                } else {
-                    e.target.value = timeMin;
-                }
-            });
+            // Setup event listeners using helper function
+            setupRangeSlider('yearMinSlider', 'year', true, minYear, maxYear);
+            setupRangeSlider('yearMaxSlider', 'year', false, minYear, maxYear);
+            setupRangeSlider('timeMinSlider', 'time', true, minTime, maxTime);
+            setupRangeSlider('timeMaxSlider', 'time', false, minTime, maxTime);
 
             // Initial fill update
             updateRangeFill('year', minYear, maxYear);
@@ -1766,10 +1677,6 @@
                     if (e.target.classList.contains('bookmark-btn')) {
                         return;
                     }
-                    // Don't trigger if clicking the external link icon
-                    if (e.target.classList.contains('external-link-icon')) {
-                        return;
-                    }
                     togglePreview(essay, title);
                 };
 
@@ -1821,7 +1728,6 @@
                             userHasSelectedSort = false;
                             primarySort = 'date-desc';
                             secondarySort = null;
-                            currentSort = 'date-desc';
                             updateSortBadges();
                         }
                     } else {

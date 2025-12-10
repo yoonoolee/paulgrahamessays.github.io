@@ -383,13 +383,6 @@ select:focus {
     gap: 0.5rem;
 }
 
-.essay-title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-
 .essay-title {
     font-size: 1rem;
     font-weight: 400;
@@ -402,10 +395,49 @@ select:focus {
     gap: 0.5rem;
 }
 
-.essay-meta-tags {
+.essay-meta-info {
     display: flex;
-    gap: 0.5rem;
+    gap: 1.5rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.1rem;
+}
+
+.essay-date-info,
+.essay-time-info {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.calendar-icon,
+.clock-icon {
     flex-shrink: 0;
+}
+
+.date-text,
+.time-text {
+    color: #6b7280;
+}
+
+.essay-audience-info,
+.essay-type-info {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.audience-icon,
+.type-icon {
+    flex-shrink: 0;
+}
+
+.audience-text,
+.type-text {
+    color: #6b7280;
 }
 
 .essay-title::after {
@@ -463,9 +495,41 @@ select:focus {
     color: #92400e;
 }
 
+/* Default topic tag color for any other categories */
 .topic-tag {
-    background: #fee2e2;
-    color: #991b1b;
+    background: #f3f4f6;
+    color: #374151;
+}
+
+/* Topic tags - color coded by category (must come after default) */
+.topic-startups {
+    background: #fed7aa;
+    color: #9a3412;
+}
+
+.topic-writing {
+    background: #fce7f3;
+    color: #9f1239;
+}
+
+.topic-society {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.topic-technology {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.topic-communication {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.topic-personal-growth {
+    background: #d1fae5;
+    color: #065f46;
 }
 
 .type-tag {

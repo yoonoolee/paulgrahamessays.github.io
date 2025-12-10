@@ -364,15 +364,21 @@ select:focus {
     gap: 1rem;
 }
 
+.essay-item.selected {
+    background: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
 .essay-item:hover .essay-title::after {
     transform: scaleX(1);
 }
 
-.essay-title.selected {
+.essay-item.selected .essay-title {
     font-weight: 600;
 }
 
-.essay-title.selected::after {
+.essay-item.selected .essay-title::after {
     transform: scaleX(1);
 }
 
@@ -397,7 +403,8 @@ select:focus {
 
 .essay-meta-info {
     display: flex;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
     margin-top: 0.4rem;
     margin-bottom: 0.1rem;
 }

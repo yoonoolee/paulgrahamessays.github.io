@@ -187,14 +187,17 @@
                 rightPane.classList.remove('visible');
                 currentlySelectedEssay = null;
                 previewHeader.innerHTML = '';
-                // Remove selected class from all titles
-                document.querySelectorAll('.essay-title').forEach(t => t.classList.remove('selected'));
+                // Remove selected class from all essay items
+                document.querySelectorAll('.essay-item').forEach(item => item.classList.remove('selected'));
             } else {
-                // Remove selected class from all titles
-                document.querySelectorAll('.essay-title').forEach(t => t.classList.remove('selected'));
-                // Add selected class to clicked title
+                // Remove selected class from all essay items
+                document.querySelectorAll('.essay-item').forEach(item => item.classList.remove('selected'));
+                // Add selected class to clicked item
                 if (titleElement) {
-                    titleElement.classList.add('selected');
+                    const essayItem = titleElement.closest('.essay-item');
+                    if (essayItem) {
+                        essayItem.classList.add('selected');
+                    }
                 }
 
                 // Add "Go to Original Essay" button in header
@@ -240,8 +243,8 @@
             rightPane.classList.remove('visible');
             currentlySelectedEssay = null;
             previewHeader.innerHTML = '';
-            // Remove selected class from all titles
-            document.querySelectorAll('.essay-title').forEach(t => t.classList.remove('selected'));
+            // Remove selected class from all essay items
+            document.querySelectorAll('.essay-item').forEach(item => item.classList.remove('selected'));
         }
 
         // ========== FILTER SECTION COLLAPSE ==========
@@ -1624,6 +1627,11 @@
                 const item = document.createElement('div');
                 item.className = 'essay-item';
 
+                // Apply selected class if this is the currently selected essay
+                if (currentlySelectedEssay && currentlySelectedEssay.Title === essay.Title) {
+                    item.classList.add('selected');
+                }
+
                 // Create bookmark button
                 const bookmarkBtn = document.createElement('button');
                 bookmarkBtn.className = 'bookmark-btn' + (isBookmarked(essay.Title) ? ' bookmarked' : '');
@@ -1637,11 +1645,6 @@
                 // Create title
                 const title = document.createElement('div');
                 title.className = 'essay-title';
-
-                // Apply selected class if this is the currently selected essay
-                if (currentlySelectedEssay && currentlySelectedEssay.Title === essay.Title) {
-                    title.classList.add('selected');
-                }
 
                 const titleText = document.createElement('span');
                 titleText.textContent = essay.Title;

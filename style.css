@@ -383,6 +383,13 @@ select:focus {
     gap: 0.5rem;
 }
 
+.essay-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
 .essay-title {
     font-size: 1rem;
     font-weight: 400;
@@ -393,6 +400,12 @@ select:focus {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.essay-meta-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
 }
 
 .essay-title::after {

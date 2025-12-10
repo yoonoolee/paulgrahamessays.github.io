@@ -94,10 +94,10 @@
                 <div class="filter-content collapsed">
                     <div class="topic-tree" id="dateSortTree">
                         <div class="tree-item" onclick="setSortOption('date-desc')">
-                            <span class="tree-item-label">Newest First</span>
+                            <span class="tree-item-label">Newest to Oldest</span>
                         </div>
                         <div class="tree-item" onclick="setSortOption('date-asc')">
-                            <span class="tree-item-label">Oldest First</span>
+                            <span class="tree-item-label">Oldest to Newest</span>
                         </div>
                     </div>
                 </div>
@@ -108,10 +108,10 @@
                 <div class="filter-content collapsed">
                     <div class="topic-tree" id="lengthSortTree">
                         <div class="tree-item" onclick="setSortOption('length-desc')">
-                            <span class="tree-item-label">Longest First</span>
+                            <span class="tree-item-label">Longest to Shortest</span>
                         </div>
                         <div class="tree-item" onclick="setSortOption('length-asc')">
-                            <span class="tree-item-label">Shortest First</span>
+                            <span class="tree-item-label">Shortest to Longest</span>
                         </div>
                     </div>
                 </div>
@@ -259,6 +259,7 @@
         let currentSort = 'date-desc';
         let primarySort = 'date-desc'; // Primary sort criterion
         let secondarySort = null; // Secondary sort criterion
+        let userHasSelectedSort = false; // Track if user explicitly selected a sort option
         let selectedTopicPaths = []; // Tracks multiple selected topic paths [[topic, category, item], ...]
         let selectedEssayTypes = []; // Tracks multiple selected essay types
         let selectedAudiences = []; // Tracks multiple selected audiences
@@ -435,18 +436,31 @@
             const sortCategory = sortType.startsWith('date') ? 'date' : 'length';
 
             // Check if clicking on already selected sort to deselect it
-            if (sortType === primarySort) {
-                // Deselecting primary - promote secondary to primary
-                primarySort = secondarySort || 'date-desc'; // Default to date-desc if no secondary
-                currentSort = primarySort;
-                secondarySort = null;
+            if (sortType === primarySort && userHasSelectedSort) {
+                // Deselecting primary (only if it was already explicitly selected)
+                if (secondarySort) {
+                    primarySort = secondarySort;
+                    currentSort = primarySort;
+                    secondarySort = null;
+                } else {
+                    // No secondary, reset to default and mark as not user-selected
+                    primarySort = 'date-desc';
+                    currentSort = 'date-desc';
+                    userHasSelectedSort = false;
+                }
             } else if (sortType === secondarySort) {
                 // Deselecting secondary
                 secondarySort = null;
             } else {
+                // Selecting a new sort option
+                const wasUserSelected = userHasSelectedSort;
+                userHasSelectedSort = true;
+
                 // Determine if this becomes primary or secondary
-                if (!primarySort || primarySort.startsWith(sortCategory)) {
-                    // First selection or clicking within same category - make it primary
+                const primaryCategory = primarySort.startsWith('date') ? 'date' : 'length';
+
+                if (!wasUserSelected || sortCategory === primaryCategory) {
+                    // First explicit selection or clicking within same category - make it primary
                     primarySort = sortType;
                     currentSort = sortType;
                 } else {
@@ -469,6 +483,11 @@
                     existingBadge.remove();
                 }
             });
+
+            // Only show badges if user has explicitly selected a sort option
+            if (!userHasSelectedSort) {
+                return;
+            }
 
             // Add badge to primary sort
             if (primarySort) {
@@ -600,14 +619,14 @@
 
             // Sort - with primary and secondary criteria
             essays.sort((a, b) => {
-                // If there's a search query, sort by TF-IDF score first
-                if (hasSearchQuery) {
+                // If there's a search query and no manual sort selected, sort by TF-IDF score
+                if (hasSearchQuery && !userHasSelectedSort) {
                     const scoreA = a._tfidfScore || 0;
                     const scoreB = b._tfidfScore || 0;
                     if (scoreB !== scoreA) {
                         return scoreB - scoreA; // Higher scores first
                     }
-                    // If TF-IDF scores are equal, fall through to regular sorting
+                    // If TF-IDF scores are equal, fall through to default date sorting
                 }
 
                 // Apply primary sort
@@ -1211,6 +1230,7 @@
             primarySort = 'date-desc';
             secondarySort = null;
             currentSort = 'date-desc';
+            userHasSelectedSort = false; // Mark as not user-selected
 
             // Collapse only sort sections (not filter sections)
             document.querySelectorAll('.sort-section .filter-label').forEach(label => {
@@ -1231,6 +1251,15 @@
             searchBar.value = '';
             searchQuery = '';
             searchClear.classList.remove('visible');
+
+            // Reset sort selection when clearing search
+            if (userHasSelectedSort) {
+                userHasSelectedSort = false;
+                primarySort = 'date-desc';
+                secondarySort = null;
+                currentSort = 'date-desc';
+                updateSortBadges();
+            }
 
             // Re-apply filters without search
             applySortAndFilter();
@@ -1605,7 +1634,11 @@
                     toggleBookmark(essay.Title);
                 };
 
-                // Create title with external link icon
+                // Create title row container
+                const titleRow = document.createElement('div');
+                titleRow.className = 'essay-title-row';
+
+                // Create title
                 const title = document.createElement('div');
                 title.className = 'essay-title';
 
@@ -1616,24 +1649,31 @@
 
                 const titleText = document.createElement('span');
                 titleText.textContent = essay.Title;
-
                 title.appendChild(titleText);
 
-                // Create tags container
-                const tagsContainer = document.createElement('div');
-                tagsContainer.className = 'essay-tags';
+                // Create meta tags container for date and time
+                const metaTags = document.createElement('div');
+                metaTags.className = 'essay-meta-tags';
 
                 // Add date tag
                 const dateTag = document.createElement('span');
                 dateTag.className = 'tag date-tag';
                 dateTag.textContent = essay.Date;
-                tagsContainer.appendChild(dateTag);
+                metaTags.appendChild(dateTag);
 
                 // Add reading time tag
                 const timeTag = document.createElement('span');
                 timeTag.className = 'tag time-tag';
                 timeTag.textContent = essay.ReadingTime + ' min';
-                tagsContainer.appendChild(timeTag);
+                metaTags.appendChild(timeTag);
+
+                // Assemble title row
+                titleRow.appendChild(title);
+                titleRow.appendChild(metaTags);
+
+                // Create tags container for topic, type, and audience tags
+                const tagsContainer = document.createElement('div');
+                tagsContainer.className = 'essay-tags';
 
                 // Add topic tags (grouped by topic)
                 essay.Topics.forEach(topic => {
@@ -1681,7 +1721,7 @@
                 // Create content wrapper
                 const contentWrapper = document.createElement('div');
                 contentWrapper.className = 'essay-content';
-                contentWrapper.appendChild(title);
+                contentWrapper.appendChild(titleRow);
                 contentWrapper.appendChild(tagsContainer);
 
                 // Assemble the item
@@ -1735,11 +1775,22 @@
                 const searchClear = document.querySelector('.search-clear');
 
                 searchBar.addEventListener('input', (e) => {
-                    searchQuery = e.target.value;
+                    const newQuery = e.target.value;
+                    const queryChanged = newQuery !== searchQuery;
+                    searchQuery = newQuery;
 
                     // Show/hide clear button
                     if (searchQuery.trim() !== '') {
                         searchClear.classList.add('visible');
+
+                        // Reset sort selection when search query changes
+                        if (queryChanged && userHasSelectedSort) {
+                            userHasSelectedSort = false;
+                            primarySort = 'date-desc';
+                            secondarySort = null;
+                            currentSort = 'date-desc';
+                            updateSortBadges();
+                        }
                     } else {
                         searchClear.classList.remove('visible');
                     }

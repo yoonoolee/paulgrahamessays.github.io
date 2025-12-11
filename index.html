@@ -7,33 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- header section with title, logo, and search bar -->
     <header>
         <div class="header-content">
+            <!-- ascii art logo on the left -->
             <img src="paulgraham-ascii.png" alt="Paul Graham ASCII Art" class="header-image">
             <div class="header-text-content">
                 <h1>Paul Graham Essays</h1>
+                <!-- search bar with TF-IDF powered search -->
                 <div class="search-container">
                     <input type="text" class="search-bar" placeholder="Search essays...">
+                    <!-- clear button appears when there's text in search -->
                     <span class="search-clear" data-action="clear-search">×</span>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- main three-column layout: filters | essays | preview -->
     <div class="main-content">
+        <!-- left sidebar: filters and sort options -->
         <div class="filters-sidebar">
+            <!-- filter section header with reset button -->
             <div class="section-divider">
                 <h3 class="section-title">Filter</h3>
                 <span class="reset-filters-btn" data-action="reset-filters">Reset Filter ×</span>
             </div>
 
+            <!-- topic filter: hierarchical tree structure (topics > categories > items) -->
             <div class="filter-group filter-section">
                 <label class="filter-label collapsed" data-action="toggle-section">Topics</label>
                 <div class="filter-content collapsed">
+                    <!-- dynamically populated from essays.json data -->
                     <div id="topicTree" class="topic-tree"></div>
                 </div>
             </div>
 
+            <!-- essay type filter: article, transcript, interview, etc. -->
             <div class="filter-group filter-section">
                 <label class="filter-label collapsed" data-action="toggle-section">Essay Type</label>
                 <div class="filter-content collapsed">
@@ -41,6 +51,7 @@
                 </div>
             </div>
 
+            <!-- audience filter: general, founders, hackers, etc. -->
             <div class="filter-group filter-section">
                 <label class="filter-label collapsed" data-action="toggle-section">Audience</label>
                 <div class="filter-content collapsed">
@@ -48,17 +59,21 @@
                 </div>
             </div>
 
+            <!-- year range filter: dual slider for min/max year -->
             <div class="filter-group filter-section">
                 <label class="filter-label collapsed" data-action="toggle-section">Year</label>
                 <div class="filter-content collapsed">
                     <div class="range-slider-container">
+                        <!-- display current min/max values -->
                         <div class="range-values">
                             <span>Min: <span class="range-value" id="yearMinValue">1996</span></span>
                             <span>Max: <span class="range-value" id="yearMaxValue">2025</span></span>
                         </div>
+                        <!-- dual range slider with visual fill between handles -->
                         <div class="dual-range-wrapper">
                             <div class="range-track-bg"></div>
                             <div class="range-track-fill" id="yearRangeTrack"></div>
+                            <!-- two overlapping sliders for min and max -->
                             <input type="range" id="yearMinSlider" class="range-input range-min" min="1996" max="2025" value="1996" step="1">
                             <input type="range" id="yearMaxSlider" class="range-input range-max" min="1996" max="2025" value="2025" step="1">
                         </div>
@@ -66,6 +81,7 @@
                 </div>
             </div>
 
+            <!-- reading time range filter: dual slider for min/max minutes -->
             <div class="filter-group filter-section">
                 <label class="filter-label collapsed" data-action="toggle-section">Reading Time (min)</label>
                 <div class="filter-content collapsed">
@@ -84,15 +100,18 @@
                 </div>
             </div>
 
+            <!-- sort section header with reset button -->
             <div class="section-divider">
                 <h3 class="section-title">Sort</h3>
                 <span class="reset-filters-btn" data-action="reset-sort">Reset Sort ×</span>
             </div>
 
+            <!-- date sort options: newest/oldest first -->
             <div class="filter-group sort-section">
                 <label class="filter-label collapsed" data-action="toggle-section">Date</label>
                 <div class="filter-content collapsed">
                     <div class="topic-tree" id="dateSortTree">
+                        <!-- default sort option -->
                         <div class="tree-item" data-action="sort" data-sort="date-desc">
                             <span class="tree-item-label">Newest to Oldest</span>
                         </div>
@@ -103,6 +122,7 @@
                 </div>
             </div>
 
+            <!-- length sort options: longest/shortest first -->
             <div class="filter-group sort-section">
                 <label class="filter-label collapsed" data-action="toggle-section">Length</label>
                 <div class="filter-content collapsed">
@@ -118,26 +138,32 @@
             </div>
         </div>
 
+        <!-- middle pane: displays filtered/sorted essay list -->
         <div class="middle-pane">
+            <!-- essay count display (e.g., "Showing 218 essays") -->
             <div class="essay-count" id="essayCount"></div>
+            <!-- dynamically rendered list of essay cards -->
             <div id="essayList"></div>
         </div>
 
+        <!-- right pane: iframe preview of selected essay (hidden by default) -->
         <div class="right-pane" id="rightPane">
+            <!-- header with "Go to Original Essay" button -->
             <div class="preview-header" id="previewHeader"></div>
+            <!-- iframe container for essay preview -->
             <div class="preview-container" id="previewContainer"></div>
         </div>
     </div>
 
     <!-- load scripts in correct order: config, state, utilities, then main -->
-    <script src="scripts/config.js"></script>
-    <script src="scripts/state.js"></script>
-    <script src="scripts/search.js"></script>
-    <script src="scripts/filters.js"></script>
-    <script src="scripts/ui-render.js"></script>
-    <script src="scripts/ui-interactions.js"></script>
-    <script src="scripts/range-sliders.js"></script>
-    <script src="scripts/event-delegation.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/config.js"></script>              <!-- constants and configuration -->
+    <script src="scripts/state.js"></script>               <!-- global state variables -->
+    <script src="scripts/search.js"></script>              <!-- TF-IDF search implementation -->
+    <script src="scripts/filters.js"></script>             <!-- filter and sort logic -->
+    <script src="scripts/ui-render.js"></script>           <!-- UI rendering functions -->
+    <script src="scripts/ui-interactions.js"></script>     <!-- event handlers and interactions -->
+    <script src="scripts/range-sliders.js"></script>       <!-- dual range slider logic -->
+    <script src="scripts/event-delegation.js"></script>    <!-- centralized event delegation -->
+    <script src="scripts/main.js"></script>                <!-- initialization and setup -->
 </body>
 </html>

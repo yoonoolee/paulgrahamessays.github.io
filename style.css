@@ -1,9 +1,15 @@
+/* ========================================
+   RESET AND BASE STYLES
+   ======================================== */
+
+/* reset all default browser spacing and use border-box model */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* base body styles: full viewport height with column layout */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
@@ -11,11 +17,64 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100vh; /* full viewport height */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* header at top, content fills remaining space */
 }
 
+/* ========================================
+   LAYOUT STRUCTURE
+   ======================================== */
+
+/* three-column main layout: filters | essays | preview */
+.main-content {
+    display: flex;
+    flex: 1; /* take up all remaining space after header */
+    overflow: hidden;
+    gap: 0;
+    width: 100%;
+}
+
+/* left sidebar: contains all filter and sort controls */
+.filters-sidebar {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    background-color: white;
+    padding: 2rem 2rem 2rem 4rem;
+    overflow-y: auto; /* scrollable if filters exceed height */
+}
+
+/* middle pane: displays filtered essay list */
+.middle-pane {
+    flex: 1;
+    min-width: 400px;
+    overflow-y: auto; /* scrollable essay list */
+    background-color: white;
+    padding: 2rem 3rem;
+    border-right: 1px solid #e5e7eb;
+}
+
+/* right pane: iframe preview (hidden by default) */
+.right-pane {
+    flex: 1; /* expands to fill available space on wide screens */
+    min-width: 600px;
+    background: white;
+    display: none; /* hidden until essay is clicked */
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* show right pane when essay is selected */
+.right-pane.visible {
+    display: flex;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+/* black header with logo and search bar */
 header {
     background: #000;
     color: #000;
@@ -25,6 +84,7 @@ header {
     position: relative;
 }
 
+/* header content wrapper: centered with max width */
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -35,6 +95,7 @@ header {
     padding: 4rem 4rem;
 }
 
+/* ascii art logo positioned absolutely on left */
 .header-image {
     height: 100%;
     width: auto;
@@ -45,15 +106,17 @@ header {
     bottom: 0;
 }
 
+/* right side of header: title and search */
 .header-text-content {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    margin-left: 200px;
+    margin-left: 200px; /* offset for logo */
 }
 
+/* main page title */
 h1 {
     font-size: 3rem;
     margin-bottom: 0;
@@ -61,12 +124,18 @@ h1 {
     font-weight: 300;
 }
 
+/* ========================================
+   SEARCH BAR
+   ======================================== */
+
+/* search container with clear button */
 .search-container {
     width: 100%;
     max-width: 600px;
     position: relative;
 }
 
+/* rounded search input with shadow */
 .search-bar {
     width: 100%;
     padding: 0.75rem 3rem 0.75rem 1.5rem;
@@ -77,10 +146,12 @@ h1 {
     outline: none;
 }
 
+/* enhance shadow on focus */
 .search-bar:focus {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
+/* clear button (X) inside search bar */
 .search-clear {
     position: absolute;
     right: 1.25rem;
@@ -89,112 +160,27 @@ h1 {
     font-size: 1.5rem;
     color: #9ca3af;
     cursor: pointer;
-    display: none;
+    display: none; /* hidden by default */
     user-select: none;
     transition: color 0.2s ease;
     line-height: 1;
 }
 
+/* hover state for clear button */
 .search-clear:hover {
     color: #6f1314;
 }
 
+/* show clear button when there's text in search */
 .search-clear.visible {
     display: block;
 }
 
-.main-content {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-    gap: 0;
-    width: 100%;
-}
+/* ========================================
+   FILTER SECTIONS (SIDEBAR)
+   ======================================== */
 
-.filters-sidebar {
-    flex: 1;
-    min-width: 280px;
-    max-width: 400px;
-    background-color: white;
-    padding: 2rem 2rem 2rem 4rem;
-    overflow-y: auto;
-}
-
-.middle-pane {
-    flex: 1;
-    min-width: 400px;
-    overflow-y: auto;
-    background-color: white;
-    padding: 2rem 3rem;
-    border-right: 1px solid #e5e7eb;
-}
-
-.right-pane {
-    flex: 1;
-    min-width: 600px;
-    background: white;
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.right-pane.visible {
-    display: flex;
-}
-
-.preview-header {
-    padding: 0.75rem 1rem;
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.go-to-original-btn {
-    background: #1f2937;
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    display: inline-block;
-}
-
-.go-to-original-btn:hover {
-    background: #374151;
-}
-
-.preview-container {
-    flex: 1;
-    position: relative;
-    background: #ffffff;
-    overflow: hidden;
-    height: 100%;
-}
-
-.preview-iframe {
-    width: 120%;
-    height: 120%;
-    border: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: translate(-80px, -55px);
-}
-
-.preview-iframe-no-offset {
-    width: 100%;
-    height: 100%;
-    border: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
+/* divider between filter groups */
 .section-divider {
     margin: 2rem 0 1.5rem 0;
     padding-top: 2rem;
@@ -204,12 +190,14 @@ h1 {
     align-items: center;
 }
 
+/* first divider has no top border/padding */
 .section-divider:first-child {
     margin-top: 0;
     padding-top: 0;
     border-top: none;
 }
 
+/* section headers (FILTER, SORT) */
 .section-title {
     font-size: 0.875rem;
     font-weight: 700;
@@ -219,6 +207,7 @@ h1 {
     margin-bottom: 0;
 }
 
+/* reset buttons next to section headers */
 .reset-filters-btn {
     color: #6b7280;
     cursor: pointer;
@@ -228,32 +217,37 @@ h1 {
     user-select: none;
 }
 
+/* hover state for reset buttons */
 .reset-filters-btn:hover {
     color: #6f1314;
     text-decoration: underline;
 }
 
+/* individual filter group container */
 .filter-group {
     margin-bottom: 1.5rem;
 }
 
+/* remove margin from last filter group */
 .filter-group:last-child {
     margin-bottom: 0;
 }
 
+/* collapsible filter labels (Topics, Essay Type, etc.) */
 .filter-label {
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 0.875rem;
     font-weight: 600;
-    color: #6f1314;
+    color: #6f1314; /* brand red */
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     cursor: pointer;
     user-select: none;
 }
 
+/* minus sign when expanded */
 .filter-label::after {
     content: '−';
     font-size: 1.2rem;
@@ -262,189 +256,33 @@ h1 {
     font-weight: 400;
 }
 
+/* plus sign when collapsed */
 .filter-label.collapsed::after {
     content: '+';
 }
 
+/* filter content area */
 .filter-content {
     display: block;
 }
 
+/* hide content when collapsed */
 .filter-content.collapsed {
     display: none;
 }
 
-#essayList {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+/* ========================================
+   TOPIC TREE (hierarchical filters)
+   ======================================== */
 
-.essay-item {
-    background: white;
-    padding: 0.5rem 0;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.essay-item.selected {
-    background: #f3f4f6;
-    padding: 0.5rem;
-    border-radius: 8px;
-}
-
-.essay-item:hover .essay-title::after {
-    transform: scaleX(1);
-}
-
-.essay-item.selected .essay-title {
-    font-weight: 600;
-}
-
-.essay-item.selected .essay-title::after {
-    transform: scaleX(1);
-}
-
-.essay-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.essay-title {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #111827;
-    transition: all 0.2s ease;
-    position: relative;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.essay-meta-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 0.4rem;
-    margin-bottom: 0.1rem;
-}
-
-/* all metadata info containers (date, time, audience, type) */
-.essay-date-info,
-.essay-time-info,
-.essay-audience-info,
-.essay-type-info {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-/* all metadata icons */
-.calendar-icon,
-.clock-icon,
-.audience-icon,
-.type-icon {
-    flex-shrink: 0;
-}
-
-/* underline animation for titles and tree items */
-.essay-title::after,
-.tree-item-label::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #000;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.essay-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tag {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 16px;
-    font-size: 0.75rem;
-    font-weight: 500;
-}
-
-/* default topic tag color for any other categories */
-.topic-tag {
-    background: #f3f4f6;
-    color: #374151;
-}
-
-/* topic tags - color coded by category (must come after default) */
-.topic-startups {
-    background: #fed7aa;
-    color: #9a3412;
-}
-
-.topic-writing {
-    background: #fce7f3;
-    color: #9f1239;
-}
-
-.topic-society {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.topic-technology {
-    background: #dbeafe;
-    color: #1e40af;
-}
-
-.topic-communication {
-    background: #fef9c3;
-    color: #854d0e;
-}
-
-.topic-personal-growth {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-a {
-    color: #6f1314;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.essay-count {
-    text-align: left;
-    margin: 0 0 1.5rem 0;
-    color: #111827;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-/* ========== topic tree (Algolia-style) ========== */
+/* tree structure for topics/types/audiences */
 .topic-tree {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
 }
 
+/* individual tree item (clickable) */
 .tree-item {
     display: flex;
     align-items: center;
@@ -454,6 +292,7 @@ a:hover {
     user-select: none;
 }
 
+/* tree item text */
 .tree-item-label {
     font-size: 0.9rem;
     color: #111827;
@@ -463,16 +302,17 @@ a:hover {
     width: fit-content;
 }
 
+/* underline animation on hover */
 .tree-item:hover .tree-item-label::after {
     transform: scaleX(1);
 }
 
-/* selected state */
+/* bold text when selected */
 .tree-item.selected .tree-item-label {
     font-weight: 700;
 }
 
-/* count badge */
+/* count badge showing number of essays */
 .count-badge {
     display: inline-flex;
     align-items: center;
@@ -488,14 +328,14 @@ a:hover {
     margin-left: 0.5rem;
 }
 
-/* sort number badge */
+/* sort number badge (1, 2) for primary/secondary sort */
 .sort-number {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 20px;
     height: 20px;
-    background: #6f1314;
+    background: #6f1314; /* brand red */
     color: white;
     border-radius: 10px;
     font-size: 0.7rem;
@@ -503,7 +343,7 @@ a:hover {
     margin-left: 0.5rem;
 }
 
-/* nested levels */
+/* nested tree levels (hidden by default) */
 .tree-children {
     display: none;
     flex-direction: column;
@@ -512,24 +352,31 @@ a:hover {
     margin-left: 0.75rem;
 }
 
+/* show nested levels when expanded */
 .tree-children.expanded {
     display: flex;
 }
 
-/* level-specific indentation */
+/* indentation for level 2 items */
 .tree-level-2 {
     margin-left: 0.5rem;
 }
 
+/* indentation for level 3 items */
 .tree-level-3 {
     margin-left: 1rem;
 }
 
-/* ========== range slider ========== */
+/* ========================================
+   RANGE SLIDERS (year and reading time)
+   ======================================== */
+
+/* range slider container */
 .range-slider-container {
     padding: 0.5rem 0;
 }
 
+/* min/max value display */
 .range-values {
     display: flex;
     justify-content: space-between;
@@ -538,16 +385,19 @@ a:hover {
     color: #6b7280;
 }
 
+/* actual values (bold) */
 .range-value {
     font-weight: 500;
     color: #111827;
 }
 
+/* wrapper for dual range slider */
 .dual-range-wrapper {
     position: relative;
     height: 30px;
 }
 
+/* background track (gray) */
 .range-track-bg {
     position: absolute;
     width: 100%;
@@ -558,6 +408,7 @@ a:hover {
     top: 13px;
 }
 
+/* filled track between handles (red) */
 .range-track-fill {
     position: absolute;
     height: 4px;
@@ -568,6 +419,7 @@ a:hover {
     top: 13px;
 }
 
+/* base range input styles */
 .range-input {
     -webkit-appearance: none;
     appearance: none;
@@ -576,10 +428,11 @@ a:hover {
     background: transparent;
     outline: none;
     position: absolute;
-    pointer-events: none;
+    pointer-events: none; /* only thumbs are clickable */
     top: 13px;
 }
 
+/* webkit slider thumb (chrome/safari) */
 .range-input::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -591,17 +444,19 @@ a:hover {
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease;
-    pointer-events: auto;
+    pointer-events: auto; /* make thumb clickable */
     position: relative;
     z-index: 2;
     margin-top: -6px;
 }
 
+/* thumb hover effect */
 .range-input::-webkit-slider-thumb:hover {
     transform: scale(1.15);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* firefox slider thumb */
 .range-input::-moz-range-thumb {
     width: 18px;
     height: 18px;
@@ -617,11 +472,13 @@ a:hover {
     margin-top: -6px;
 }
 
+/* firefox thumb hover effect */
 .range-input::-moz-range-thumb:hover {
     transform: scale(1.15);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* webkit slider track */
 .range-input::-webkit-slider-runnable-track {
     width: 100%;
     height: 6px;
@@ -629,6 +486,7 @@ a:hover {
     border-radius: 3px;
 }
 
+/* firefox slider track */
 .range-input::-moz-range-track {
     width: 100%;
     height: 6px;
@@ -636,6 +494,260 @@ a:hover {
     border-radius: 3px;
 }
 
+/* max slider has higher z-index to be on top */
 .range-max {
     z-index: 3;
+}
+
+/* ========================================
+   ESSAY LIST (middle pane)
+   ======================================== */
+
+/* essay count text at top of list */
+.essay-count {
+    text-align: left;
+    margin: 0 0 1.5rem 0;
+    color: #111827;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* essay list container */
+#essayList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* individual essay card */
+.essay-item {
+    background: white;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* selected essay has gray background */
+.essay-item.selected {
+    background: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+/* show underline on hover */
+.essay-item:hover .essay-title::after {
+    transform: scaleX(1);
+}
+
+/* bold title when selected */
+.essay-item.selected .essay-title {
+    font-weight: 600;
+}
+
+/* keep underline visible when selected */
+.essay-item.selected .essay-title::after {
+    transform: scaleX(1);
+}
+
+/* essay content wrapper */
+.essay-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* essay title with underline animation */
+.essay-title {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #111827;
+    transition: all 0.2s ease;
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* underline animation for titles and tree items */
+.essay-title::after,
+.tree-item-label::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0); /* hidden by default */
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+/* metadata row (date, time, audience, type) */
+.essay-meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.1rem;
+}
+
+/* all metadata info containers with icons */
+.essay-date-info,
+.essay-time-info,
+.essay-audience-info,
+.essay-type-info {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* metadata icons should not shrink */
+.calendar-icon,
+.clock-icon,
+.audience-icon,
+.type-icon {
+    flex-shrink: 0;
+}
+
+/* ========================================
+   TAGS (topics, types, audiences)
+   ======================================== */
+
+/* tag container */
+.essay-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* base tag style */
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* default topic tag color (gray) */
+.topic-tag {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+/* topic-specific tag colors */
+.topic-startups {
+    background: #fed7aa; /* orange */
+    color: #9a3412;
+}
+
+.topic-writing {
+    background: #fce7f3; /* pink */
+    color: #9f1239;
+}
+
+.topic-society {
+    background: #d1fae5; /* green */
+    color: #065f46;
+}
+
+.topic-technology {
+    background: #dbeafe; /* blue */
+    color: #1e40af;
+}
+
+.topic-communication {
+    background: #fef9c3; /* yellow */
+    color: #854d0e;
+}
+
+.topic-personal-growth {
+    background: #d1fae5; /* green */
+    color: #065f46;
+}
+
+/* ========================================
+   PREVIEW PANE (right side)
+   ======================================== */
+
+/* preview header with button */
+.preview-header {
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* "Go to Original Essay" button */
+.go-to-original-btn {
+    background: #1f2937;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+/* button hover state */
+.go-to-original-btn:hover {
+    background: #374151;
+}
+
+/* iframe container */
+.preview-container {
+    flex: 1;
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* iframe with offset for paulgraham.com (hides nav) */
+.preview-iframe {
+    width: 120%;
+    height: 120%;
+    border: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-80px, -55px); /* offset to hide header */
+}
+
+/* iframe without offset for other sites */
+.preview-iframe-no-offset {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* ========================================
+   LINKS
+   ======================================== */
+
+/* global link styles */
+a {
+    color: #6f1314; /* brand red */
+    text-decoration: none;
+}
+
+/* underline on hover */
+a:hover {
+    text-decoration: underline;
 }

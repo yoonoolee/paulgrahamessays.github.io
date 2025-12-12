@@ -649,14 +649,9 @@ h1 {
     color: #9a3412;
 }
 
-.topic-writing {
-    background: #fce7f3; /* pink */
-    color: #9f1239;
-}
-
 .topic-society {
-    background: #d1fae5; /* green */
-    color: #065f46;
+    background: #e9d5ff; /* purple */
+    color: #6b21a8;
 }
 
 .topic-technology {

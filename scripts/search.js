@@ -74,6 +74,7 @@ function buildInvertedIndex(essays) {
 }
 
 // compute TF-IDF score for a query against a document
+// TF(term, doc) = count of term in doc / total terms in doc (normalized)
 // returns weighted sum of (TF * IDF) for title and content
 // title matches are weighted more than content matches
 function computeTFIDF(query, essay) {
@@ -82,17 +83,18 @@ function computeTFIDF(query, essay) {
 
     // compute TF for title
     const titleTokens = tokenize(essay.Title);
-    const titleTF = {}; // term frequency map for title
+    const titleTF = {}; // term count map for title
     titleTokens.forEach(token => {
         titleTF[token] = (titleTF[token] || 0) + 1; // count how many times each term appears
     });
 
-    // compute TF-IDF score for title
+    // compute TF-IDF score for title with normalized TF
     let titleScore = 0;
     queryTokens.forEach(queryTerm => {
-        const termFreq = titleTF[queryTerm] || 0; // how often the term appears in title
+        const termCount = titleTF[queryTerm] || 0; // raw count of term in title
+        const termFreq = titleTokens.length > 0 ? termCount / titleTokens.length : 0; // normalize by total terms
         const idf = idfScores[queryTerm] || 0; // how rare the term is across all docs
-        titleScore += termFreq * idf; // multiply frequency by importance
+        titleScore += termFreq * idf; // multiply normalized frequency by importance
     });
 
     // also search content
@@ -101,13 +103,14 @@ function computeTFIDF(query, essay) {
         const contentEntry = essayContent.find(c => c.ID === essay.ID);
         if (contentEntry && contentEntry.Content) {
             const contentTokens = tokenize(contentEntry.Content);
-            const contentTF = {}; // term frequency map for content
+            const contentTF = {}; // term count map for content
             contentTokens.forEach(token => {
                 contentTF[token] = (contentTF[token] || 0) + 1;
             });
 
             queryTokens.forEach(queryTerm => {
-                const termFreq = contentTF[queryTerm] || 0;
+                const termCount = contentTF[queryTerm] || 0; // raw count of term in content
+                const termFreq = contentTokens.length > 0 ? termCount / contentTokens.length : 0; // normalize by total terms
                 const idf = idfScores[queryTerm] || 0;
                 contentScore += termFreq * idf;
             });

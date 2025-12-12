@@ -9,7 +9,8 @@ function tokenize(text) {
 }
 
 // compute IDF scores for all terms in the corpus
-// IDF(term) = log(N / df) where N = total docs, df = docs containing term
+// IDF(term) = log(N / (1 + df)) where N = total docs, df = docs containing term
+// adding 1 to denominator prevents division by zero and smooths rare terms
 // uses title + content
 function computeIDF(essays) {
     const N = essays.length; // total number of documents
@@ -34,10 +35,10 @@ function computeIDF(essays) {
         });
     });
 
-    // compute IDF for each term using logarithmic scale
+    // compute IDF for each term using logarithmic scale with smoothing
     const idf = {};
     for (const term in termDocFreq) {
-        idf[term] = Math.log(N / termDocFreq[term]); // rarer terms get higher scores
+        idf[term] = Math.log(N / (termDocFreq[term] + 1)); // rarer terms get higher scores
     }
 
     return idf;
